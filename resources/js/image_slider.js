@@ -31,6 +31,7 @@ function imageSlider() {
     }
   }
   imageSlider.addEventListener('scroll', slideAnimation);
+  slideAnimation();
 }; //EOF
 //initialize image slider
 window.addEventListener('load', imageSlider);
