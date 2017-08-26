@@ -1,30 +1,55 @@
-function imageSlider() {
-  var box = document.getElementById('image_slider');
-  var s0 = box.getElementsByTagName('div')[0];
-  var sW = s0.offsetWidth;
-  var sF = sW + parseInt(getComputedStyle(s0).marginRight);
-  var sArr = document.getElementsByClassName('image_slide');
-  function sAnimate() {
-    var boxW = box.offsetWidth;
-    var scrPos = box.scrollLeft;
-    if (sF * (sArr.length - 1) <= boxW ) {
-      image_slider.setAttribute('class','justified');
+// Image Slider
+function sAnimate(box, boxW, sW, sMR, sOffsetArr, sImgArr) {
+  var scrPos = box.scrollLeft;
+  for (var i = 0; i < sOffsetArr.length; i++) {
+    var sPos = sOffsetArr[i] + ((sW+sMR) / 2);
+    var sPosVis = scrPos - sPos;
+    var sPosPct = (sPosVis / boxW) * 100;
+    sPosPct = sPosPct + 50;
+    sPosPct = (sPosPct * 0.20).toFixed(4); // slow image movement by reducing this %, round to two decimal
+    sImgArr[i].style.transform = "translateX(" + sPosPct + "%)";
+  }
+} //EOF
+
+function imageSlider(firstRun) {
+  if (firstRun === true) {
+    //re-init slider
+    window.addEventListener("resize", imageSlider);
+    window.addEventListener("orientationchange", imageSlider);
+  }
+  var allSliders = document.querySelectorAll(".image_slider");
+  // For each individual slider 'section' element
+  for (var j = 0; j < allSliders.length; j++) {
+    let box = allSliders[j];
+    let boxW = box.offsetWidth;
+    let s0 = box.querySelector("div");
+    let sW = s0.offsetWidth;
+    let sMR = parseFloat(getComputedStyle(s0).marginRight);
+    let sF = sW + sMR;
+    let sArr = box.querySelectorAll(".image_slide");
+    // If screen is too wide, there is no need to run the slider
+    if (sF * (sArr.length - 1) <= boxW) {
+      box.setAttribute("class","image_slider justified");
+      box.scrollLeft = 0;
     } else {
+      box.setAttribute("class","image_slider");
+      let sOffsetArr = [];
+      let sImgArr = [];
+      // For each individual slide within the parent slider
       for (var i = 0; i < sArr.length; i++) {
-        var sPos = Math.round(sArr[i].offsetLeft + (sF / 2) );
-        var sPosVis = scrPos - sPos;
-        var sPosPct = Math.round((sPosVis / boxW) * 100);
-        sPosPct = sPosPct + 50;
-        sPosPct = sPosPct * 0.20; // slow image movement by reducing this %
-        sArr[i].getElementsByTagName('img')[0].style.transform = 'translateX(' + sPosPct + '%)';
+        sOffsetArr.push(sArr[i].offsetLeft);
+        sImgArr.push(sArr[i].querySelector("img"));
       }
+      box.addEventListener("scroll", function() {
+        sAnimate(box, boxW, sW, sMR, sOffsetArr, sImgArr);
+      });
+      sAnimate(box, boxW, sW, sMR, sOffsetArr, sImgArr);
     }
   }
-  box.addEventListener('scroll', sAnimate);
-  sAnimate();
-}; //EOF
+} //EOF
+
 //init slider
-window.addEventListener('load', imageSlider);
-//re-init slider
-window.addEventListener('resize', imageSlider);
-window.addEventListener('orientationchange', imageSlider);
+window.addEventListener("load", function() {
+  imageSlider(true);
+});
+// End Image Slider
