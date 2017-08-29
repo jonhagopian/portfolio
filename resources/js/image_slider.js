@@ -1,48 +1,59 @@
 // Image Gallery Slider
 function imageSlider(firstRun) {
   if (firstRun === true) {
-    // Re-init slider
-    window.addEventListener("resize", imageSlider);
+    var resizeDone;
+    window.addEventListener("resize", function() {
+      clearTimeout(resizeDone);
+      resizeDone = setTimeout(function() {
+        imageSlider();
+      }, 200);
+    });
     window.addEventListener("orientationchange", imageSlider);
   }
-  function sAnimate(box, boxW, sW, sMR, sOffsetArr, sImgArr) {
+  function sAnimate(box, boxW, sW, sOffsetArr, sImgArr) {
     var scrPos = box.scrollLeft;
+    // for each individual image slide
     for (var i = 0; i < sOffsetArr.length; i++) {
-      var sPos = sOffsetArr[i] + ((sW+sMR) / 2);
+      var sPos = sOffsetArr[i] + (sW / 2);
       var sPosVis = scrPos - sPos;
       var sPosPct = (sPosVis / boxW) * 100;
-      sPosPct = sPosPct + 50;
-      sPosPct = (sPosPct * 0.20).toFixed(2); // slow image movement by reducing this %
+      sPosPct = sPosPct + 50; // plus 50% for center
+      sPosPct = (sPosPct * 0.20).toFixed(2); // change image movement lag by reducing the %
       sImgArr[i].style.transform = "translateX(" + sPosPct + "%)";
     }
   } //EOF
   var allSliders = document.querySelectorAll(".image_slider");
-  // For each individual slider 'section' element
+  // For each individual gallery
   for (var j = 0; j < allSliders.length; j++) {
     let box = allSliders[j];
     let boxW = box.offsetWidth;
-    let s0 = box.querySelector("div");
-    let sW = s0.offsetWidth;
-    let sMR = parseFloat(getComputedStyle(s0).marginRight);
-    let sF = sW + sMR;
-    let sArr = box.querySelectorAll(".image_slide");
-    // If screen is too wide, no need to run slider
-    if (sF * (sArr.length - 1) <= boxW) {
+    let sArr = box.querySelectorAll("figure");
+    let sW = box.querySelector("figure").offsetWidth;
+    let sOffsetArr = [];
+    for (var i = 0; i < sArr.length; i++) {
+      sOffsetArr.push(sArr[i].offsetLeft);
+    }
+    let sImgArr = box.querySelectorAll("figure img");
+    // If screen is too wide, no slider
+    if (box.scrollWidth <= boxW) {
       box.setAttribute("class","image_slider justified");
       box.scrollLeft = 0;
+      for (var i = 0; i < sImgArr.length; i++) {
+        sImgArr[i].style.transform = "translateX(0%)";
+      }
     } else {
       box.setAttribute("class","image_slider");
-      let sOffsetArr = [];
-      let sImgArr = [];
-      // For each individual slide within the parent slider
-      for (var i = 0; i < sArr.length; i++) {
-        sOffsetArr.push(sArr[i].offsetLeft);
-        sImgArr.push(sArr[i].querySelector("img"));
+      let _forEventListener = function() {
+        sAnimate(box, boxW, sW, sOffsetArr, sImgArr);
       }
-      box.addEventListener("scroll", function() {
-        sAnimate(box, boxW, sW, sMR, sOffsetArr, sImgArr);
+      box.addEventListener("scroll", _forEventListener);
+      window.addEventListener("resize", function() {
+        box.removeEventListener("scroll", _forEventListener)
       });
-      sAnimate(box, boxW, sW, sMR, sOffsetArr, sImgArr);
+      window.addEventListener("orientationchange", function() {
+        box.removeEventListener("scroll", _forEventListener)
+      });
+      sAnimate(box, boxW, sW, sOffsetArr, sImgArr);
     }
   }
 } //EOF
