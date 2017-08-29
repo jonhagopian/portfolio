@@ -61,26 +61,37 @@ h2 {
 .image_slider.justified {
   justify-content: center;
 }
-.image_slider .image_slide {
-  width: 66%;
+.image_slider figure {
+  width: calc(66.6% - 1em);
   height: auto;
-  margin-right: 2%;
+  margin-right: 1em;
   border-radius: 1em;
   overflow: hidden;
   flex: 0 0 auto;
   position: relative;
 }
-.image_slider .image_slide img {
+.image_slider figure img {
   /* negative margin matches width amount over 100% / 2 */
   margin-left: -14%;
   width: 128%;
   height: auto;
 }
-@media screen and (min-width: 1224px) {
-  .image_slider .image_slide {
-    width: 400px;
+@media screen and (min-width: 48em) and (max-width: 76em) {
+  .image_slider figure {
+    width: calc(40% - 1em);
     height: auto;
-    margin-right: 24px;
+  }
+}
+@media screen and (min-width: 76em) and (max-width: 112em) {
+  .image_slider figure {
+    width: calc(22% - 1em);
+    height: auto;
+  }
+}
+@media screen and (min-width: 112em) {
+  .image_slider figure {
+    width: calc(22em - 1em);
+    height: auto;
   }
 }
 /* End Image Slider */
