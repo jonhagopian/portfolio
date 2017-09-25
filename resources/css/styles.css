@@ -31,6 +31,25 @@ h2 {
 }
 /* End General Styles */
 
+/* Header */
+#header-image {
+  width: 664px;
+  height: 415px;
+  background-color: skyblue;
+  position: relative;
+}
+#header-image img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition-duration: 4s;
+  opacity: 0;
+}
+/* Header */
+
 /* ----------- iPhone 6+ and Smaller ----------- */
 
 /* Portrait and Landscape */

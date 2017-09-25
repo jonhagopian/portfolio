@@ -1,0 +1,43 @@
+/*
+  Swaps banner images at timed intervals from json, then choosing at random.
+  *batching reflows by browsers causes animation not to work on newly created elements, accessign offsetWidth triggers reflow and fixes this.
+*/
+function hdrImg() {
+  /*var hdrImgArray = [
+    "banff1.jpg",
+    "banff2.jpg",
+    "banff3.jpg",
+    "banff4.jpg",
+    "banff5.jpg",
+    "banff6.jpg",
+    "banff7.jpg",
+    "banff8.jpg"
+  ]*/
+  function randomImage() {
+    return hdrImgArray[Math.floor(Math.random() * hdrImgArray.length)];
+  }// EOF
+  function swapHdrImg() {
+    newBannerImage = document.createElement("img");
+    newBannerImage.src = "resources/images/banner/" + randomImage();
+    newBannerImage.onload = function() {
+      imageBnrBox.appendChild(newBannerImage);
+      var flowFix = newBannerImage.offsetWidth; // see note: *
+      newBannerImage.style.opacity = 1;
+    }
+  }// EOF
+  var hdrImgArray = [];
+  var imageBnrBox = document.getElementById("header-image");
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      hdrImgArray = JSON.parse(this.responseText);
+      var headlineTimer = setInterval(swapHdrImg, 6000);
+      swapHdrImg();
+    }
+  };
+  xmlhttp.open("GET", "resources/js/bannerImages.json", true);
+  xmlhttp.send();
+}// EOF
+window.addEventListener("load", function() {
+  hdrImg();
+});
