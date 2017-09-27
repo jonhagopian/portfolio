@@ -3,16 +3,6 @@
   *batching reflows by browsers causes animation not to work on newly created elements, accessign offsetWidth triggers reflow and fixes this.
 */
 function hdrImg() {
-  /*var hdrImgArray = [
-    "banff1.jpg",
-    "banff2.jpg",
-    "banff3.jpg",
-    "banff4.jpg",
-    "banff5.jpg",
-    "banff6.jpg",
-    "banff7.jpg",
-    "banff8.jpg"
-  ]*/
   function randomImage() {
     return hdrImgArray[Math.floor(Math.random() * hdrImgArray.length)];
   }// EOF
@@ -28,15 +18,32 @@ function hdrImg() {
   var hdrImgArray = [];
   var imageBnrBox = document.getElementById("header-image");
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
+
+// Testing Local
+  hdrImgArray = [
+    "header-image-1.jpg",
+    "header-image-2.jpg",
+    "header-image-3.jpg",
+    "header-image-4.jpg",
+    "header-image-5.jpg",
+    "header-image-6.jpg"
+  ]
+  swapHdrImg();
+  var headlineTimer = setInterval(swapHdrImg, 10000);
+  
+// End Testing Local
+
+/*  xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       hdrImgArray = JSON.parse(this.responseText);
-      var headlineTimer = setInterval(swapHdrImg, 6000);
       swapHdrImg();
+      var headlineTimer = setInterval(swapHdrImg, 6000);
+      
     }
   };
   xmlhttp.open("GET", "resources/js/bannerImages.json", true);
   xmlhttp.send();
+*/
 }// EOF
 window.addEventListener("load", function() {
   hdrImg();

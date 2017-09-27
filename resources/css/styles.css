@@ -1,14 +1,14 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400i,700');
 * {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;line-height:inherit;letter-spacing:inherit;list-style:none;text-decoration:none;}
 html {
   box-sizing: border-box;
-  overflow: hidden;
 }
 body {
+  font-size: 16px;
   font-family: 'Roboto', sans-serif;
-  color: black;
-  padding: 1em;
+  font-weight: 400;
+  color: #212121;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -18,52 +18,297 @@ img {
 }
 
 /* General Styles */
-section {
+h1, h2, h3, h4, p {
   margin: 1em 0;
+  line-height: 1.4em;
 }
 h1 {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 1em;
 }
 h2 {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 0.875px;
+}
+p {
+  font-size: 0.875em
+}
+hr {
+  border-bottom: 1px solid #BCBCBC;
+  width: 80%;
+  margin: 3em auto;
 }
 /* End General Styles */
 
-/* Header */
+/* ----------- Mobile First ----------- */
+
+/* ----------- Header ----------- */
+header {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1px 0;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  position: fixed;
+  background-color: white;
+}
+header strong {
+  font-weight: 700;
+}
+nav#navigation, div#icon, div#header-image {
+  height: 75px;
+  width: 75px;
+  margin: 0 1px;
+}
+nav#navigation {
+  background-color: #2274A5;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 40% 40%;
+  color: #2274A5;
+}
+nav#navigation.open {
+  background-image: url("../images/menu-icon-open.svg");
+}
+nav#navigation.close {
+  background-image: url("../images/menu-icon-close.svg");
+}
+nav#navigation ul {
+  display: block;
+  position: absolute;
+  width: 70%;
+  border-right: solid 4px #FEEA3B;
+  background-color: #2274A5;
+  z-index: 9;
+  top: calc(100% + 1px);
+  height: calc(100vh - 75px);
+  box-shadow: 3px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  transition-duration: 1s;
+  color: #FEEA3B;
+  font-weight: 700;
+  font-size: 1.25em;
+}
+nav#navigation.open ul {
+  left: -80%;
+}
+nav#navigation.close ul {
+  left: 0;
+}
+nav#navigation ul li {
+  padding: 0.875em 0;
+  margin: 0 2em;
+  border-bottom: 1px solid #FEEA3B;
+}
+nav#navigation ul li:last-of-type {
+  border-bottom: none;
+}
+nav#navigation a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+}
+div#icon {
+  background-image: url("../images/icon-jonhagopian.jpg");
+  background-size: contain;
+}
 #header-image {
-  width: 664px;
-  height: 415px;
-  background-color: skyblue;
+  background-color: #FEEA3B;
   position: relative;
+  flex-grow: 1;
+  overflow: hidden;
 }
 #header-image img {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  transition-duration: 4s;
-  opacity: 0;
+  display: none;
 }
-/* Header */
-
-/* ----------- iPhone 6+ and Smaller ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (max-width: 736px) { 
-    body {
-      background-color: #212121;
-      color: white;
-    }
+div#header-image #logo {
+  font-size: 1em;
+  line-height: 75px;
+  display: inline;
+  margin-left: 1em;
+  color: #2274A5;
 }
+div#header-image #logo strong {
+  font-weight: bold;
+}
+/* ----------- End Header ----------- */
 
-/* ----------- End iPhone 6+ and Smaller ----------- */
+/* ----------- Main Body Columns ----------- */
+main {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding: 75px 1em 1em 1em;
+}
+main strong {
+  font-weight: 700;
+}
+main article {
+}
+article#left-column {
+}
+article#right-column {
+}
+section#main-content {
+  font-size: 0.875em;
+  padding: 1em;
+  text-align: center;
+}
+section#main-content h1 {
+  line-height: 1.875;
+}
+/* ----------- End Main Body Columns ----------- */
 
+/* ----------- Global Footer ----------- */
+footer#global-footer {
+  margin-top: 1em;
+  color: #212121;
+  border-top: 1px solid #BCBCBC;
+  text-align: center;
+  line-height: 2;
+  font-size: 0.875em;
+}
+footer#global-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+/* ----------- End Global Footer ----------- */
+
+/* ----------- End Mobile First ----------- */
+
+/* ----------- iPad Standard Portrait to Large Desktop displays ----------- */
+@media only screen and (min-width: 767px) {
+/* ----------- Header ----------- */
+  header {
+    flex-flow: row wrap;
+  }
+  nav#navigation, div#icon, div#header-image {
+    height: 160px;
+    width: 160px;
+    margin: 0 1px;
+  }
+  nav#navigation {
+    background: #FEEA3B;
+    border-top: 1px solid white;
+    flex-basis: 100%;
+    padding: 0.75em 0;
+    order: 3;
+    height: auto;
+  }
+  nav#navigation.open ul , nav#navigation.close ul {
+    left: auto;
+  }
+  nav#navigation ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: auto;
+    border-right: none;
+    background: none;
+    top: auto;
+    height: auto;
+    box-shadow: none;
+    transition-duration: 0;
+    color: #2274A5;
+  }
+  nav#navigation ul li {
+    padding: 0 1em;
+    border-right: 2px solid;
+    border-bottom: none;
+    margin: 0;
+  }
+  nav#navigation ul li:last-of-type {
+    border-right: none;
+  }
+  nav#navigation a {
+    text-decoration: none;
+    color: inherit;
+    transition-duration: 1s;
+  }
+  nav#navigation a:hover {
+    color: #165478;
+  }
+  #header-image {
+    background-color: #2274A5;
+  }
+  #header-image img {
+    display: block;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition-duration: 4s;
+    opacity: 0;
+  }
+  div#header-image #logo {
+    display: block;
+    font-size: 1.875em;
+    color: white;
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+    line-height: inherit;
+    margin-left: 0;
+    z-index: 2;
+  }
+
+/* ----------- End Header ----------- */
+
+/* ----------- Main Body Columns ----------- */
+  main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    padding: calc(2.75em + 160px) 1em 1em 1em;
+  }
+  article#left-column {
+    width: 60%;
+  }
+  article#right-column {
+    width:  30%;
+  }
+  section#main-content {
+    padding: 2em 1em 1em 1em;
+  }
+  section#main-content h1 {
+    line-height: 2;
+  }
+/* ----------- End Main Body Columns ----------- */
+
+/* ----------- Global Footer ----------- */
+  footer#global-footer {
+
+  }
+/* ----------- End Global Footer ----------- */
+
+}
+/* ----------- End iPad Standard Portrait to Large Desktop displays ----------- */
+
+
+
+
+
+
+
+/* ----------- Miscellaneous Styling ----------- */
+/* ----------- If screen is too big for header image ----------- */
+@media only screen and (min-width: 1440px) {
+  #header-image img {
+    height: auto;
+    width: 100%;
+  }
+}
+/* ----------- End If screen is too big for header image ----------- */
+
+/* ----------- Image Slider ----------- */
 /* Image Slider */
-.image_slider {
+.image-slider-container {
+  position: relative;
+}
+.image-slider {
   width: 100%;
   padding: 0;
   display: flex;
@@ -74,14 +319,14 @@ h2 {
   margin-left: auto;
   margin-right: auto;
 }
-.image_slider::-webkit-scrollbar {
+.image-slider::-webkit-scrollbar {
   display: none;
 }
-.image_slider.justified {
+.image-slider.justified {
   justify-content: center;
 }
-.image_slider figure {
-  width: calc(66.6% - 1em);
+.image-slider figure, .image-slider div {
+  width: calc(22em - 1em);
   height: auto;
   margin-right: 1em;
   border-radius: 1em;
@@ -89,28 +334,45 @@ h2 {
   flex: 0 0 auto;
   position: relative;
 }
-.image_slider figure img {
+.image-slider figure img {
   /* negative margin matches width amount over 100% / 2 */
   margin-left: -14%;
   width: 128%;
   height: auto;
 }
-@media screen and (min-width: 48em) and (max-width: 76em) {
-  .image_slider figure {
-    width: calc(40% - 1em);
-    height: auto;
-  }
+.btn-slider {
+  visibility: hidden;
 }
-@media screen and (min-width: 76em) and (max-width: 112em) {
-  .image_slider figure {
-    width: calc(22% - 1em);
-    height: auto;
-  }
+.image-slider figure {
+  width: calc(66.6% - 1em);
 }
-@media screen and (min-width: 112em) {
-  .image_slider figure {
-    width: calc(22em - 1em);
-    height: auto;
+/* ----------- iPad Standard Portrait to Large Desktop displays ----------- */
+@media only screen and (min-width: 767px) {
+  .btn-slider {
+    position: absolute;
+    z-index: 1;
+    height: 2em;
+    width: 2em;
+    background-color: white;
+    border-radius: 1em;
+    display: block;
+    top: calc(50% - 1em);
+    line-height: 2em;
+    text-align: center;
+    font-size: 1.5em;
+    border: 1px solid #BCBCBC;
+    cursor: pointer;
   }
-}
-/* End Image Slider */
+  .btn-slider {
+    visibility: visible;
+  }
+  .btn-slider-l {
+    left: -1em;
+  }
+  .btn-slider-r {
+    right: -1em;
+  }
+/* ----------- End iPad Standard Portrait to Large Desktop displays ----------- */
+
+/* ----------- End Image Slider ----------- */
+/* ----------- End Miscellaneous Styling ----------- */

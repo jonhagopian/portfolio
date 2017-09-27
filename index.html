@@ -9,46 +9,78 @@
     <meta name="author" content="Jon Hagopian">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="resources/css/styles.css" rel="stylesheet" type="text/css">
+    <script src="resources/js/main.js" type="text/javascript"></script>
     <script src="resources/js/imageSlider.js" type="text/javascript"></script>
     <script src="resources/js/headerImage.js" type="text/javascript"></script>
+    <!-- http://d37ekv4ncjnnix.cloudfront.net -->
   </head>
 
   <body>
     <header>
-      <h1>Jon Hagopian</h1>
+      <nav id="navigation" role="navigation" class="open">
+        <ul>
+          <li><a href="/" target="_blank">home</a></li>
+          <li><a href="#" target="_blank">portfolio</a></li>
+          <li><a href="#" target="_blank">skills</a></li>
+          <li><a href="#" target="_blank">resume</a></li>
+          <li><a href="#" target="_blank">interests</a></li>
+          <li><a href="#" target="_blank">contact</a></li> 
+        </ul>
+      </nav>
+      <div id="icon">
+        <!-- photo icon -->
+      </div>
       <div id="header-image">
+        <div id="logo">
+          <strong>jonhagopian</strong>.com
+        </div>
       </div>
     </header>
-    <section>
-      <h2>Temporary index page, testing.</h2>
-    </section>
-    <!-- http://d37ekv4ncjnnix.cloudfront.net -->
-    <div class="image_slider">
-      <figure class="image_slide">
-        <img src="http://d37ekv4ncjnnix.cloudfront.net/resources/images/banff1.jpg">
-      </figure>
-      <figure class="image_slide">
-        <img src="http://d37ekv4ncjnnix.cloudfront.net/resources/images/banff2.jpg">
-      </figure>
-      <figure class="image_slide">
-        <img src="http://d37ekv4ncjnnix.cloudfront.net/resources/images/banff3.jpg">
-      </figure>
-      <figure class="image_slide">
-        <img src="http://d37ekv4ncjnnix.cloudfront.net/resources/images/banff4.jpg">
-      </figure>
-      <figure class="image_slide">
-        <img src="http://d37ekv4ncjnnix.cloudfront.net/resources/images/banff5.jpg">
-      </figure>
-      <figure class="image_slide">
-        <img src="http://d37ekv4ncjnnix.cloudfront.net/resources/images/banff6.jpg">
-      </figure>
-      <figure class="image_slide">
-        <img src="http://d37ekv4ncjnnix.cloudfront.net/resources/images/banff7.jpg">
-      </figure>
-      <figure class="image_slide">
-        <img src="http://d37ekv4ncjnnix.cloudfront.net/resources/images/banff8.jpg">
-      </figure>
-    </div>
+
+    <main>
+      <article id="left-column">
+        <section id="main-content">
+          <h1><strong>Web Developer</strong> with experience in ecommerce websites, marketing micro-sites and ads, taking creatives from clients to functional web entities. Experience includes leading large initiatives, managing offshore talent, client expectations, directing workflow and debugging. Notable skills are an eye for creative layout while coding for reusability, simplicity and speed. I enjoy solving problems in an elegant streamlined fashion while learning new technologies and techniques.</h1>
+          <hr>
+        </section>
+      </article>
+      <article id="right-column">
+        <p>Temporary index page, testing.</p>
+        <div class="image-slider-container">
+          <div class="btn-slider btn-slider-l">&#10094;</div>
+          <div class="image-slider">
+            <figure class="image-slide">
+              <img src="resources/images/gallery-test/banff1.jpg">
+            </figure>
+            <figure class="image-slide">
+                <img src="resources/images/gallery-test/banff2.jpg">
+            </figure>
+            <figure class="image-slide">
+                <img src="resources/images/gallery-test/banff3.jpg">
+            </figure>
+            <figure class="image-slide">
+                <img src="resources/images/gallery-test/banff4.jpg">
+            </figure>
+            <figure class="image-slide">
+                <img src="resources/images/gallery-test/banff5.jpg">
+            </figure>
+            <figure class="image-slide">
+                <img src="resources/images/gallery-test/banff6.jpg">
+            </figure>
+            <figure class="image-slide">
+                <img src="resources/images/gallery-test/banff7.jpg">
+            </figure>
+            <figure class="image-slide">
+                <img src="resources/images/gallery-test/banff8.jpg">
+            </figure>
+          </div>
+          <div class="btn-slider btn-slider-r">&#10095;</div>
+        </div>
+      </article>
+    </main>
+    <footer id="global-footer">
+      jon hagopian | <a href="#">contact</a>
+    </footer>
   </body>
 
 </html>
