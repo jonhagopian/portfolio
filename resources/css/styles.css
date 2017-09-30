@@ -134,7 +134,7 @@ div#header-image #logo strong {
 /* ----------- Main Body Columns ----------- */
 main {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   justify-content: center;
   padding: 75px 1em 1em 1em;
 }
@@ -173,6 +173,8 @@ footer#global-footer a {
 /* ----------- End Global Footer ----------- */
 
 /* ----------- End Mobile First ----------- */
+
+
 
 /* ----------- iPad Standard Portrait to Large Desktop displays ----------- */
 @media only screen and (min-width: 767px) {
@@ -262,13 +264,14 @@ footer#global-footer a {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    padding: calc(2.75em + 160px) 1em 1em 1em;
+    padding: calc(3.3em + 160px) 1em 1em 1em;
   }
   article#left-column {
     width: 60%;
   }
   article#right-column {
     width:  30%;
+    height: calc(100vh - 6.875em - 160px);
   }
   section#main-content {
     padding: 2em 1em 1em 1em;
@@ -290,9 +293,6 @@ footer#global-footer a {
 
 
 
-
-
-
 /* ----------- Miscellaneous Styling ----------- */
 /* ----------- If screen is too big for header image ----------- */
 @media only screen and (min-width: 1440px) {
@@ -303,19 +303,22 @@ footer#global-footer a {
 }
 /* ----------- End If screen is too big for header image ----------- */
 
+
+
+
+
+
+
+
 /* ----------- Image Slider ----------- */
-/* Image Slider */
-.image-slider-container {
-  position: relative;
-}
+/* Image Slider Mobile */
 .image-slider {
   width: 100%;
   padding: 0;
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow: auto;
   margin-left: auto;
   margin-right: auto;
 }
@@ -325,54 +328,47 @@ footer#global-footer a {
 .image-slider.justified {
   justify-content: center;
 }
-.image-slider figure, .image-slider div {
-  width: calc(22em - 1em);
+.image-slider figure {
+  width: calc(66.6% - 1em);
   height: auto;
   margin-right: 1em;
   border-radius: 1em;
   overflow: hidden;
   flex: 0 0 auto;
-  position: relative;
 }
 .image-slider figure img {
   /* negative margin matches width amount over 100% / 2 */
-  margin-left: -14%;
   width: 128%;
-  height: auto;
+  margin-left: -14%;
 }
-.btn-slider {
-  visibility: hidden;
-}
-.image-slider figure {
-  width: calc(66.6% - 1em);
-}
-/* ----------- iPad Standard Portrait to Large Desktop displays ----------- */
+/* End Image Slider Mobile */
+
+/* Begin Image Slider Desktop */
 @media only screen and (min-width: 767px) {
-  .btn-slider {
-    position: absolute;
-    z-index: 1;
-    height: 2em;
-    width: 2em;
-    background-color: white;
+  .image-slider {
+    margin-top: 2em;
+    height: calc(100% - 2em);
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  .image-slider::-webkit-scrollbar {
+    display: none;
+  }
+  .image-slider figure {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 1em;
+    flex: 0 0 auto;
     border-radius: 1em;
-    display: block;
-    top: calc(50% - 1em);
-    line-height: 2em;
-    text-align: center;
-    font-size: 1.5em;
-    border: 1px solid #BCBCBC;
-    cursor: pointer;
   }
-  .btn-slider {
-    visibility: visible;
+  .image-slider figure img {
+    /* Height calc via JS */
   }
-  .btn-slider-l {
-    left: -1em;
-  }
-  .btn-slider-r {
-    right: -1em;
-  }
-/* ----------- End iPad Standard Portrait to Large Desktop displays ----------- */
+}
+/* End  Image Slider Desktop */
 
 /* ----------- End Image Slider ----------- */
 /* ----------- End Miscellaneous Styling ----------- */

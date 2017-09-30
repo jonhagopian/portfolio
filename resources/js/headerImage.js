@@ -29,7 +29,7 @@ function hdrImg() {
     "header-image-6.jpg"
   ]
   swapHdrImg();
-  var headlineTimer = setInterval(swapHdrImg, 10000);
+  var headlineTimer = setInterval(swapHdrImg, 60000);
   
 // End Testing Local
 
