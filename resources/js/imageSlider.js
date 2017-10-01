@@ -6,7 +6,7 @@ function imageSlider(firstRun) {
       clearTimeout(resizeDone);
       resizeDone = setTimeout(function() {
         imageSlider();
-      }, 200);
+      }, 400);
     });
     window.addEventListener("orientationchange", imageSlider);
   }
@@ -36,35 +36,28 @@ function imageSlider(firstRun) {
   } //EOF
   var allSliders = document.querySelectorAll(".image-slider");
   for (var j = 0; j < allSliders.length; j++) { // For each individual gallery element
-    let box = allSliders[j];
+    let box = allSliders[j]; // let so values aren't overwritten
     let sArr = box.querySelectorAll("figure");
     let sImgArr = box.querySelectorAll("figure img");
     // if horizontal/vertical scroll switch
-    let flexDir = window.getComputedStyle(box).flexDirection;
+    var flexDir = window.getComputedStyle(box).flexDirection;
     if (flexDir === "row") {
-      let boxW = box.offsetWidth;
-      let sW = box.querySelector("figure").offsetWidth;
-      let sWm = box.querySelector("figure").offsetWidth + parseInt(getComputedStyle(box.querySelector("figure")).marginRight); // with margins
-      let sOffsetArrL = [];
+      box.scrollLeft = 0; // reset scroll to beginning
+      var boxW = box.offsetWidth;
+      var sW = box.querySelector("figure").offsetWidth;
+      var sOffsetArrL = [];
       for (var i = 0; i < sArr.length; i++) {
         sOffsetArrL.push(sArr[i].offsetLeft);
       }
-      let _forEventListener = function() {
+      var _forEventListener = function() {
         sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr);
       }
-      box.addEventListener("scroll", _forEventListener);
       sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr);
-      window.addEventListener("resize", function() {
-        box.removeEventListener("scroll", _forEventListener)
-      });
-      window.addEventListener("orientationchange", function() {
-        box.removeEventListener("scroll", _forEventListener)
-      });
     } else if (flexDir === "column") {
-      let boxH = box.offsetHeight;
-      let sH = box.querySelector("figure").offsetHeight;
-      let sHm = box.querySelector("figure").offsetHeight + parseInt(getComputedStyle(box.querySelector("figure")).marginBottom); // with margins
-      let sOffsetArrT = [];
+      box.scrollTop = 0;
+      var boxH = box.offsetHeight;
+      var sH = box.querySelector("figure").offsetHeight;
+      var sOffsetArrT = [];
       for (var i = 0; i < sArr.length; i++) {
         sOffsetArrT.push(sArr[i].offsetTop);
         // Aspect ratio adjust
@@ -72,19 +65,19 @@ function imageSlider(firstRun) {
         newHeight = Math.round(newHeight);
         sArr[i].setAttribute("style", "height: " + newHeight + "px;");
       }
-      let _forEventListener = function() {
+      var _forEventListener = function() {
         syAnimate(box, boxH, sH, sOffsetArrT, sImgArr);
       }
-      box.addEventListener("scroll", _forEventListener);
       syAnimate(box, boxH, sH, sOffsetArrT, sImgArr);
-      window.addEventListener("resize", function() {
-        box.removeEventListener("scroll", _forEventListener)
-      });
-      window.addEventListener("orientationchange", function() {
-        box.removeEventListener("scroll", _forEventListener)
-      });
     } // End if else row/column
 
+    box.addEventListener("scroll", _forEventListener);
+    window.addEventListener("resize", function() {
+      box.removeEventListener("scroll", _forEventListener)
+    });
+    window.addEventListener("orientationchange", function() {
+      box.removeEventListener("scroll", _forEventListener)
+    });
   } // End for
 } //EOF
 // Init Slider
