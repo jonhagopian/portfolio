@@ -43,7 +43,7 @@ function hdrImg() {
       // End Testing Local
     }
   };
-  xmlhttp.open("GET", "bannerImages.json", true);
+  xmlhttp.open("GET", "/js/bannerImages.json", true);
   xmlhttp.send();
 }// EOF
 window.addEventListener("load", function() {
