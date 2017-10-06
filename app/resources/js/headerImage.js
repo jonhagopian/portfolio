@@ -19,31 +19,30 @@ function hdrImg() {
   var imageBnrBox = document.getElementById("header-image");
   var xmlhttp = new XMLHttpRequest();
 
-// Testing Local
-  hdrImgArray = [
-    "header-image-1.jpg",
-    "header-image-2.jpg",
-    "header-image-3.jpg",
-    "header-image-4.jpg",
-    "header-image-5.jpg",
-    "header-image-6.jpg"
-  ]
-  swapHdrImg();
-  var headlineTimer = setInterval(swapHdrImg, 60000);
-  
-// End Testing Local
 
-/*  xmlhttp.onreadystatechange = function() {
+
+  xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       hdrImgArray = JSON.parse(this.responseText);
       swapHdrImg();
       var headlineTimer = setInterval(swapHdrImg, 6000);
-      
+    } else {
+      // Testing Local
+      hdrImgArray = [
+        "header-image-1.jpg",
+        "header-image-2.jpg",
+        "header-image-3.jpg",
+        "header-image-4.jpg",
+        "header-image-5.jpg",
+        "header-image-6.jpg"
+      ]
+      swapHdrImg();
+      var headlineTimer = setInterval(swapHdrImg, 60000);
+      // End Testing Local
     }
   };
-  xmlhttp.open("GET", "resources/js/bannerImages.json", true);
+  xmlhttp.open("GET", "/js/bannerImages.json", true);
   xmlhttp.send();
-*/
 }// EOF
 window.addEventListener("load", function() {
   hdrImg();

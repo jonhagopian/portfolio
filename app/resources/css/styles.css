@@ -36,6 +36,10 @@ hr {
   width: 80%;
   margin: 2em auto;
 }
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
 /* End General Styles */
 
 /* ----------- Mobile First ----------- */
