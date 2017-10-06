@@ -9,9 +9,7 @@ app.set("views", "app/views");
 
 // Global Variables
 app.locals.siteTitle = "Jon Hagopian:: ";
-//app.locals.defaultResources = "app/resources";
 
-// IS the where you would set the AWS CDN URL?
 app.use(express.static('app/resources'));
 // Set Routes
 app.use(require('./routes/route-index'));

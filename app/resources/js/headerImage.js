@@ -28,6 +28,7 @@ function hdrImg() {
       var headlineTimer = setInterval(swapHdrImg, 6000);
     } else {
       // Testing Local
+      console.log("Header Images Testing Local");
       hdrImgArray = [
         "header-image-1.jpg",
         "header-image-2.jpg",
