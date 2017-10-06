@@ -4,8 +4,10 @@
 */
 function hdrImg() {
   function randomImage() {
+    // hdrImgArray values exist in and include rendered in head.ejs 
     return hdrImgArray[Math.floor(Math.random() * hdrImgArray.length)];
   }// EOF
+  var imageBnrBox = document.getElementById("header-image");
   function swapHdrImg() {
     newBannerImage = document.createElement("img");
     newBannerImage.src = "images/banner/" + randomImage();
@@ -15,38 +17,9 @@ function hdrImg() {
       newBannerImage.style.opacity = 1;
     }
   }// EOF
-  var headlineTimer;
-  function startTimer() {
-    headlineTimer = setInterval(swapHdrImg, 6000);
-  }
-  var hdrImgArray = [];
-  var imageBnrBox = document.getElementById("header-image");
-  var xmlhttp = new XMLHttpRequest();
-
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      hdrImgArray = JSON.parse(this.responseText);
-      swapHdrImg();
-      startTimer();
-      console.log("xmlhttp get successful");
-    }
-      // Testing Local
-      /*console.log("Header Images Testing Local");
-      hdrImgArray = [
-        "header-image-1.jpg",
-        "header-image-2.jpg",
-        "header-image-3.jpg",
-        "header-image-4.jpg",
-        "header-image-5.jpg",
-        "header-image-6.jpg"
-      ]
-      swapHdrImg();
-      var headlineTimer = setInterval(swapHdrImg, 60000);*/
-      // End Testing Local
-  };
-  xmlhttp.open("GET", "/js/bannerImages.json", true);
-  xmlhttp.send();
+  headlineTimer = setInterval(swapHdrImg, 6000);
+  swapHdrImg();
 }// EOF
 window.addEventListener("load", function() {
   hdrImg();
-});
+}); 
