@@ -15,17 +15,19 @@ function hdrImg() {
       newBannerImage.style.opacity = 1;
     }
   }// EOF
+  var headlineTimer;
+  function startTimer() {
+    headlineTimer = setInterval(swapHdrImg, 6000);
+  }
   var hdrImgArray = [];
   var imageBnrBox = document.getElementById("header-image");
   var xmlhttp = new XMLHttpRequest();
-
-  var headlineTimer;
 
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       hdrImgArray = JSON.parse(this.responseText);
       swapHdrImg();
-      headlineTimer = setInterval(swapHdrImg, 6000);
+      startTimer();
       console.log("xmlhttp get successful");
     }
       // Testing Local
