@@ -26,6 +26,7 @@ function hdrImg() {
       hdrImgArray = JSON.parse(this.responseText);
       swapHdrImg();
       var headlineTimer = setInterval(swapHdrImg, 6000);
+      console.log("xmlhttp get successful");
     } else {
       // Testing Local
       console.log("Header Images Testing Local");
@@ -42,7 +43,7 @@ function hdrImg() {
       // End Testing Local
     }
   };
-  xmlhttp.open("GET", "/js/bannerImages.json", true);
+  xmlhttp.open("GET", "bannerImages.json", true);
   xmlhttp.send();
 }// EOF
 window.addEventListener("load", function() {
