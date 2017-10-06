@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Jon Hagopian's online portfolio",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "nodemon -e css,ejs,js,json --watch app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonhagopian/portfolio.git"
+  },
+  "author": "Jon Hagopian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonhagopian/portfolio/issues"
+  },
+  "homepage": "http://jonhagopian.com",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.1",
+    "reload": "^2.2.2"
+  }
+}
