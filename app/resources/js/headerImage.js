@@ -1,25 +1,37 @@
 /*
-  Swaps banner images at timed intervals from json, then choosing at random.
+  Swaps banner images at timed intervals, when all loaded then choosing at random.
   *batching reflows by browsers causes animation not to work on newly created elements, accessign offsetWidth triggers reflow and fixes this.
 */
-function hdrImg() {
-  function randomImage() {
-    // hdrImgArray values exist in and include rendered in head.ejs 
-    return hdrImgArray[Math.floor(Math.random() * hdrImgArray.length)];
-  }// EOF
-  var imageBnrBox = document.getElementById("header-image");
-  function swapHdrImg() {
+var imageBnrBox;
+var i = 0;
+function loadHdrImgs() {
+  var timeOut = setTimeout(function() {
+    if (i >= hdrImgArray.length) {
+      clearTimeout(timeOut);
+      runHdrImg();
+      return;
+    }
     newBannerImage = document.createElement("img");
-    newBannerImage.src = "images/banner/" + randomImage();
+    newBannerImage.src = "images/banner/" + hdrImgArray[i];
     newBannerImage.onload = function() {
       imageBnrBox.appendChild(newBannerImage);
       var flowFix = newBannerImage.offsetWidth; // see note: *
       newBannerImage.style.opacity = 1;
     }
-  }// EOF
-  headlineTimer = setInterval(swapHdrImg, 6000);
-  swapHdrImg();
+    i++;
+    loadHdrImgs();
+  }, 1000);
 }// EOF
+function runHdrImg() {
+  var imgElem = imageBnrBox.querySelectorAll("img");
+  window.setInterval(function() {
+    for (var i = 0; i < imgElem.length; i++) {
+      imgElem[i].style.opacity = 0;
+    }
+    imgElem[Math.floor(Math.random() * imgElem.length)].style.opacity = 1;
+  }, 6000);
+}//EOF
 window.addEventListener("load", function() {
-  hdrImg();
+  imageBnrBox = document.getElementById("header-image");
+  loadHdrImgs();
 }); 
