@@ -29,7 +29,7 @@ function startHdrImgs() {
       }
       i++;
       loadHdrImgs();
-    }, 1000);
+    }, 10000);
   }
   loadHdrImgs();
 }// EOF
@@ -40,7 +40,7 @@ function runHdrImg() {
       imgElem[i].style.opacity = 0;
     }
     imgElem[Math.floor(Math.random() * imgElem.length)].style.opacity = 1;
-  }, 1000);
+  }, 10000);
 }//EOF
 window.addEventListener("load", function() {
   imageBnrBox = document.getElementById("header-image");
