@@ -12,6 +12,7 @@ function runHdrImg() {
       imgElem[i].style.opacity = 0;
     }
     imgElem[Math.floor(Math.random() * imgElem.length)].style.opacity = 1;
+    console.log("Running rotation complete");
   }, 10000);
 }//EOF
 
@@ -20,6 +21,7 @@ function loadHdrImgs() {
     if (i >= hdrImgArray.length) {
       clearTimeout(timeOut);
       runHdrImg();
+      console.log("cleared Timeout and runHdrImg");
       return;
     }
     newBannerImage = document.createElement("img");
@@ -43,6 +45,7 @@ function startHdrImgs() {
     var flowFix = newBannerImage.offsetWidth; // see note: *
     newBannerImage.style.opacity = 1;
   }
+  console.log("done start and loading hdr img func");
   loadHdrImgs();
 }// EOF
 
