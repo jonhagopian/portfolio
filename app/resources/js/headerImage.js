@@ -4,35 +4,7 @@
 */
 var imageBnrBox;
 var i = 1;
-function startHdrImgs() {
-  newBannerImage = document.createElement("img");
-  newBannerImage.src = defaultDomain + "/images/banner/" + hdrImgArray[0]; 
-  newBannerImage.onload = function() {
-    imageBnrBox.appendChild(newBannerImage);
-    var flowFix = newBannerImage.offsetWidth; // see note: *
-    newBannerImage.style.opacity = 1;
-  }
-  function loadHdrImgs() {
-    var timeOut = setTimeout(function() {
-      if (i >= hdrImgArray.length) {
-        clearTimeout(timeOut);
-        runHdrImg();
-        return;
-      }
-      newBannerImage = document.createElement("img");
-      newBannerImage.src = defaultDomain + "/images/banner/" + hdrImgArray[i];
-      newBannerImage.onload = function() {
-        console.log("loaded header image: " + i);
-        imageBnrBox.appendChild(newBannerImage);
-        var flowFix = newBannerImage.offsetWidth; // see note: *
-        newBannerImage.style.opacity = 1;
-      }
-      i++;
-      loadHdrImgs();
-    }, 10000);
-  }
-  loadHdrImgs();
-}// EOF
+
 function runHdrImg() {
   var imgElem = imageBnrBox.querySelectorAll("img");
   window.setInterval(function() {
@@ -42,6 +14,38 @@ function runHdrImg() {
     imgElem[Math.floor(Math.random() * imgElem.length)].style.opacity = 1;
   }, 10000);
 }//EOF
+
+function loadHdrImgs() {
+  var timeOut = setTimeout(function() {
+    if (i >= hdrImgArray.length) {
+      clearTimeout(timeOut);
+      runHdrImg();
+      return;
+    }
+    newBannerImage = document.createElement("img");
+    newBannerImage.addEventListener("load", function() {
+      console.log("loaded header image: " + i);
+      imageBnrBox.appendChild(newBannerImage);
+      var flowFix = newBannerImage.offsetWidth; // see note: *
+      newBannerImage.style.opacity = 1;
+    });
+    newBannerImage.src = defaultDomain + "/images/banner/" + hdrImgArray[i];
+    i++;
+    loadHdrImgs();
+  }, 10000);
+}//EOF
+
+function startHdrImgs() {
+  newBannerImage = document.createElement("img");
+  newBannerImage.src = defaultDomain + "/images/banner/" + hdrImgArray[0]; 
+  newBannerImage.onload = function() {
+    imageBnrBox.appendChild(newBannerImage);
+    var flowFix = newBannerImage.offsetWidth; // see note: *
+    newBannerImage.style.opacity = 1;
+  }
+  loadHdrImgs();
+}// EOF
+
 window.addEventListener("load", function() {
   imageBnrBox = document.getElementById("header-image");
   startHdrImgs();
