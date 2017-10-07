@@ -4,7 +4,7 @@
 */
 var imageBnrBox;
 var i = 1;
-function loadHdrImgs() {
+function startHdrImgs() {
   newBannerImage = document.createElement("img");
   newBannerImage.src = "images/banner/" + hdrImgArray[0];
   newBannerImage.onload = function() {
@@ -12,26 +12,29 @@ function loadHdrImgs() {
     var flowFix = newBannerImage.offsetWidth; // see note: *
     newBannerImage.style.opacity = 1;
   }
-  var timeOut = setTimeout(function() {
-    if (i >= hdrImgArray.length) {
-      clearTimeout(timeOut);
-      runHdrImg();
-      return;
-    }
-    newBannerImage = document.createElement("img");
-    newBannerImage.src = "images/banner/" + hdrImgArray[i];
-    newBannerImage.onload = function() {
-      imageBnrBox.appendChild(newBannerImage);
-      var flowFix = newBannerImage.offsetWidth; // see note: *
-      newBannerImage.style.opacity = 1;
-    }
-    i++;
-    loadHdrImgs();
-  }, 10000);
+  function loadHdrImgs() {
+    var timeOut = setTimeout(function() {
+      if (i >= hdrImgArray.length) {
+        clearTimeout(timeOut);
+        runHdrImg();
+        return;
+      }
+      newBannerImage = document.createElement("img");
+      newBannerImage.src = "images/banner/" + hdrImgArray[i];
+      newBannerImage.onload = function() {
+        imageBnrBox.appendChild(newBannerImage);
+        var flowFix = newBannerImage.offsetWidth; // see note: *
+        newBannerImage.style.opacity = 1;
+      }
+      i++;
+      loadHdrImgs();
+    }, 10000);
+  }
+  loadHdrImgs();
 }// EOF
 function runHdrImg() {
   var imgElem = imageBnrBox.querySelectorAll("img");
-  var setInterval = setInterval(function() {
+  window.setInterval(function() {
     for (var i = 0; i < imgElem.length; i++) {
       imgElem[i].style.opacity = 0;
     }
@@ -40,5 +43,5 @@ function runHdrImg() {
 }//EOF
 window.addEventListener("load", function() {
   imageBnrBox = document.getElementById("header-image");
-  loadHdrImgs();
+  startHdrImgs();
 }); 
