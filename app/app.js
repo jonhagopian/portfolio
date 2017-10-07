@@ -11,6 +11,7 @@ app.use(express.static('app/resources'));
 
 // Global Variables
 app.locals.siteTitle = "Jon Hagopian:: ";
+app.locals.awscdnDomain = "http://d27uh45wmyq0ww.cloudfront.net";
 
 // Set Routes
 app.use(require('./routes/route-index'));
