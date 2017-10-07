@@ -3,8 +3,15 @@
   *batching reflows by browsers causes animation not to work on newly created elements, accessign offsetWidth triggers reflow and fixes this.
 */
 var imageBnrBox;
-var i = 0;
+var i = 1;
 function loadHdrImgs() {
+  newBannerImage = document.createElement("img");
+  newBannerImage.src = "images/banner/" + hdrImgArray[0];
+  newBannerImage.onload = function() {
+    imageBnrBox.appendChild(newBannerImage);
+    var flowFix = newBannerImage.offsetWidth; // see note: *
+    newBannerImage.style.opacity = 1;
+  }
   var timeOut = setTimeout(function() {
     if (i >= hdrImgArray.length) {
       clearTimeout(timeOut);
@@ -24,7 +31,7 @@ function loadHdrImgs() {
 }// EOF
 function runHdrImg() {
   var imgElem = imageBnrBox.querySelectorAll("img");
-  window.setInterval(function() {
+  var setInterval = setInterval(function() {
     for (var i = 0; i < imgElem.length; i++) {
       imgElem[i].style.opacity = 0;
     }
