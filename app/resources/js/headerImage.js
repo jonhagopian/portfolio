@@ -4,37 +4,35 @@
 */
 var imageBnrBox;
 var i = 1;
+var timeOut;
+var interval;
 
 function runHdrImg() {
   var imgElem = imageBnrBox.querySelectorAll("img");
-  window.setInterval(function() {
     for (var i = 0; i < imgElem.length; i++) {
       imgElem[i].style.opacity = 0;
     }
     imgElem[Math.floor(Math.random() * imgElem.length)].style.opacity = 1;
     console.log("Running rotation complete");
-  }, 10000);
 }//EOF
 
 function loadHdrImgs() {
-  var timeOut = setTimeout(function() {
-    if (i >= hdrImgArray.length) {
-      clearTimeout(timeOut);
-      runHdrImg();
-      console.log("cleared Timeout and runHdrImg");
-      return;
-    }
-    newBannerImage = document.createElement("img");
-    newBannerImage.addEventListener("load", function() {
-      console.log("loaded header image: " + i);
-      imageBnrBox.appendChild(newBannerImage);
-      var flowFix = newBannerImage.offsetWidth; // see note: *
-      newBannerImage.style.opacity = 1;
-    });
-    newBannerImage.src = defaultDomain + "/images/banner/" + hdrImgArray[i];
-    i++;
-    loadHdrImgs();
-  }, 10000);
+  if (i >= hdrImgArray.length) {
+    clearTimeout(timeOut);
+    interval = setInterval(runHdrImg, 10000);
+    console.log("cleared Timeout and runHdrImg");
+    return;
+  }
+  newBannerImage = document.createElement("img");
+  newBannerImage.addEventListener("load", function() {
+    console.log("loaded header image: " + i);
+    imageBnrBox.appendChild(newBannerImage);
+    var flowFix = newBannerImage.offsetWidth; // see note: *
+    newBannerImage.style.opacity = 1;
+  });
+  newBannerImage.src = defaultDomain + "/images/banner/" + hdrImgArray[i];
+  i++;
+  var timeOut = setTimeout(loadHdrImgs, 10000);
 }//EOF
 
 function startHdrImgs() {
@@ -47,7 +45,7 @@ function startHdrImgs() {
   }
   console.log("done start and loading hdr img func");
   loadHdrImgs();
-}// EOF
+}//EOF
 
 window.addEventListener("load", function() {
   imageBnrBox = document.getElementById("header-image");
