@@ -32,19 +32,19 @@ function loadHdrImgs() {
   });
   newBannerImage.src = defaultDomain + "/images/banner/" + hdrImgArray[i];
   i++;
-  var timeOut = setTimeout(loadHdrImgs, 10000);
+  timeOut = setTimeout(loadHdrImgs, 10000);
 }//EOF
 
 function startHdrImgs() {
   newBannerImage = document.createElement("img");
   newBannerImage.src = defaultDomain + "/images/banner/" + hdrImgArray[0]; 
-  newBannerImage.onload = function() {
+  newBannerImage.addEventListener("load", function() {
     imageBnrBox.appendChild(newBannerImage);
     var flowFix = newBannerImage.offsetWidth; // see note: *
     newBannerImage.style.opacity = 1;
-  }
-  console.log("done start and loading hdr img func");
-  loadHdrImgs();
+    console.log("done start and loading hdr img func");
+    timeOut = setTimeout(loadHdrImgs, 1000);
+  });
 }//EOF
 
 window.addEventListener("load", function() {
