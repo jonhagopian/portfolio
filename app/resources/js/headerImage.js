@@ -26,7 +26,7 @@ function loadHdrImgs() {
       var flowFix = newBannerImage.offsetWidth; // see note: *
       newBannerImage.style.opacity = 1;
     });
-    newBannerImage.src = defaultDomain + "/images/banner/" + hdrImgArray[i];
+    newBannerImage.src = defaultResources + "/images/banner/" + hdrImgArray[i];
     i++;
     timeOut = setTimeout(rotate, 10000);
   }
