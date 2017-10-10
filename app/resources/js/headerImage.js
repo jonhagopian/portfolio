@@ -19,7 +19,7 @@ function shuffle(array) {
   return array;
 }//EOF
 
-var shflImgArray = shuffle(hdrImgArray);
+var shflImgArray = shuffle(hdrImgArr);
 
 function runHdrImg() {
   var imgElem = imageBnrBox.querySelectorAll("img");

@@ -9,7 +9,26 @@
    ],
   "portfolio_projects": [{
     "title" : "Project One",
+    "shortname" : "project_one",
     "clientname" : "freelance",
+    "description" : "Summary goes here.",
+    "images" : ["image_00.jpg", "image_01.jpg", "image_02.jpg"]
+  },{
+    "title" : "Project Two",
+    "shortname" : "project_two",
+    "clientname" : "Elephants",
+    "description" : "Summary goes here.",
+    "images" : ["image_00.jpg", "image_01.jpg", "image_02.jpg"]
+  },{
+    "title" : "Project Three",
+    "shortname" : "project_three",
+    "clientname" : "Martians",
+    "description" : "Summary goes here.",
+    "images" : ["image_00.jpg", "image_01.jpg", "image_02.jpg"]
+  },{
+    "title" : "Project Four",
+    "shortname" : "project_four",
+    "clientname" : "Monkies",
     "description" : "Summary goes here.",
     "images" : ["image_00.jpg", "image_01.jpg", "image_02.jpg"]
   }]

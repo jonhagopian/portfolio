@@ -77,31 +77,36 @@ nav#navigation.open {
 nav#navigation.close {
   background-image: url("../images/menu-icon-close.svg");
 }
-nav#navigation ul {
+nav#navigation > ul {
   display: block;
   position: absolute;
+  background-color: #2274A5;
+  transition-duration: 1s;
+  color: #FEEA3B;
+  font-weight: 700;
+}
+nav#navigation > ul {
   width: 70%;
   border-right: solid 4px #FEEA3B;
-  background-color: #2274A5;
   z-index: 9;
   top: calc(100% + 1px);
   height: calc(100vh - 75px);
   box-shadow: 3px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  transition-duration: 1s;
-  color: #FEEA3B;
-  font-weight: 700;
   font-size: 1.25em;
 }
-nav#navigation.open ul {
+nav#navigation.open > ul {
   left: -80%;
 }
-nav#navigation.close ul {
+nav#navigation.close > ul {
   left: 0;
 }
 nav#navigation ul li {
-  padding: 0.875em 0;
   margin: 0 2em;
   border-bottom: 1px solid #FEEA3B;
+  padding: 0.875em 0;
+}
+nav#navigation ul li > ul { 
+  display: none;
 }
 nav#navigation ul li:last-of-type {
   border-bottom: none;
@@ -197,21 +202,22 @@ footer#global-footer a {
     background: #FEEA3B;
     border-top: 1px solid white;
     flex-basis: 100%;
-    padding: 0.75em 0;
     order: 3;
     height: auto;
   }
-  nav#navigation.open ul , nav#navigation.close ul {
+  nav#navigation.open > ul , nav#navigation.close > ul {
     left: auto;
   }
   nav#navigation ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    position: relative;
     width: auto;
+  }
+  nav#navigation > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: static;
     border-right: none;
     background: none;
     top: auto;
@@ -220,16 +226,18 @@ footer#global-footer a {
     transition-duration: 0;
     color: #2274A5;
   }
-  nav#navigation ul li {
-    padding: 0 1em;
-    border-right: 2px solid;
+  nav#navigation ul > li {
     border-bottom: none;
-    margin: 0;
+    border-right: 1px solid white;
+    margin: 0 0.875em 0 0;
+    padding: 0 0.875em 0 0;
   }
-  nav#navigation ul li:last-of-type {
-    border-right: none;
+  nav#navigation > ul > li:first-of-type {
+    padding-left: 0.875em;
   }
   nav#navigation a {
+    display: block;
+    margin: 0.50em 0;
     text-decoration: none;
     color: inherit;
     transition-duration: 1s;
@@ -237,6 +245,25 @@ footer#global-footer a {
   nav#navigation a:hover {
     color: #165478;
   }
+  /* Drop Down Navigation */
+  nav#navigation ul li > ul {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    background-color: #FEEA3B;
+    margin-left: -0.875em;
+    font-size: 0.75em;
+  }
+  nav#navigation ul li > ul li {
+    border-right: none;
+    margin: 0;
+    padding: 0 1em;
+  }
+  nav#navigation ul li:hover > ul {
+    display: flex;
+  }
+  /* End Drop Down Navigation */
+
   #header-image {
     background-color: #2274A5;
   }

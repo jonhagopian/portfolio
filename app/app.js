@@ -11,9 +11,10 @@ app.set("views", "app/views");
 
 app.use(express.static('app/resources'));
 
-// Global Variables
+// Variables
 app.locals.siteTitle = "Jon Hagopian:: ";
-app.locals.hdrImgArray = dataFile.header_images;
+app.locals.hdrImgArr = dataFile.header_images;
+app.locals.projectsArr = dataFile.portfolio_projects;
 
 // Set Resources Domain testing/development (prod)
 if (app.get("env") === "development" || app.get("env") === "production") {

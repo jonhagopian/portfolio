@@ -2,7 +2,13 @@
   <nav id="navigation" role="navigation" class="open">
     <ul>
       <li><a href="/">home</a></li>
-      <li><a href="#">portfolio</a></li>
+      <li><a href="#">portfolio</a>
+        <ul>
+        <% projectsArr.forEach(function(item) { %>
+          <li><a href="/projects/<%= item.shortname %>"><%= item.title %></a></li>
+        <% }); %>
+        </ul>
+      </li>
       <li><a href="#">skills</a></li>
       <li><a href="#">resume</a></li>
       <li><a href="#">interests</a></li>
