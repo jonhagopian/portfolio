@@ -1,0 +1,16 @@
+{
+  "header_images" : [
+    "header-image-1.jpg",
+    "header-image-2.jpg",
+    "header-image-3.jpg",
+    "header-image-4.jpg",
+    "header-image-5.jpg",
+    "header-image-6.jpg"
+   ],
+  "portfolio_projects": [{
+    "title" : "Project One",
+    "clientname" : "freelance",
+    "description" : "Summary goes here.",
+    "images" : ["image_00.jpg", "image_01.jpg", "image_02.jpg"]
+  }]
+}

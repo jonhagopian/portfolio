@@ -8,9 +8,11 @@
 <script type="text/javascript" id="addOnScripts">
   // sets resource path for CDN testing/dev/prod
   var defaultResources = "<%= defaultResources %>";
+  var hdrImgArray = <%- JSON.stringify(hdrImgArray) %>;
 </script>
-<% include ../content/header-images.ejs %>
 <script src="/js/main.js" type="text/javascript"></script>
 <script src="/js/imageSlider.js" type="text/javascript"></script>
 <script src="/js/headerImage.js" type="text/javascript"></script>
-<%= reloadModule %>
+<% if (defaultResources === "") { %>
+  <script src="/reload/reload.js" type="text/javascript"></script>
+<% } %>

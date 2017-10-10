@@ -1,9 +1,11 @@
 var express = require("express");
 var reload = require("reload"); // auto browser reload module, use for local testing
+var dataFile = require('./data/data.json');
 
 var app = express();
 
 app.set("port", process.env.PORT || 3000)
+app.set("appData", dataFile)
 app.set("view engine", "ejs");
 app.set("views", "app/views");
 
@@ -11,15 +13,15 @@ app.use(express.static('app/resources'));
 
 // Global Variables
 app.locals.siteTitle = "Jon Hagopian:: ";
+app.locals.hdrImgArray = dataFile.header_images;
+
 // Set Resources Domain testing/development (prod)
-if (app.settings.env === "development") {
-	app.locals.defaultResources = "http://d27uh45wmyq0ww.cloudfront.net";
-	app.locals.reloadModule = "";
-} else {
-	app.locals.defaultResources = "";
-	app.locals.reloadModule = `<script src="/reload/reload.js" type="text/javascript"></script>`;
-	// start reload for testing local
-	reload(app);
+if (app.get("env") === "development" || app.get("env") === "production") {
+  app.locals.defaultResources = "http://d27uh45wmyq0ww.cloudfront.net";
+} else if (app.get("env") === "testing") {
+  console.log("In Local Testing Environment");
+  app.locals.defaultResources = "";
+  reload(app); // start reload for testing local
 }
 
 // Set Routes

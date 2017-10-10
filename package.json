@@ -4,7 +4,7 @@
   "description": "Jon Hagopian's online portfolio",
   "main": "app/app.js",
   "scripts": {
-    "start": "nodemon -e css,ejs,js,json --watch app"
+    "start": "NODE_ENV=testing nodemon -e css,ejs,js,json --watch app"
   },
   "repository": {
     "type": "git",
