@@ -1,0 +1,55 @@
+<!doctype html>
+<% include includes/template/signature.ejs %>
+<html lang="en">
+
+  <head>
+    <% include includes/template/head.ejs %>
+    <script src="/js/imageOverlay.js" type="text/javascript"></script>
+  </head>
+
+  <body id="<%= pageID %>">
+    <% include includes/template/header.ejs %>
+    <main>
+      <% itemAll.forEach(function(item) { %>
+      <article id="left-column">
+        <section id="main-content" class="item-description">
+          <h1><%= item.title %></h1>
+          <p>
+            <%- item.description %>
+          </p>
+        </section>
+      </article>
+      <article id="right-column">
+        <div class="img-slider">
+          <% item.images.forEach(function(item) { %>
+          <figure class="img-slide">
+            <a class="overlayLink" href="<%= defaultResources %>/images/portfolio/<%= item %>_lg.jpg">
+              <img src="<%= defaultResources %>/images/portfolio/<%= item %>.jpg">
+            </a>
+          </figure>
+          <% }); %>
+        </div>
+      </article>
+      <div class="img-overlay">
+        <div class="img-overlay-box">
+          <% item.images.forEach(function(item) { %>
+          <img src="<%= defaultResources %>/images/portfolio/<%= item %>.jpg">
+          <% }); %>
+          <div class="img-overlay-left">
+            <div class="img-overlay-btns"><!-- left navigate -->&#10092;</div>
+          </div>
+          <div class="img-overlay-right">
+            <div class="img-overlay-btns"><!-- right navigate -->&#10093;</div>
+          </div>
+          <div class="img-overlay-close img-overlay-btns">
+            &#10005;
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </main>
+    <% include includes/template/footer.ejs %>
+
+  </body>
+
+</html>

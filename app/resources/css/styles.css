@@ -9,6 +9,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: #212121;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -17,19 +18,23 @@ img {
   display: block;
 }
 
-/* General Styles */
+/* ----------- General Styles ----------- */
 h1, h2, h3, h4, p {
   margin: 1em 0;
   line-height: 1.4em;
 }
+h1, h2, h3, h4, figcaption {
+  font-family: 'Roboto Slab', serif;
+}
 h1 {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 h2 {
   font-size: 0.875px;
 }
 p {
-  font-size: 0.875em
+  font-size: 0.875em;
+  text-indent: 1em;
 }
 hr {
   border-bottom: 1px solid #BCBCBC;
@@ -40,7 +45,7 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
-/* End General Styles */
+/* ----------- End General Styles ----------- */
 
 /* ----------- Mobile First ----------- */
 
@@ -146,7 +151,7 @@ main {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  padding: 75px 1em 1em 1em;
+  padding: 75px 1em 0 1em;
 }
 main strong {
   font-weight: 700;
@@ -157,20 +162,105 @@ main article {
 article#left-column {
 }
 article#right-column {
+	border-top: 1px solid #BCBCBC;
+	padding-top: 2em;
+	margin: 2em 0;
 }
-section#main-content {
-  font-size: 0.875em;
-  padding: 1em;
-  text-align: center;
+article#full-column {
+	text-align: center;
 }
 section#main-content h1 {
   line-height: 1.75;
 }
 /* ----------- End Main Body Columns ----------- */
 
+/* ----------- Item Grid Body Rows ----------- */
+.item-grid {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+figcaption {
+  font-size: 0.875em;
+  line-height: 2em;
+}
+/* ----------- End Item Grid Body Rows ----------- *
+
+/* ----------- Item Detail Page ----------- */
+.img-overlay {
+	display: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 90;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+.img-overlay-box {
+	position: absolute;
+	width: 60%;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 91;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,50);
+}
+
+.img-overlay-btns {
+	font-weight: bold;
+	position: absolute;
+	line-height: 1.5em;
+	font-size: 1.5em;
+	border-radius: 0.75em;
+	width: 1.5em;
+	text-align: center;
+	background-color: #FEEA3B;
+	color: #2274A5;
+}
+.img-overlay-left div {
+	top: calc(50% - 0.75em);
+	left: -0.75em;
+}
+.img-overlay-right div {
+	top: calc(50% - 0.75em);
+	right: -0.75em;
+}
+.img-overlay-close {
+	z-index: 94;
+	top: -0.5em;
+	right: -0.5em;
+	cursor: pointer;
+}
+.img-overlay-left, .img-overlay-right {
+	position: absolute;
+	z-index: 93;
+	cursor: pointer;
+	top: 0;
+	height: 100%;
+	line-height: 100%;
+}
+.img-overlay-left {
+	width: 50%;
+	left: 0;
+}
+.img-overlay-right {
+	width: 50%;
+	right: 0;
+}
+.img-overlay img {
+	display: none;
+	width: 100%;
+}
+.overlayLink {
+	cursor: pointer;
+}
+/* ----------- End Item Detail Page ----------- */
+
 /* ----------- Global Footer ----------- */
 footer#global-footer {
-  margin-top: 1em;
   color: #212121;
   border-top: 1px solid #BCBCBC;
   text-align: center;
@@ -182,6 +272,18 @@ footer#global-footer a {
   text-decoration: none;
 }
 /* ----------- End Global Footer ----------- */
+
+/* ----------- Page Specific Styles ----------- */
+#home h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.125em;
+  margin: 2em 0;
+  text-align: center;
+}
+#item-detail {
+	text-align: left;
+}
+/* ----------- End Page Specific Styles ----------- */
 
 /* ----------- End Mobile First ----------- */
 
@@ -228,9 +330,8 @@ footer#global-footer a {
   }
   nav#navigation ul > li {
     border-bottom: none;
-    border-right: 1px solid white;
-    margin: 0 0.875em 0 0;
-    padding: 0 0.875em 0 0;
+    margin: 0;
+    padding: 0;
   }
   nav#navigation > ul > li:first-of-type {
     padding-left: 0.875em;
@@ -238,14 +339,21 @@ footer#global-footer a {
   nav#navigation a {
     display: block;
     margin: 0.50em 0;
+    padding: 0 0.875em;
     text-decoration: none;
     color: inherit;
     transition-duration: 1s;
   }
+  nav#navigation > ul > li > a {
+    border-right: 2px solid #2274A5;
+  }
+  nav#navigation > ul > li:last-of-type > a {
+    border-right: 0;
+  }
   nav#navigation a:hover {
     color: #165478;
   }
-  /* Drop Down Navigation */
+    /* ----------- Drop Down Navigation ----------- */
   nav#navigation ul li > ul {
     display: none;
     position: absolute;
@@ -258,12 +366,12 @@ footer#global-footer a {
     border-right: none;
     margin: 0;
     padding: 0 1em;
+    
   }
   nav#navigation ul li:hover > ul {
     display: flex;
   }
-  /* End Drop Down Navigation */
-
+    /* ----------- End Drop Down Navigation ----------- */
   #header-image {
     background-color: #2274A5;
   }
@@ -306,7 +414,7 @@ footer#global-footer a {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    padding: calc(3.3em + 160px) 1em 1em 1em;
+    padding: calc(3.25em + 160px) 1em 0.25em 1em;
   }
   article#left-column {
     width: 60%;
@@ -314,9 +422,18 @@ footer#global-footer a {
   article#right-column {
     width:  30%;
     height: calc(100vh - 6.875em - 160px);
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  article#full-column {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
   }
   section#main-content {
-    padding: 2em 1em 1em 1em;
+    width: 100%;
   }
   section#main-content h1 {
     line-height: 2;
@@ -329,6 +446,17 @@ footer#global-footer a {
   }
 /* ----------- End Global Footer ----------- */
 
+/* ----------- Page Specific Styles ----------- */
+  #home h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    margin: 3em 0;
+  }
+  #item-detail {
+  	text-align: left;
+  }
+/* ----------- End Page Specific Styles ----------- */
+
 }
 /* ----------- End iPad Standard Portrait to Large Desktop displays ----------- */
 
@@ -336,6 +464,7 @@ footer#global-footer a {
 
 
 /* ----------- Miscellaneous Styling ----------- */
+
 /* ----------- If screen is too big for header image ----------- */
 @media only screen and (min-width: 1440px) {
   #header-image img, #header-image div.overlay {
@@ -354,7 +483,7 @@ footer#global-footer a {
 
 /* ----------- Image Slider ----------- */
 /* Image Slider Mobile */
-.image-slider {
+.img-slider {
   width: 100%;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
@@ -365,13 +494,13 @@ footer#global-footer a {
   margin-left: auto;
   margin-right: auto;
 }
-.image-slider::-webkit-scrollbar {
+.img-slider::-webkit-scrollbar {
   display: none;
 }
-.image-slider.justified {
+.img-slider.justified {
   justify-content: center;
 }
-.image-slider figure {
+.img-slider figure {
   width: calc(66.6% - 1em);
   height: auto;
   margin-right: 1em;
@@ -379,7 +508,7 @@ footer#global-footer a {
   overflow: hidden;
   flex: 0 0 auto;
 }
-.image-slider figure img {
+.img-slider figure img {
   /* negative margin matches width amount over 100% / 2 */
   width: 128%;
   margin-left: -14%;
@@ -388,17 +517,16 @@ footer#global-footer a {
 
 /* Begin Image Slider Desktop */
 @media only screen and (min-width: 767px) {
-  .image-slider {
+  .img-slider {
     overflow-y: scroll;
-    margin-top: 2em;
-    height: calc(100% - 2em);
+    height: 100%;
     flex-direction: column;
     justify-content: flex-start;
   }
-  .image-slider::-webkit-scrollbar {
+  .img-slider::-webkit-scrollbar {
     display: none;
   }
-  .image-slider figure {
+  .img-slider figure {
     width: 100%;
     height: auto;
     margin-right: 0;
@@ -406,7 +534,7 @@ footer#global-footer a {
     flex: 0 0 auto;
     border-radius: 1em;
   }
-  .image-slider figure img {
+  .img-slider figure img {
     /* Height calc via JS */
   }
 }

@@ -27,6 +27,8 @@ if (app.get("env") === "development" || app.get("env") === "production") {
 
 // Set Routes
 app.use(require('./routes/route-index'));
+app.use(require('./routes/route-item-grid'));
+app.use(require('./routes/route-item'));
 
 var server = app.listen(app.get('port'), function() {
   console.log('Listening on port ' + app.get('port'));

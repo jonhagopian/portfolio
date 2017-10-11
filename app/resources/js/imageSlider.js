@@ -34,7 +34,7 @@ function imageSlider(firstRun) {
       sImgArr[i].style.transform = "translateX(" + sPosPct + "%)";
     }
   } //EOF
-  var allSliders = document.querySelectorAll(".image-slider");
+  var allSliders = document.querySelectorAll(".img-slider");
   for (var j = 0; j < allSliders.length; j++) { // For each individual gallery element
     let box = allSliders[j]; // let so values aren't overwritten
     let sArr = box.querySelectorAll("figure");

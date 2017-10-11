@@ -1,12 +1,12 @@
 <!doctype html>
-
+<% include includes/template/signature.ejs %>
 <html lang="en">
 
   <head>
     <% include includes/template/head.ejs %>
   </head>
 
-  <body>
+  <body id="<%= pageID%>">
     <% include includes/template/header.ejs %>
     <main>
       <article id="left-column">
@@ -16,30 +16,30 @@
         </section>
       </article>
       <article id="right-column">
-        <div class="image-slider">
-          <figure class="image-slide">
+        <div class="img-slider">
+          <figure class="img-slide">
             <img src="<%= defaultResources %>/images/gallery-test/banff1.jpg">
           </figure>
-          <figure class="image-slide">
-              <img src="<%= defaultResources %>/images/gallery-test/banff2.jpg">
+          <figure class="img-slide">
+             <img src="<%= defaultResources %>/images/gallery-test/banff2.jpg">
           </figure>
-          <figure class="image-slide">
-              <img src="<%= defaultResources %>/images/gallery-test/banff3.jpg">
+          <figure class="img-slide">
+             <img src="<%= defaultResources %>/images/gallery-test/banff3.jpg">
           </figure>
-          <figure class="image-slide">
-              <img src="<%= defaultResources %>/images/gallery-test/banff4.jpg">
+          <figure class="img-slide">
+             <img src="<%= defaultResources %>/images/gallery-test/banff4.jpg">
           </figure>
-          <figure class="image-slide">
-              <img src="<%= defaultResources %>/images/gallery-test/banff5.jpg">
+          <figure class="img-slide">
+             <img src="<%= defaultResources %>/images/gallery-test/banff5.jpg">
           </figure>
-          <figure class="image-slide">
-              <img src="<%= defaultResources %>/images/gallery-test/banff6.jpg">
+          <figure class="img-slide">
+             <img src="<%= defaultResources %>/images/gallery-test/banff6.jpg">
           </figure>
-          <figure class="image-slide">
-              <img src="<%= defaultResources %>/images/gallery-test/banff7.jpg">
+          <figure class="img-slide">
+             <img src="<%= defaultResources %>/images/gallery-test/banff7.jpg">
           </figure>
-          <figure class="image-slide">
-              <img src="<%= defaultResources %>/images/gallery-test/banff8.jpg">
+          <figure class="img-slide">
+             <img src="<%= defaultResources %>/images/gallery-test/banff8.jpg">
           </figure>
         </div>
       </article>
