@@ -16,7 +16,7 @@
             <% for (i = 0; i < items.length; i++) { %>
             <figure>
               <a href="/projects/<%= items[i].shortname %>">
-                <img src="/images/portfolio/<%= items[i].images[0] %>_tn.jpg" alt="Image <%= i %>">
+                <img src="<%= defaultResources %>/images/portfolio/<%= items[i].images[0] %>_tn.jpg" alt="Image <%= i %>">
                 <figcaption><%= items[i].title %></figcaption>
               </a>
             </figure>
