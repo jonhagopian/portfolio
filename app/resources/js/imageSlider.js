@@ -34,7 +34,6 @@ function imageSlider(firstRun) {
     });
   } //EOF
   var allSliders = document.querySelectorAll(".img-slider");
-  var sliderOff = window.getComputedStyle(allSliders[0]).overflowX; // slider off if 'auto'
   // forEach individual gallery element
   allSliders.forEach(function(sBox) {
     let box = sBox; // let so values aren't overwritten
@@ -45,9 +44,6 @@ function imageSlider(firstRun) {
       sImg.removeAttribute("style");
       sArr[index].removeAttribute("style");
     });
-    if (sliderOff === "visible") {
-      return false; // if so cancel out slider alltogether
-    }
     // if horizontal/vertical scroll switch
     var flexDir = window.getComputedStyle(box).flexDirection;
     if (flexDir === "row") {
@@ -88,5 +84,7 @@ function imageSlider(firstRun) {
   }); // End forEach
 } //EOF
 window.addEventListener("load", function() {
-  imageSlider(true);
+  if(document.querySelector(".img-slider") !== null) {
+    imageSlider(true);
+  }
 });

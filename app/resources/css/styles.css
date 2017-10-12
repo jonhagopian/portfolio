@@ -14,8 +14,14 @@ body {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+/* img and data-src along with JS create image fade in on load */
 img {
   display: block;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+img[data-src] {
+  opacity: 0;
 }
 
 /* ----------- General Styles ----------- */
@@ -460,7 +466,6 @@ footer#global-footer a {
 }
 .item-grid figure {
   margin: 0 2em 0.50em 2em;
-  background-color: black;
   border-radius: 0.75em;
   overflow: hidden;
 }

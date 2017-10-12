@@ -23,7 +23,7 @@
         <div class="img-slider">
           <% item.images.forEach(function(item) { %>
           <figure class="img-slide overlayLink">
-            <img src="<%= defaultResources %>/images/portfolio/<%= item %>_tn.jpg">
+            <img data-src="<%= defaultResources %>/images/portfolio/<%= item %>_tn.jpg">
           </figure>
           <% }); %>
         </div>
@@ -31,7 +31,7 @@
       <div class="img-overlay">
         <div class="img-overlay-box">
           <% item.images.forEach(function(item) { %>
-          <img src="<%= defaultResources %>/images/portfolio/<%= item %>.jpg">
+          <img data-src="<%= defaultResources %>/images/portfolio/<%= item %>.jpg">
           <% }); %>
           <div class="img-overlay-left">
             <div class="img-overlay-btns"><!-- left navigate -->&#10092;</div>
