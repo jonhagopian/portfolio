@@ -309,7 +309,7 @@ footer#global-footer a {
   width: 100%;
 }
 #portfolio .img-slider figcaption {
-
+  margin: 0.25em 0 2em 0;
 }
 /* ----------- End Page Specific Styles ----------- */
 
