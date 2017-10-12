@@ -1,16 +1,16 @@
 function overlay() {
   var overlay = document.querySelector(".img-overlay");
   var allImgs = document.querySelectorAll(".img-overlay-box img");
-  var allLinks = document.querySelectorAll("a.overlayLink");
+  var allLinks = document.querySelectorAll(".overlayLink");
   var closeBtn = document.querySelector(".img-overlay-close");
   var leftNav = document.querySelector(".img-overlay-left");
   var rightNav = document.querySelector(".img-overlay-right");
   var counter = 0;
   closeBtn.addEventListener("click", function() {
     overlay.style.display = "";
-    for (var i = 0; i < allImgs.length; i++) {
-      allImgs[i].removeAttribute("style");
-    }
+    allImgs.forEach(function(img) {
+      img.removeAttribute("style");
+    });
   });
   rightNav.addEventListener("click", function() {
       allImgs[counter].removeAttribute("style");
@@ -27,7 +27,7 @@ function overlay() {
   function checkBtns(dir) {
     if(dir === "right" || counter > 0) {
       leftNav.style.display = "block";
-      if(counter === allImgs.length - 1) {
+      if(counter === (allImgs.length - 1)) {
         rightNav.style.display = "none";
       }
     }
@@ -38,10 +38,10 @@ function overlay() {
       }
     } 
   }// EOF
-  for (var i = 0; i < allLinks.length; i++) {
-    let currImg = allImgs[i];
-    let loc = i; // let since we want the value of loc to stay within for as written
-    allLinks[i].addEventListener("click", function() {
+  allLinks.forEach(function(links, index){
+    let currImg = allImgs[index];
+    let loc = index; // let since we want the value of loc to stay within for as written
+    links.addEventListener("click", function() {
       overlay.style.display = "block";
       currImg.style.display = "block";
       counter = loc;
@@ -50,8 +50,13 @@ function overlay() {
       } else {
         leftNav.style.display = "block";
       }
+      if(counter === (allImgs.length - 1)) {
+        rightNav.style.display = "none";
+      } else {
+        rightNav.style.display = "block";
+      }
     });
-  }
+  });
   checkBtns("start");
 }// EOF
 

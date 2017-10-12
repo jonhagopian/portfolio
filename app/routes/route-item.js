@@ -8,7 +8,6 @@ router.get("/projects/:itemid", function(request, response) {
   data.portfolio_projects.forEach(function(item) {
     if (item.shortname == request.params.itemid) {
       itemAll.push(item);
-      console.log(itemAll);
     }
   });
 

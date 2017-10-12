@@ -10,20 +10,18 @@
     <% include includes/template/header.ejs %>
     <main>
       <article id="full-column">
-        <h1>+++ <%= pageTitle %> +++</h1>
+        <h1><%= pageTitle %></h1>
         <section id="main-content" class="item-grid">
-          <div class="img-slider">
-          <% if (items.length > 0) { %> 
-            <% for (i = 0; i < items.length; i++) { %>
-            <a href="/projects/<%= items[i].shortname %>">
-              <figure class="img-slide">
-                  <img src="<%= defaultResources %>/images/portfolio/<%= items[i].images[0] %>_tn.jpg" alt="Image <%= i %>">
-              </figure>
-              <figcaption><%= items[i].title %></figcaption>
-            </a>
-            <% } %>
+        <% if (items.length > 0) { %> 
+          <% for (i = 0; i < items.length; i++) { %>
+          <a href="/projects/<%= items[i].shortname %>">
+            <figure class="img-slide">
+                <img src="<%= defaultResources %>/images/portfolio/<%= items[i].images[0] %>_tn.jpg" alt="Image <%= i %>">
+            </figure>
+            <figcaption><%= items[i].title %></figcaption>
+          </a>
           <% } %>
-        	</div>
+        <% } %>
         </section>
       </article>
     </main>

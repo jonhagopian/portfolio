@@ -22,10 +22,8 @@
       <article id="right-column">
         <div class="img-slider">
           <% item.images.forEach(function(item) { %>
-          <figure class="img-slide">
-            <a class="overlayLink" href="<%= defaultResources %>/images/portfolio/<%= item %>_lg.jpg">
-              <img src="<%= defaultResources %>/images/portfolio/<%= item %>.jpg">
-            </a>
+          <figure class="img-slide overlayLink">
+            <img src="<%= defaultResources %>/images/portfolio/<%= item %>_tn.jpg">
           </figure>
           <% }); %>
         </div>
