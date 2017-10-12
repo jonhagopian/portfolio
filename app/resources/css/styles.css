@@ -465,6 +465,8 @@ footer#global-footer a {
   justify-content: center;
 }
 .item-grid figure {
+  width: 250px;
+  height: 179px;
   margin: 0 2em 0.50em 2em;
   border-radius: 0.75em;
   overflow: hidden;
