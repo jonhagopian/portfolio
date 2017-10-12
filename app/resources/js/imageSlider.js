@@ -35,10 +35,22 @@ function imageSlider(firstRun) {
     }
   } //EOF
   var allSliders = document.querySelectorAll(".img-slider");
+  var sliderOff = window.getComputedStyle(allSliders[0]).overflowX; // slider off if 'auto'
   for (var j = 0; j < allSliders.length; j++) { // For each individual gallery element
     let box = allSliders[j]; // let so values aren't overwritten
     let sArr = box.querySelectorAll("figure");
     let sImgArr = box.querySelectorAll("figure img");
+    // Clear out transform on resize
+    for (var i = 0; i < sImgArr.length; i++) {
+      sArr[i].removeAttribute("style");
+      sImgArr[i].removeAttribute("style");
+    }
+    console.log(sliderOff);
+    if (sliderOff === "visible") {
+      
+      console.log("morp");
+      return false; // if so cancel out slider alltogether
+    }
     // if horizontal/vertical scroll switch
     var flexDir = window.getComputedStyle(box).flexDirection;
     if (flexDir === "row") {

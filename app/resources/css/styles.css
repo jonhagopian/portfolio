@@ -162,9 +162,7 @@ main article {
 article#left-column {
 }
 article#right-column {
-	border-top: 1px solid #BCBCBC;
-	padding-top: 2em;
-	margin: 2em 0;
+  margin-bottom: 1em;
 }
 article#full-column {
 	text-align: center;
@@ -276,12 +274,42 @@ footer#global-footer a {
 /* ----------- Page Specific Styles ----------- */
 #home h1 {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.125em;
+  font-size: 1em;
   margin: 2em 0;
   text-align: center;
 }
 #item-detail {
 	text-align: left;
+}
+#portfolio .item-grid {
+  height: calc(100vh - 75px - 5.7em);
+}
+#portfolio .item-grid figure {
+  margin-bottom: 0;
+}
+#portfolio .item-grid figcaption {
+  margin: 0.50em 0 1em 0;
+  font-weight: bold;
+}
+#portfolio .img-slider {
+  overflow-y: scroll;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+#portfolio .img-slider::-webkit-scrollbar {
+  display: none;
+}
+#portfolio .img-slider figure, #portfolio .img-slider figcaption {
+  margin: 0;
+  flex: 0 0 auto;
+}
+#portfolio .img-slider figure {
+  width: 100%;
+}
+#portfolio .img-slider figcaption {
+
 }
 /* ----------- End Page Specific Styles ----------- */
 
@@ -453,10 +481,37 @@ footer#global-footer a {
     margin: 3em 0;
   }
   #item-detail {
-  	text-align: left;
+    text-align: left;
   }
-/* ----------- End Page Specific Styles ----------- */
+  #portfolio .item-grid {
+    height: auto;
+  }
+  #portfolio .img-slider {
+    overflow: visible;
+    flex-direction: row;
+    height: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  #portfolio .img-slider a {
+    display: block;
+    width: 19%;
+    margin: 0 3%;
+    flex: 0 0 auto;
+  }
+  #portfolio .img-slider figure {
+    height: auto;
+  }
+  #portfolio .img-slider img {
+    width: 100%;
+    margin-left: 0;
+  }
+  #portfolio .img-slider figcaption {
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
 
+/* ----------- End Page Specific Styles ----------- */
 }
 /* ----------- End iPad Standard Portrait to Large Desktop displays ----------- */
 
@@ -474,71 +529,4 @@ footer#global-footer a {
 }
 /* ----------- End If screen is too big for header image ----------- */
 
-
-
-
-
-
-
-
-/* ----------- Image Slider ----------- */
-/* Image Slider Mobile */
-.img-slider {
-  width: 100%;
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  margin-left: auto;
-  margin-right: auto;
-}
-.img-slider::-webkit-scrollbar {
-  display: none;
-}
-.img-slider.justified {
-  justify-content: center;
-}
-.img-slider figure {
-  width: calc(66.6% - 1em);
-  height: auto;
-  margin-right: 1em;
-  border-radius: 1em;
-  overflow: hidden;
-  flex: 0 0 auto;
-}
-.img-slider figure img {
-  /* negative margin matches width amount over 100% / 2 */
-  width: 128%;
-  margin-left: -14%;
-}
-/* End Image Slider Mobile */
-
-/* Begin Image Slider Desktop */
-@media only screen and (min-width: 767px) {
-  .img-slider {
-    overflow-y: scroll;
-    height: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  .img-slider::-webkit-scrollbar {
-    display: none;
-  }
-  .img-slider figure {
-    width: 100%;
-    height: auto;
-    margin-right: 0;
-    margin-bottom: 1em;
-    flex: 0 0 auto;
-    border-radius: 1em;
-  }
-  .img-slider figure img {
-    /* Height calc via JS */
-  }
-}
-/* End  Image Slider Desktop */
-
-/* ----------- End Image Slider ----------- */
 /* ----------- End Miscellaneous Styling ----------- */
