@@ -1,12 +1,14 @@
 function navSetup() {
-	var headerNav = document.getElementById("navigation");
-	headerNav.addEventListener("click", function() {
-		if (headerNav.className === "open") {
-			headerNav.className = "close";
-		} else {
-			headerNav.className = "open";
-		}
-	});
+  var headerNav = document.getElementById("navigation");
+  function navOpenClose() {
+    if (headerNav.className === "open") {
+      headerNav.className = "close";
+    } else {
+      headerNav.className = "open";
+    }
+  }
+  headerNav.addEventListener("click", navOpenClose);
+  headerNav.removeAttribute("style");
 }
 
 function imgSetup() {
@@ -20,6 +22,6 @@ function imgSetup() {
 }
 
 window.addEventListener("load", function() {
-	navSetup();
+  navSetup();
   imgSetup();
 });

@@ -81,6 +81,7 @@ nav#navigation {
   background-repeat: no-repeat;
   background-size: 40% 40%;
   color: #2274A5;
+  cursor: pointer;
 }
 nav#navigation.open {
   background-image: url("../images/menu-icon-open.svg");
@@ -88,28 +89,32 @@ nav#navigation.open {
 nav#navigation.close {
   background-image: url("../images/menu-icon-close.svg");
 }
-nav#navigation > ul {
-  display: block;
+nav#navigation #nav-menu {
   position: absolute;
-  background-color: #2274A5;
   transition-duration: 1s;
+  height: calc(100vh - 75px);
+  z-index: 9;
+  top: calc(100% + 1px);
+  width: 100%;
+}
+nav#navigation.open #nav-menu {
+  left: -80%;
+}
+nav#navigation.close #nav-menu {
+  left: 0;
+}
+nav#navigation #nav-menu > ul {
+  display: block;
+  background-color: #2274A5;
   color: #FEEA3B;
   font-weight: 700;
 }
-nav#navigation > ul {
+nav#navigation #nav-menu > ul {
   width: 70%;
   border-right: solid 4px #FEEA3B;
-  z-index: 9;
-  top: calc(100% + 1px);
-  height: calc(100vh - 75px);
+  height: 100%;
   box-shadow: 3px 0px 4px 0px rgba(0, 0, 0, 0.25);
   font-size: 1.25em;
-}
-nav#navigation.open > ul {
-  left: -80%;
-}
-nav#navigation.close > ul {
-  left: 0;
 }
 nav#navigation ul li {
   margin: 0 2em;
@@ -312,6 +317,22 @@ footer#global-footer a {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ----------- iPad Standard Portrait to Large Desktop displays ----------- */
 @media only screen and (min-width: 767px) {
 /* ----------- Header ----------- */
@@ -329,34 +350,38 @@ footer#global-footer a {
     flex-basis: 100%;
     order: 3;
     height: auto;
+
   }
-  nav#navigation.open > ul , nav#navigation.close > ul {
+  nav#navigation.close {
+    visibility: hidden;
+  }
+  nav#navigation.open #nav-menu , nav#navigation.close #nav-menu {
     left: auto;
   }
-  nav#navigation ul {
-    justify-content: flex-start;
-    align-items: center;
-    width: auto;
+  nav#navigation #nav-menu {
+    position: static;
+    top: auto;
+    height: auto;
+    transition-duration: 0;
   }
-  nav#navigation > ul {
+  nav#navigation #nav-menu > ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    position: static;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
     border-right: none;
     background: none;
-    top: auto;
-    height: auto;
-    box-shadow: none;
-    transition-duration: 0;
     color: #2274A5;
+    box-shadow: none;
   }
   nav#navigation ul > li {
     border-bottom: none;
     margin: 0;
     padding: 0;
   }
-  nav#navigation > ul > li:first-of-type {
+  nav#navigation ul > li:first-of-type {
     padding-left: 0.875em;
   }
   nav#navigation a {
@@ -367,10 +392,10 @@ footer#global-footer a {
     color: inherit;
     transition-duration: 1s;
   }
-  nav#navigation > ul > li > a {
+  nav#navigation #nav-menu > ul > li > a {
     border-right: 2px solid #2274A5;
   }
-  nav#navigation > ul > li:last-of-type > a {
+  nav#navigation #nav-menu > ul > li:last-of-type > a {
     border-right: 0;
   }
   nav#navigation a:hover {
