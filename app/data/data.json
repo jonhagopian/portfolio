@@ -1,11 +1,24 @@
 {
   "header_images" : [
-    "header-image-1.jpg",
-    "header-image-2.jpg",
-    "header-image-3.jpg",
-    "header-image-4.jpg",
-    "header-image-5.jpg",
-    "header-image-6.jpg"
+    {
+      "filename" : "header-image-1.jpg",
+      "style" : "left: 0; right: auto;1"
+    },{
+      "filename" : "header-image-2.jpg",
+      "style" : "right: 0; left: auto;2"
+    },{
+      "filename" : "header-image-3.jpg",
+      "style" : "left: 0; right: auto;3"
+    },{
+      "filename" : "header-image-4.jpg",
+      "style" : "left: 0; right: auto;4"
+    },{
+      "filename" : "header-image-5.jpg",
+      "style" : "right: 0; left: auto;5"
+    },{
+      "filename" : "header-image-6.jpg",
+      "style" : "right: 0; left: auto;6"
+    }
    ],
   "portfolio_projects": [{
     "title" : "Project One",

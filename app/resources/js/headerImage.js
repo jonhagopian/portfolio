@@ -27,18 +27,20 @@ function loadHdrImgs() {
   function rotate() {
     if (i >= shflImgArray.length) {
       clearTimeout(timeOut);
-      interval = setInterval(runHdrImg, 20000);
+      interval = setInterval(runHdrImg, 5000);
       return;
     }
     newBannerImage = document.createElement("img");
+    var flowFix = newBannerImage.offsetWidth; // see note: *
+    let style 
     newBannerImage.addEventListener("load", function() {
-      imageBnrBox.appendChild(newBannerImage);
-      var flowFix = newBannerImage.offsetWidth; // see note: *
-      newBannerImage.style.opacity = 1;
+      this.style.opacity = 1;
     });
-    newBannerImage.src = defaultResources + "/images/banner/" + shflImgArray[i];
+    newBannerImage.src = defaultResources + "/images/banner/" + shflImgArray[i].filename;
+    newBannerImage.setAttribute("style", shflImgArray[i].style);
+    imageBnrBox.appendChild(newBannerImage);
     i++;
-    timeOut = setTimeout(rotate, 20000);
+    timeOut = setTimeout(rotate, 5000);
   }
   rotate();
 }//EOF

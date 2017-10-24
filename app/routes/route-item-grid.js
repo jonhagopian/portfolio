@@ -6,7 +6,7 @@ router.get("/portfolio", function(request, response) {
   var itemImages = [];
   var itemsAll = data.portfolio_projects;
 
-  response.render("portfolio", {
+  response.render("items-category", {
     pageTitle : "Portfolio",
     pageID : "portfolio",
     items : itemsAll

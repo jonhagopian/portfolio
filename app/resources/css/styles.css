@@ -375,6 +375,8 @@ footer#global-footer a {
     background: none;
     color: #2274A5;
     box-shadow: none;
+    font-size: 1em;
+    font-weight: normal;
   }
   nav#navigation ul > li {
     border-bottom: none;
@@ -390,10 +392,10 @@ footer#global-footer a {
     padding: 0 0.875em;
     text-decoration: none;
     color: inherit;
-    transition-duration: 1s;
+    transition-duration: 400ms;
   }
   nav#navigation #nav-menu > ul > li > a {
-    border-right: 2px solid #2274A5;
+    border-right: 1px solid #2274A5;
   }
   nav#navigation #nav-menu > ul > li:last-of-type > a {
     border-right: 0;
