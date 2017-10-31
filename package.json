@@ -19,6 +19,7 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.1",
+    "nodemailer": "^4.3.1",
     "reload": "^2.2.2"
   }
 }

@@ -27,7 +27,7 @@ function loadHdrImgs() {
   function rotate() {
     if (i >= shflImgArray.length) {
       clearTimeout(timeOut);
-      interval = setInterval(runHdrImg, 5000);
+      interval = setInterval(runHdrImg, 20000);
       return;
     }
     newBannerImage = document.createElement("img");
@@ -40,7 +40,7 @@ function loadHdrImgs() {
     newBannerImage.setAttribute("style", shflImgArray[i].style);
     imageBnrBox.appendChild(newBannerImage);
     i++;
-    timeOut = setTimeout(rotate, 5000);
+    timeOut = setTimeout(rotate, 20000);
   }
   rotate();
 }//EOF

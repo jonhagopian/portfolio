@@ -1,0 +1,124 @@
+<!doctype html>
+<% include includes/template/signature.ejs %>
+<html lang="en">
+
+  <head>
+    <% include includes/template/head.ejs %>
+  </head>
+
+  <body id="<%= pageID %>" class="<%= pageVer %>">
+    <% include includes/template/header.ejs %>
+    <main>
+      <article id="left-column">
+        <section id="main-content">
+          <h1><%= pageTitle %></h1>
+          <div class="tycopy">
+            <p>
+              Your message has been sent. <br>I'll respond as soon as I can.
+            </p>
+            <blockquote>
+              &ldquo;<%= messageEmail %>&rdquo;
+            </blockquote>
+          </div>
+          <form id="contact-form" action="<%= emailGetURL %>" method="get">
+            <p>
+              Interested in working together? Please fill out the form below and I will respond as soon as I can.
+            </p>
+            <!-- HTML5 constraint validation API -->
+            <p>
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" required placeholder="Full Name" maxlength="50">
+            </p>
+            <p>
+              <label for="from">Email</label>
+              <input type="email" name="from" id="from" required placeholder="you@email.com" maxlength="100" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+            </p>
+            <p>
+              <label for="subject">Subject</label>
+              <input type="text" name="subject" id="subject" required placeholder="Subject..." maxlength="200">
+            </p>
+            <p>
+              <label for="message">Message</label>
+              <textarea name="message" id="message" required placeholder="Message here..." maxlength="1000"></textarea>
+            </p>
+            <p>All fields are required</p>
+            <p>
+              <button class="clear" id="clear" type="reset" form="contact-form">clear</button>
+              <button class="submit" id="submit" type="submit" form="contact-form">submit</button>
+            </p>
+          </form>
+        </section>
+      </article>
+      <article id="right-column">
+        <section id="main-content">
+          <h1><%= pageTitle %> Links</h1>
+          <p>
+            <span>Email</span>
+            <a href="mailto:jon@jonhagopian.com">jon@jonhagopian.com</a>
+          </p>
+          <p>
+            <span>Telephone</span>
+            <a href="tel:+12019822983">+1 201 982 2983</a>
+          </p>
+          <p>
+            <span>LinkedIn</span>
+            <a href="http://linkedin.com/in/jonhagopian" target="_blank">www.linkedin.com/in/jonhagopian</a>
+          </p>
+          <p>
+            <span>Location</span>
+            <a href="https://www.google.com/maps/place/Raleigh,+NC/@35.8780456,-78.8071639,11.21z/data=!4m5!3m4!1s0x89ac5a2f9f51e0f7:0x6790b6528a11f0ad!8m2!3d35.7795897!4d-78.6381787" target="_blank">Raleigh NC, USA</a>
+          </p>
+        </section>
+      </article>
+    </main>
+    <% include includes/template/footer.ejs %>
+
+    <script type="text/javascript">
+
+/*
+      var form = document.getElementById("contact-form");
+
+      var email = document.getElementById("email");
+      var name = document.getElementById("name");
+      var subject = document.getElementById("subject");
+      var message = document.getElementById("message");
+      // Form Validation
+
+      email.addEventListener("input", function (event) {
+        if (email.validity.typeMismatch) {
+          email.setCustomValidity("Check your email format");
+        } else if (email.validity.valueMissing) {
+          email.setCustomValidity("This field is required");
+        } else {
+           email.setCustomValidity("");
+        }
+      });*/
+
+      /*function getInput() {
+        name = name.value;
+        from = email.value;
+        subject = subject.value;
+        message = message.value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() { 
+          console.log(xhr.readyState);
+          console.log(xhr.status);
+          //if (xhr.readyState == 4 && xhr.status == 200) {
+          if (xhr.readyState == 4) {
+            console.log("done");
+            document.getElementById("main-content").innerHTML = "Thanks! Your email has been submitted."
+          }
+        }
+        xhr.open("GET", "<%= emailGetURL %>?name=" + name + "&from=" + from + "&subject=" + subject + "&message=" + message, true);
+        xhr.send(null);
+      }
+
+      form.addEventListener("submit", function(event) {
+        getInput();
+      });*/
+    </script>
+
+  </body>
+
+</html>

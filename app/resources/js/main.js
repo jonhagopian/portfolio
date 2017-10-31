@@ -1,5 +1,6 @@
 function navSetup() {
   var headerNav = document.getElementById("navigation");
+  var headerNavBtn = document.getElementById("navigationBtn");
   function navOpenClose() {
     if (headerNav.className === "open") {
       headerNav.className = "close";
@@ -7,7 +8,7 @@ function navSetup() {
       headerNav.className = "open";
     }
   }
-  headerNav.addEventListener("click", navOpenClose);
+  headerNavBtn.addEventListener("click", navOpenClose);
   headerNav.removeAttribute("style");
 }
 
