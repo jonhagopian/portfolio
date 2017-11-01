@@ -196,6 +196,7 @@ main article {
   position: relative;
 }
 article#left-column {
+  padding: 0 1em;
 }
 article#right-column {
 }
@@ -588,6 +589,7 @@ footer#global-footer a {
   }
   article#left-column {
     width: 60%;
+    padding: 0;
   }
   article#right-column {
     width:  30%;
