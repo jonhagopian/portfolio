@@ -21,17 +21,17 @@
       </article>
       <article id="images" class="right-column">
         <div class="img-parallax">
-          <% item.images.forEach(function(item) { %>
+          <% item.images.forEach(function(subitem) { %>
           <figure class="img-slide overlayLink">
-            <img data-src="<%= defaultResources %>/images/portfolio/<%= item %>_tn.jpg">
+            <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem %>_tn<%= item.format %>">
           </figure>
           <% }); %>
         </div>
       </article>
       <div class="img-overlay">
         <div class="img-overlay-box">
-          <% item.images.forEach(function(item) { %>
-          <img data-src="<%= defaultResources %>/images/portfolio/<%= item %>.jpg">
+          <% item.images.forEach(function(subitem) { %>
+          <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem %><%- item.format %>">
           <% }); %>
           <div class="img-overlay-left">
             <div class="img-overlay-btns"><!-- left navigate -->&#10092;</div>

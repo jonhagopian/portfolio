@@ -13,51 +13,73 @@
       "filename" : "header-image-4.jpg",
       "style" : "left: 0; right: auto;4"
     },{
-      "filename" : "header-image-5.jpg",
-      "style" : "right: 0; left: auto;5"
-    },{
       "filename" : "header-image-6.jpg",
       "style" : "right: 0; left: auto;6"
     },{
       "filename" : "header-image-7.jpg",
       "style" : "right: 0; left: auto;7"
+    },{
+      "filename" : "header-image-8.jpg",
+      "style" : "right: 0; left: auto;8"
     }
-   ],
-  "portfolio_projects": [{
-    "title" : "Project One",
-    "shortname" : "project_one",
-    "clientname" : "freelance",
-    "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget, molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
-    "images" : ["image_01", "image_02", "image_03", "image_04", "image_05"]
-  },{
-    "title" : "Project Two",
-    "shortname" : "project_two",
-    "clientname" : "Elephants",
-    "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget, molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
-    "images" : ["image_06", "image_07", "image_08", "image_09", "image_10"]
-  },{
-    "title" : "Project Three",
-    "shortname" : "project_three",
-    "clientname" : "Martians",
-    "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget, molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
-    "images" : ["image_11", "image_12", "image_13", "image_14"]
-  },{
-    "title" : "Project Four",
-    "shortname" : "project_four",
-    "clientname" : "Monkeys",
-    "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget, molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
-    "images" : ["image_15", "image_16", "image_17", "image_18", "image_19"]
-  },{
-    "title" : "Project Five",
-    "shortname" : "project_five",
-    "clientname" : "Silly Basteds",
-    "description" : "<p>Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget,nsectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
-    "images" : ["image_03", "image_08", "image_15", "image_18", "image_09"]
-  },{
-    "title" : "Project Six",
-    "shortname" : "project_Six",
-    "clientname" : "Jerks",
-    "description" : "<p>Nunc neque ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p> molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
-    "images" : ["image_16", "image_12", "image_17", "image_15", "image_14"]
-  }]
+  ],
+
+  "about_me": [
+    {
+      "copy" : "<p>About me copy goes here in json file. Travel, Family, Hiking, Photography, Aviation, Home Building and Contracting and Model Airplane Building and Flying, plus the Nets Blimp.</p>",
+      "images" : ["squamish-jon", "tuscany", "girls-appalachian", "172sp-jon", "city-from172", "OiaHouseandJimmy", "decathlon-jon", "sly-flying", "rearleft_frame", "westervelt-frame", "attic-frame", "westervelt-front"]
+    }
+  ],
+
+  "portfolio_projects" : [
+    {
+      "title" : "People Shop Ecommerce Site",
+      "shortname" : "peshop",
+      "clientname" : "Time Inc.",
+      "description" : "<p>Time Inc. management decided to test the People brand potential to generate revenue from an e-commerce storefront selling products relating to the people theme and trends.</p><ul><li>I was tasked with the integration of HTML, CSS and JavaScript libraries into our e-commerce platform using velocity templating language.</li><li>All requested features of the site had to work properly when served from the backend.</li><li>In order to meet our hard go live date I broke down the most basic needs of the project and tackled them accordingly. I utilized our backend team and offshore developers to complete and test various components of the storefront.</li></ul><p>People Shop hit the target go live date fully tested and full featured. Marketing was extremely happy with the project from start to finish and our performance and demonstration of progress along the way via screen share kept them informed, satisfied and minimized stress.</p><p> I utilized my logic and reason to manage time and energy, making sure that the most critical components were completed and tested ahead of schedule. Other skills demonstrated were, leadership, adaptability, self awareness. Technical skills put to use were HTML, CSS, JavaScript, Velocity, jQuery, Flexible/Mobile Design, UX/UI and Photoshop.</p>",
+      "format" : ".png",
+      "images" : [
+          "peshop-catResultpage",
+          "peshop-homepage",
+          "peshop-homepage2",
+          "peshop-productDetailPage",
+          "peshop-viewCartPage"
+        ]
+    },{
+      "title" : "Project Two",
+      "shortname" : "project_two",
+      "clientname" : "Elephants",
+      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget, molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
+      "format" : ".jpg",
+      "images" : ["image_06", "image_07", "image_08", "image_09", "image_10"]
+    },{
+      "title" : "Project Three",
+      "shortname" : "project_three",
+      "clientname" : "Martians",
+      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget, molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
+      "format" : ".jpg",
+      "images" : ["image_11", "image_12", "image_13", "image_14"]
+    },{
+      "title" : "Project Four",
+      "shortname" : "project_four",
+      "clientname" : "Monkeys",
+      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget, molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
+        "format" : ".jpg",
+      "images" : ["image_15", "image_16", "image_17", "image_18", "image_19"]
+    },{
+      "title" : "Project Five",
+      "shortname" : "project_five",
+      "clientname" : "Silly Basteds",
+      "description" : "<p>Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget,nsectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
+      "format" : ".jpg",
+      "images" : ["image_03", "image_08", "image_15", "image_18", "image_09"]
+    },{
+      "title" : "Project Six",
+      "shortname" : "project_Six",
+      "clientname" : "Jerks",
+      "description" : "<p>Nunc neque ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p> molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
+      "format" : ".jpg",
+      "images" : ["image_16", "image_12", "image_17", "image_15", "image_14"]
+    }
+  ]
 }

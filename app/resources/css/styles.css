@@ -11,6 +11,10 @@ body {
   color: #212121;
   -webkit-font-smoothing: subpixel-antialiased;
 }
+html, body {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -295,6 +299,13 @@ article.full-column {
 .overlayLink {
 	cursor: pointer;
 }
+.item-description ul {
+  padding-left: 1.5em;
+}
+.item-description ul li {
+  list-style: disc;
+  margin: 1em 0;
+}
 /* ----------- End Item Detail Page ----------- */
 
 /* ----------- Home Page ----------- */
@@ -364,7 +375,6 @@ body.thankyou #contact-form {
   display: block;
   font-weight: 700;
   width: 100%;
-  margin-bottom: 1em;
 }
 #contact .right-column a {
   margin-left: 1em;
@@ -395,22 +405,10 @@ body.thankyou #contact-form {
 #contact button.submit {
   font-weight: 700;
 }
-/* ----------- End Contact Page ----------- */
-
-/* ----------- Image Slider ----------- */
-.img-parallax {
-  padding: 2em 0 2em 1em;
+#contact blockquote {
   margin-bottom: 2em;
-  background-color: #F2F2F2;
 }
-#item-grid .img-parallax {
-  background-color: unset;
-}
-#item-grid .img-parallax figcaption {
-  margin: 0.25em 1em 1em 0;
-  text-align: right;
-}
-/* ----------- End Image Slider ----------- */
+/* ----------- End Contact Page ----------- */
 
 /* ----------- Global Footer ----------- */
 #global-footer {
@@ -465,10 +463,16 @@ body.thankyou #contact-form {
 /* ----------- Header ----------- */
   header {
     flex-flow: row wrap;
+    left: 0;
+    right: 0;
   }
-  nav#navigation, div#icon, div#header-image {
+  nav#navigation, div#icon {
     height: 160px;
     width: 160px;
+    margin: 0 1px;
+  }
+  div#header-image {
+    height: 160px;
     margin: 0 1px;
   }
   nav#navigation {
@@ -593,7 +597,7 @@ body.thankyou #contact-form {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    padding: calc(3.25em + 160px) 0 0.25em 0;
+    padding: calc(2.675em + 160px) 0 0 0;
   }
   article.left-column {
     width: 60%;
@@ -643,6 +647,9 @@ body.thankyou #contact-form {
     margin: 0 2em 3em 2em;
     text-align: center;
   }
+  .item-grid figure {
+    border: 1px solid #BCBCBC;
+  }
 /* ----------- End Item Grid Body Rows ----------- * /
 
 /* ----------- Item Detail Page ----------- */
@@ -683,13 +690,6 @@ body.thankyou #contact-form {
     width: 100%;
   }
 /* ----------- End Contact Page ----------- */
-
-/* ----------- Image Slider ----------- */
-  .img-parallax {
-    padding: 2em 0;
-    background: none;
-  }
-/* ----------- End Image Slider ----------- */
 
 /* ----------- Global Footer ----------- */
   footer#global-footer {

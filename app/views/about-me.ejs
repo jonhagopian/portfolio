@@ -12,40 +12,29 @@
       <article id="about-me" class="left-column">
         <h1 class="underline"><%= pageTitle %></h1>
         <section id="interests">
-          <p>About me interestes copy here</p>
+          <% aboutAll.forEach(function(item) { %>
+            <%- item.copy %>
+          <% }); %>
         </section>
       </article>
       <article id="images" class="right-column">
         <div class="img-parallax">
+          <% aboutAll.forEach(function(item) { %>
+            <% item.images.forEach(function(item) { %>
           <figure class="img-slide">
-            <img data-src="<%= defaultResources %>/images/gallery-test/banff1.jpg">
+            <img data-src="<%= defaultResources %>/images/about-me/<%= item %>_tn.jpg">
           </figure>
-          <figure class="img-slide">
-            <img data-src="<%= defaultResources %>/images/gallery-test/banff2.jpg">
-          </figure>
-          <figure class="img-slide">
-            <img data-src="<%= defaultResources %>/images/gallery-test/banff3.jpg">
-          </figure>
-          <figure class="img-slide">
-            <img data-src="<%= defaultResources %>/images/gallery-test/banff4.jpg">
-          </figure>
-          <figure class="img-slide">
-            <img data-src="<%= defaultResources %>/images/gallery-test/banff5.jpg">
-          </figure>
-          <figure class="img-slide">
-            <img data-src="<%= defaultResources %>/images/gallery-test/banff6.jpg">
-          </figure>
-          <figure class="img-slide">
-            <img data-src="<%= defaultResources %>/images/gallery-test/banff7.jpg">
-          </figure>
-          <figure class="img-slide">
-            <img data-src="<%= defaultResources %>/images/gallery-test/banff8.jpg">
-          </figure>
+            <% }); %>
+          <% }); %>
         </div>
       </article>
       <div class="img-overlay">
         <div class="img-overlay-box">
-          <img data-src="">
+          <% aboutAll.forEach(function(item) { %>
+            <% item.images.forEach(function(item) { %>
+          <img data-src="<%= defaultResources %>/images/about-me/<%= item %>.jpg">
+            <% }); %>
+          <% }); %>
           <div class="img-overlay-left">
             <div class="img-overlay-btns"><!-- left navigate -->&#10092;</div>
           </div>

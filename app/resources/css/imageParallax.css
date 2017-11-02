@@ -30,12 +30,23 @@
   width: 128%;
   margin-left: -14%;
 }
+.img-parallax {
+  padding: 2em 0 2em 1em;
+  margin-bottom: 2em;
+  background-color: #F2F2F2;
+}
+#item-grid .img-parallax {
+  background-color: unset;
+}
+#item-grid .img-parallax figcaption {
+  margin: 0.25em 1em 1em 0;
+  text-align: right;
+}
 
 /* Image Slider Full Height Mobile Column */
 
 #category-results .img-parallax {
   height: auto;
-  overflow: visible; /* This determines if slider JS will chose fixed height or auto */
   flex-direction: column;
   justify-content: flex-start;
   padding: 0;
@@ -44,6 +55,7 @@
   width: 100%;
   margin-right: 0;
   border-radius: 0;
+  border: 1px solid #BCBCBC;
 }
 #category-results .img-parallax figure img {
   transition: all 200ms;
@@ -59,6 +71,8 @@
     height: 100%;
     flex-direction: column;
     justify-content: flex-start;
+    background-color: #f2f2f2;
+    padding: 1em;
   }
   .img-parallax::-webkit-scrollbar {
     display: none;

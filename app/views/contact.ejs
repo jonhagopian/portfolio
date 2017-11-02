@@ -51,7 +51,7 @@
       </article>
       <article id="contact-links" class="right-column">
         <section>
-          <h2 class="underline"><%= pageTitle %> Links</h2>
+          <h2 class="underline">Links</h2>
           <p>
             <span>Email:</span>
             <a href="mailto:jon@jonhagopian.com">jon@jonhagopian.com</a>
@@ -72,52 +72,6 @@
       </article>
     </main>
     <% include includes/template/footer.ejs %>
-
-    <script type="text/javascript">
-
-/*
-      var form = document.getElementById("contact-form");
-
-      var email = document.getElementById("email");
-      var name = document.getElementById("name");
-      var subject = document.getElementById("subject");
-      var message = document.getElementById("message");
-      // Form Validation
-
-      email.addEventListener("input", function (event) {
-        if (email.validity.typeMismatch) {
-          email.setCustomValidity("Check your email format");
-        } else if (email.validity.valueMissing) {
-          email.setCustomValidity("This field is required");
-        } else {
-           email.setCustomValidity("");
-        }
-      });*/
-
-      /*function getInput() {
-        name = name.value;
-        from = email.value;
-        subject = subject.value;
-        message = message.value;
-
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() { 
-          console.log(xhr.readyState);
-          console.log(xhr.status);
-          //if (xhr.readyState == 4 && xhr.status == 200) {
-          if (xhr.readyState == 4) {
-            console.log("done");
-            document.getElementById("main-content").innerHTML = "Thanks! Your email has been submitted."
-          }
-        }
-        xhr.open("GET", "<%= emailGetURL %>?name=" + name + "&from=" + from + "&subject=" + subject + "&message=" + message, true);
-        xhr.send(null);
-      }
-
-      form.addEventListener("submit", function(event) {
-        getInput();
-      });*/
-    </script>
 
   </body>
 
