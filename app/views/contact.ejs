@@ -9,9 +9,9 @@
   <body id="<%= pageID %>" class="<%= pageVer %>">
     <% include includes/template/header.ejs %>
     <main>
-      <article id="left-column">
-        <section id="main-content">
-          <h1><%= pageTitle %></h1>
+      <article id="contact-form" class="left-column">
+        <section>
+          <h1 class="underline"><%= pageTitle %></h1>
           <div class="tycopy">
             <p>
               Your message has been sent. <br>I'll respond as soon as I can.
@@ -49,23 +49,23 @@
           </form>
         </section>
       </article>
-      <article id="right-column">
-        <section id="main-content">
-          <h1><%= pageTitle %> Links</h1>
+      <article id="contact-links" class="right-column">
+        <section>
+          <h2 class="underline"><%= pageTitle %> Links</h2>
           <p>
-            <span>Email</span>
+            <span>Email:</span>
             <a href="mailto:jon@jonhagopian.com">jon@jonhagopian.com</a>
           </p>
           <p>
-            <span>Telephone</span>
+            <span>Telephone:</span>
             <a href="tel:+12019822983">+1 201 982 2983</a>
           </p>
           <p>
-            <span>LinkedIn</span>
-            <a href="http://linkedin.com/in/jonhagopian" target="_blank">www.linkedin.com/in/jonhagopian</a>
+            <span>LinkedIn:</span>
+            <a href="http://linkedin.com/in/jonhagopian" target="_blank">linkedin.com/in/jonhagopian</a>
           </p>
           <p>
-            <span>Location</span>
+            <span>Location:</span>
             <a href="https://www.google.com/maps/place/Raleigh,+NC/@35.8780456,-78.8071639,11.21z/data=!4m5!3m4!1s0x89ac5a2f9f51e0f7:0x6790b6528a11f0ad!8m2!3d35.7795897!4d-78.6381787" target="_blank">Raleigh NC, USA</a>
           </p>
         </section>

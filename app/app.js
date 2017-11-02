@@ -63,6 +63,7 @@ app.get("/send", function(request, response) {
 app.use(require("./routes/route-index"));
 app.use(require("./routes/route-resume"));
 app.use(require("./routes/route-contact"));
+app.use(require("./routes/route-aboutme"));
 app.use(require("./routes/route-item-grid"));
 app.use(require("./routes/route-item"));
 

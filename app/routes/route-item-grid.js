@@ -8,7 +8,7 @@ router.get("/portfolio", function(request, response) {
 
   response.render("items-category", {
     pageTitle : "Portfolio",
-    pageID : "portfolio",
+    pageID : "item-grid",
     items : itemsAll
   });
 });

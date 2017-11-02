@@ -1,6 +1,6 @@
 /* ----------- Image Slider ----------- */
 /* Image Slider Mobile */
-.img-slider {
+.img-parallax {
   width: 100%;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
@@ -11,13 +11,13 @@
   margin-left: auto;
   margin-right: auto;
 }
-.img-slider::-webkit-scrollbar {
+.img-parallax::-webkit-scrollbar {
   display: none;
 }
-.img-slider.justified {
+.img-parallax.justified {
   justify-content: center;
 }
-.img-slider figure {
+.img-parallax figure {
   width: calc(66.6% - 1em);
   height: auto;
   margin-right: 1em;
@@ -25,25 +25,45 @@
   overflow: hidden;
   flex: 0 0 auto;
 }
-.img-slider figure img {
+.img-parallax figure img {
   /* negative margin matches width amount over 100% / 2 */
   width: 128%;
   margin-left: -14%;
 }
+
+/* Image Slider Full Height Mobile Column */
+
+#category-results .img-parallax {
+  height: auto;
+  overflow: visible; /* This determines if slider JS will chose fixed height or auto */
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+}
+#category-results .img-parallax figure {
+  width: 100%;
+  margin-right: 0;
+  border-radius: 0;
+}
+#category-results .img-parallax figure img {
+  transition: all 200ms;
+}
+/* End Image Slider Full Height Mobile Column */
+
 /* End Image Slider Mobile */
 
 /* Begin Image Slider Desktop */
 @media only screen and (min-width: 767px) {
-  .img-slider {
+  .img-parallax {
     overflow-y: scroll;
     height: 100%;
     flex-direction: column;
     justify-content: flex-start;
   }
-  .img-slider::-webkit-scrollbar {
+  .img-parallax::-webkit-scrollbar {
     display: none;
   }
-  .img-slider figure {
+  .img-parallax figure {
     width: 100%;
     height: auto;
     margin-right: 0;
@@ -51,7 +71,7 @@
     flex: 0 0 auto;
     border-radius: 1em;
   }
-  .img-slider figure img {
+  .img-parallax figure img {
     /* Height calc via JS */
   }
 }

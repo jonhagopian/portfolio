@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get("/contact/", function(request, response) {
   response.render("contact", {
-    pageTitle : "Contact Form",
+    pageTitle : "Contact",
     pageID : "contact",
     pageVer : ""
   });

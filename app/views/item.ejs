@@ -11,16 +11,16 @@
     <% include includes/template/header.ejs %>
     <main>
       <% itemAll.forEach(function(item) { %>
-      <article id="left-column">
-        <section id="main-content" class="item-description">
-          <h1><%= item.title %></h1>
+      <article id="project-description" class="left-column">
+        <h1><%= item.title %></h1>
+        <section class="item-description">
           <p>
             <%- item.description %>
           </p>
         </section>
       </article>
-      <article id="right-column">
-        <div class="img-slider">
+      <article id="images" class="right-column">
+        <div class="img-parallax">
           <% item.images.forEach(function(item) { %>
           <figure class="img-slide overlayLink">
             <img data-src="<%= defaultResources %>/images/portfolio/<%= item %>_tn.jpg">

@@ -22,6 +22,10 @@ function imgSetup() {
   }
 }
 
+function removeClass(e, c) {
+  e.className = e.className.replace(new RegExp("(?:^|\\s)" + c + "(?!\\S)") ,"");
+}
+
 window.addEventListener("load", function() {
   navSetup();
   imgSetup();

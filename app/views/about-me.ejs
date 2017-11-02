@@ -6,13 +6,13 @@
     <% include includes/template/head.ejs %>
   </head>
 
-  <body id="<%= pageID%>">
+  <body id="<%= pageID %>">
     <% include includes/template/header.ejs %>
     <main>
-      <article id="introduction" class="left-column">
-        <section>
-          <h1><strong>Web Developer</strong> with experience in ecommerce websites, marketing micro-sites and ads, taking creatives from clients to functional web entities. Experience includes leading large initiatives, managing offshore talent, client expectations, directing workflow and debugging. Notable skills are an eye for creative layout while coding for reusability, simplicity and speed. I enjoy solving problems in an elegant streamlined fashion while learning new technologies and techniques.</h1>
-          <hr>
+      <article id="about-me" class="left-column">
+        <h1 class="underline"><%= pageTitle %></h1>
+        <section id="interests">
+          <p>About me interestes copy here</p>
         </section>
       </article>
       <article id="images" class="right-column">
@@ -43,6 +43,20 @@
           </figure>
         </div>
       </article>
+      <div class="img-overlay">
+        <div class="img-overlay-box">
+          <img data-src="">
+          <div class="img-overlay-left">
+            <div class="img-overlay-btns"><!-- left navigate -->&#10092;</div>
+          </div>
+          <div class="img-overlay-right">
+            <div class="img-overlay-btns"><!-- right navigate -->&#10093;</div>
+          </div>
+          <div class="img-overlay-close img-overlay-btns">
+            &#10005;
+          </div>
+        </div>
+      </div>
     </main>
     <% include includes/template/footer.ejs %>
 

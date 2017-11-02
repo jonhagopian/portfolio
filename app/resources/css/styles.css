@@ -27,19 +27,23 @@ img[data-src] {
 /* ----------- General Styles ----------- */
 h1, h2, h3, h4, p {
   margin: 1em 0;
-  line-height: 1.4em;
+  line-height: 1.5em;
+}
+li {
+  line-height: 1.5;
 }
 h1, h2, h3, h4, figcaption {
   font-family: 'Roboto Slab', serif;
 }
-h1 {
+h1, h2 {
   font-size: 1.2em;
 }
-h2 {
-  font-size: 0.875px;
+h3, h4 {
+  font-size: 1em;
+  font-weight: 700;
 }
 p {
-  font-size: 0.875em;
+  font-size: 1em;
 }
 hr {
   border-bottom: 1px solid #BCBCBC;
@@ -65,6 +69,9 @@ input, textarea {
 }
 button {
   cursor: pointer;
+}
+.underline {
+  border-bottom: 1px solid #BCBCBC;
 }
 /* ----------- End General Styles ----------- */
 
@@ -189,18 +196,24 @@ main {
   justify-content: center;
   padding-top: 75px;
 }
+main a {
+  color: #2274A5;
+}
+main a:hover {
+  color: #165478;
+}
 main strong {
   font-weight: 700;
 }
 main article {
   position: relative;
 }
-article#left-column {
+article.left-column {
   padding: 0 1em;
 }
-article#right-column {
+article.right-column {
 }
-article#full-column {
+article.full-column {
   padding: 0 2em;
 }
 /* ----------- End Main Body Columns ----------- */
@@ -210,17 +223,6 @@ article#full-column {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-}
-.item-grid figure {
-}
-.item-grid figure img {
-  width: 100%;
-}
-.item-grid figcaption {
-  font-size: 0.875em;
-  line-height: 2em;
-  margin: 1em 0 2em 0;
-  text-align: right;
 }
 /* ----------- End Item Grid Body Rows ----------- * /
 
@@ -295,37 +297,46 @@ article#full-column {
 }
 /* ----------- End Item Detail Page ----------- */
 
+/* ----------- Home Page ----------- */
+#home h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+#home .left-column {
+  padding: 0.50em 1em;
+  text-indent: 0.50em;
+}
+/* ----------- End Home Page ----------- */
+
 /* ----------- Resume Page ----------- */
-#resume #main-content {
+#resume #resume-full {
   padding-bottom: 4em;
 }
 #resume h3, #resume h4 {
   margin-bottom: 0;
-  font-weight: 700;
 }
 #resume h3 {
   display: flex;
-  font-size: 1em;
 }
 #resume h3 > div:last-of-type {
   margin-left: auto;
 }
-#resume h4 {
-  font-size: 0.875em;
-}
-#resume p, #resume ul {
-  font-size: 0.875em;
+#resume article p, #resume article ul {
   text-indent: 0;
   margin: 0;
 }
-#resume b {
+#resume article b {
   font-weight: 700;
 }
-#resume #main-content ul {
-  padding-left: 2em;
+#resume article ul {
+  padding-left: 1.3em;
 }
-#resume #main-content ul li {
+#resume article ul li {
   list-style-type: disc;
+}
+#resume #download-link {
+  float: right;
 }
 /* ----------- End Resume Page ----------- */
 
@@ -339,35 +350,32 @@ body.thankyou .tycopy {
 body.thankyou #contact-form {
   display: none;
 }
-#contact #right-column {
+#contact .right-column {
   order: 1;
   padding: 0 1em;
 }
-#contact #left-column {
+#contact .left-column {
   order: 2;
 }
 #contact form label {
   font-weight: bold;
 }
-#contact #right-column p > span {
+#contact .right-column p > span {
   display: block;
   font-weight: 700;
   width: 100%;
-  border-bottom: 1px solid #BCBCBC;
   margin-bottom: 1em;
 }
-#contact #right-column a {
+#contact .right-column a {
   margin-left: 1em;
-  color: #2274A5;
-  transition: 400ms ease-in-out;
 }
-#contact #right-column a:hover {
+#contact .right-column a:hover {
   color: #165478;
 }
-#contact #left-column input {
+#contact .left-column input {
   width: 100%;
 }
-#contact #left-column textarea {
+#contact .left-column textarea {
   width: 100%;
   height: 14em;
 }
@@ -379,9 +387,10 @@ body.thankyou #contact-form {
   margin-right: 1em;
   background-color: white;
   transition: 400ms ease-in-out;
+  color: #2274A5;
 }
 #contact button:hover {
-  color: #2274A5;
+  color: #165478;
 }
 #contact button.submit {
   font-weight: 700;
@@ -389,38 +398,37 @@ body.thankyou #contact-form {
 /* ----------- End Contact Page ----------- */
 
 /* ----------- Image Slider ----------- */
-.img-slider {
+.img-parallax {
   padding: 2em 0 2em 1em;
   margin-bottom: 2em;
   background-color: #F2F2F2;
 }
+#item-grid .img-parallax {
+  background-color: unset;
+}
+#item-grid .img-parallax figcaption {
+  margin: 0.25em 1em 1em 0;
+  text-align: right;
+}
 /* ----------- End Image Slider ----------- */
 
 /* ----------- Global Footer ----------- */
-footer#global-footer {
+#global-footer {
   color: #212121;
   border-top: 1px solid #BCBCBC;
   text-align: center;
   line-height: 2;
   font-size: 0.875em;
 }
-footer#global-footer a {
+#global-footer a {
   color: inherit;
   text-decoration: none;
+  color: #2274A5;
+}
+#global-footer a:hover {
+  color: #165478;
 }
 /* ----------- End Global Footer ----------- */
-
-/* ----------- Page Specific Styles ----------- */
-#home h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-}
-#home #left-column {
-  padding: 0.50em 1em;
-  text-indent: 0.50em;
-}
-/* ----------- End Page Specific Styles ----------- */
 
 /* ----------- End Mobile First ----------- */
 
@@ -587,21 +595,21 @@ footer#global-footer a {
     justify-content: space-around;
     padding: calc(3.25em + 160px) 0 0.25em 0;
   }
-  article#left-column {
+  article.left-column {
     width: 60%;
     padding: 0;
   }
-  article#right-column {
+  article.right-column {
     width:  30%;
     height: calc(100vh - 6.875em - 160px);
     border: none;
     margin: 0;
     padding: 0;
   }
-  article#full-column {
+  article.full-column {
     width: 100%;
   }
-  section#main-content {
+  section {
     width: 100%;
   }
 /* ----------- End Main Body Columns ----------- */
@@ -623,11 +631,12 @@ footer#global-footer a {
     width: 250px;
     height: 179px;
     margin: 0 2em 0.50em 2em;
-    border-radius: 0.75em;
     overflow: hidden;
+    border-radius: 0;
   }
   .item-grid figure img {
     width: auto;
+
   }
   .item-grid figcaption {
     font-size: 0.875em;
@@ -642,34 +651,41 @@ footer#global-footer a {
   }
 /* ----------- End Item Detail Page ----------- */
 
+/* ----------- Home Page ----------- */
+  #home h1 {
+    margin: 3em 0;
+    line-height: 1.75;
+  }
+/* ----------- End Home Page ----------- */
+
 /* ----------- Resume Page ----------- */
-  #resume #main-content {
+  #resume #resume-full {
     padding-left: 2em;
     padding-right: 2em;
   }
 /* ----------- End Resume Page ----------- */
 
 /* ----------- Contact Page ----------- */
-  #contact #right-column {
+  #contact .right-column {
     order: 2;
   }
-  #contact #left-column {
+  #contact .left-column {
     order: 1;
   }
-  #contact #right-column p {
+  #contact .right-column p {
     margin-bottom: 2em;
   }
-  #contact #left-column input {
+  #contact .left-column input {
     width: auto;
     min-width: 20em;
   }
-  #contact #left-column input#subject {
+  #contact .left-column input#subject {
     width: 100%;
   }
 /* ----------- End Contact Page ----------- */
 
 /* ----------- Image Slider ----------- */
-  .img-slider {
+  .img-parallax {
     padding: 2em 0;
     background: none;
   }
@@ -680,13 +696,6 @@ footer#global-footer a {
 
   }
 /* ----------- End Global Footer ----------- */
-
-/* ----------- Page Specific Styles ----------- */
-  #home h1 {
-    margin: 3em 0;
-    line-height: 1.75;
-  }
-/* ----------- End Page Specific Styles ----------- */
 }
 /* ----------- End iPad Standard Portrait to Large Desktop displays ----------- */
 

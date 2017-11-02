@@ -9,8 +9,29 @@ function imageSlider(firstRun) {
     });
     window.addEventListener("orientationchange", imageSlider);
   }
-  function syAnimate(box, boxH, sH, sOffsetArrT, sImgArr) {
-    var scrPos = box.scrollTop;
+
+
+    var mq = window.matchMedia("(min-width: 767px)");
+    var page = document.body.id;
+    if (mq.matches && page === "item-grid") {
+      var elem = document.querySelectorAll(".img-parallax");
+      elem.forEach(function(e) {
+        removeClass(e,"img-parallax");
+      });
+    } else {
+      var elem = document.querySelectorAll(".item-grid");
+      elem.forEach(function(e) {
+        e.className = e.className += " img-parallax";
+      });
+    }
+
+
+  function syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag) { // fixed height box
+    if (flag === "full") {
+      var scrPos = document.body.scrollTop;
+    } else {
+      var scrPos = box.scrollTop;
+    }
     // forEach individual image slide
     sOffsetArrT.forEach(function(sOffset, index){
       var sPos = sOffset + (sH / 2);
@@ -21,6 +42,7 @@ function imageSlider(firstRun) {
       sImgArr[index].style.transform = "translateY(" + sPosPct + "%)";
     });
   } //EOF
+
   function sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr) {
     var scrPos = box.scrollLeft;
     // forEach individual image slide
@@ -33,7 +55,7 @@ function imageSlider(firstRun) {
       sImgArr[index].style.transform = "translateX(" + sPosPct + "%)";
     });
   } //EOF
-  var allSliders = document.querySelectorAll(".img-slider");
+  var allSliders = document.querySelectorAll(".img-parallax");
   // forEach individual gallery element
   allSliders.forEach(function(sBox) {
     let box = sBox; // let so values aren't overwritten
@@ -44,8 +66,9 @@ function imageSlider(firstRun) {
       sImg.removeAttribute("style");
       sArr[index].removeAttribute("style");
     });
-    // if horizontal/vertical scroll switch
+    // if horizontal/vertical scroll switch, and overflow for full hight hidden for fixed
     var flexDir = window.getComputedStyle(box).flexDirection;
+    var overFlow = window.getComputedStyle(box).overflow;
     if (flexDir === "row") {
       box.scrollLeft = 0; // reset scroll to beginning
       var boxW = box.offsetWidth;
@@ -60,7 +83,13 @@ function imageSlider(firstRun) {
       sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr);
     } else if (flexDir === "column") {
       box.scrollTop = 0;
-      var boxH = box.offsetHeight;
+      if (overFlow === "visible") {
+        var boxH = document.body.offsetHeight; // height of element that is scrolling
+        var flag = "full";
+      } else {
+        var boxH = box.offsetHeight;
+        var flag = "fixed";
+      }
       var sH = box.querySelector("figure").offsetHeight;
       var sOffsetArrT = [];
       sArr.forEach(function(sOffset, index) {
@@ -70,10 +99,13 @@ function imageSlider(firstRun) {
         sOffset.setAttribute("style", "height: " + newHeight + "px;");
       });
       var _forEventListener = function() {
-        syAnimate(box, boxH, sH, sOffsetArrT, sImgArr);
+        syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag);
       }
-      syAnimate(box, boxH, sH, sOffsetArrT, sImgArr);
+      syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag);
     } // End if else row/column
+    if (overFlow === "visible") {
+      box = document;
+    }
     box.addEventListener("scroll", _forEventListener);
     window.addEventListener("resize", function() {
       box.removeEventListener("scroll", _forEventListener)
@@ -84,7 +116,7 @@ function imageSlider(firstRun) {
   }); // End forEach
 } //EOF
 window.addEventListener("load", function() {
-  if(document.querySelector(".img-slider") !== null) {
+  if(document.querySelector(".img-parallax") !== null) {
     imageSlider(true);
   }
 });

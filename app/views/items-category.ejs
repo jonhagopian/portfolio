@@ -9,24 +9,23 @@
   <body id="<%= pageID %>">
     <% include includes/template/header.ejs %>
     <main>
-      <article id="full-column">
+      <article id="category-results" class="full-column">
         <h1><%= pageTitle %></h1>
-        <section id="main-content" class="item-grid">
-        <% if (items.length > 0) { %> 
-          <% for (i = 0; i < items.length; i++) { %>
-          <a href="/projects/<%= items[i].shortname %>">
-            <figure>
-                <img data-src="<%= defaultResources %>/images/portfolio/<%= items[i].images[0] %>_tn.jpg" alt="Image <%= i %>">
-            </figure>
-            <figcaption><%= items[i].title %></figcaption>
-          </a>
-          <% } %>
-        <% } %>
+        <section class="item-grid img-parallax">
+            <% if (items.length > 0) { %> 
+              <% for (i = 0; i < items.length; i++) { %>
+              <a href="/projects/<%= items[i].shortname %>">
+                <figure class="img-slide">
+                    <img data-src="<%= defaultResources %>/images/portfolio/<%= items[i].images[0] %>_tn.jpg" alt="Image <%= i %>">
+                </figure>
+                <figcaption><%= items[i].title %></figcaption>
+              </a>
+              <% } %>
+            <% } %>
         </section>
       </article>
     </main>
     <% include includes/template/footer.ejs %>
-
   </body>
 
 </html>
