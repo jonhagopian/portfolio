@@ -417,6 +417,7 @@ body.thankyou #contact-form {
   text-align: center;
   line-height: 2;
   font-size: 0.875em;
+  height: 30px;
 }
 #global-footer a {
   color: inherit;
@@ -600,15 +601,18 @@ body.thankyou #contact-form {
     padding: calc(2.675em + 160px) 0 0 0;
   }
   article.left-column {
-    width: 60%;
-    padding: 0;
+    width: 65%;
+    padding: 0 4em 0 4em;
+    height: calc(100vh - 2.5em - 190px);
+    overflow: scroll;
   }
   article.right-column {
-    width:  30%;
-    height: calc(100vh - 6.875em - 160px);
+    width:  35%;
+    height: calc(100vh - 2.5em - 190px);
     border: none;
     margin: 0;
-    padding: 0;
+    padding: 0 2em 0 1em;
+    background-color: #f2f2f2;
   }
   article.full-column {
     width: 100%;
@@ -619,9 +623,9 @@ body.thankyou #contact-form {
 /* ----------- End Main Body Columns ----------- */
 
 /* ----------- Home Page ----------- */
-#home h1 {
-  text-indent: 1em;
-}
+  #home h1 {
+    text-indent: 1em;
+  }
 /* ----------- End Home Page ----------- */
 
 /* ----------- Item Grid Body Rows ----------- */

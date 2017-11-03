@@ -44,7 +44,7 @@ app.get("/send", function(request, response) {
     name : request.query.name,
     from : request.query.from,
     subject : request.query.subject,
-    text : request.query.message + "\n\nFrom: request.query.name " +  request.query.from,
+    text : request.query.message + "\n\n From:" + request.query.name +  request.query.from,
     html : `<p>Sent via jonhagopian.com</p>
     <p><b>Message:</b> ${request.query.message}</p>
     <p><b>From:</b> ${request.query.name} <<a href="mailto:${request.query.from}">${request.query.from}</a>></p>`
