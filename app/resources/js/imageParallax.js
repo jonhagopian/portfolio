@@ -9,7 +9,7 @@ function imageSlider(firstRun) {
       var pct = 0.25;
     }
     // forEach individual image slide
-    sOffsetArrT.forEach(function(sOffset, index){
+    sOffsetArrT.forEach(function(sOffset, index) {
       var sPos = sOffset + (sH / 2);
       var sPosVis = scrPos - sPos;
       var sPosPct = (sPosVis / boxH) * 100; // get the percentage to apply to image inside
@@ -39,7 +39,7 @@ function imageSlider(firstRun) {
       clearTimeout(resizeDone);
       resizeDone = setTimeout(function() {
         imageSlider();
-      }, 400);
+      }, 66);
     });
     window.addEventListener("orientationchange", imageSlider);
   }

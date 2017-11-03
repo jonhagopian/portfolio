@@ -4,6 +4,9 @@
 html {
   box-sizing: border-box;
 }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 body {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
@@ -14,9 +17,6 @@ body {
 html, body {
   max-width: 1400px;
   margin: 0 auto;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
 }
 /* img and data-src along with JS create image fade in on load */
 img {
@@ -29,22 +29,42 @@ img[data-src] {
 }
 
 /* ----------- General Styles ----------- */
-h1, h2, h3, h4, p {
+  /* Heading should be defined only once */
+h1 {
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.2em;
+}
+h2 {
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.2em;
+}
+h3 {
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1em;
+  font-weight: 700;
+}
+h4 {
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1em;
+  font-weight: 700;
+}
+p {
   margin: 1em 0;
   line-height: 1.5em;
 }
 li {
   line-height: 1.5;
 }
-h1, h2, h3, h4, figcaption {
+figcaption {
   font-family: 'Roboto Slab', serif;
-}
-h1, h2 {
-  font-size: 1.2em;
-}
-h3, h4 {
-  font-size: 1em;
-  font-weight: 700;
 }
 p {
   font-size: 1em;
@@ -96,12 +116,12 @@ header {
 header strong {
   font-weight: 700;
 }
-nav#navigation, div#icon, div#header-image {
+#navigation, #icon, #header-image {
   height: 75px;
   width: 75px;
   margin: 0 1px;
 }
-nav#navigation {
+#navigation {
   background-color: #2274A5;
   background-position: center center;
   background-repeat: no-repeat;
@@ -109,24 +129,24 @@ nav#navigation {
   color: #2274A5;
   cursor: pointer;
 }
-nav#navigation.open {
+#navigation.open {
   background-image: url("../images/menu-icon-open.svg");
 }
-nav#navigation.close {
+#navigation.close {
   background-image: url("../images/menu-icon-close.svg");
 }
-nav#navigation #navigationBtn {
+#navigationBtn {
   position: absolute;
   z-index: 8;
   width: inherit;
   height: inherit;
   cursor: pointer;
 }
-nav#navigation.close #navigationBtn {
+.close #navigationBtn {
   width: 100vw;
   height: 100vh;
 }
-nav#navigation #nav-menu {
+#nav-menu {
   position: absolute;
   transition: 400ms ease-in-out;
   height: calc(100vh - 75px);
@@ -134,41 +154,41 @@ nav#navigation #nav-menu {
   top: calc(100% + 1px);
   width: 70%;
 }
-nav#navigation.open #nav-menu {
+.open #nav-menu {
   left: -100%;
 }
-nav#navigation.close #nav-menu {
+.close #nav-menu {
   left: 0;
 }
-nav#navigation #nav-menu > ul {
+#nav-menu > ul {
   display: block;
   background-color: #2274A5;
   color: #FEEA3B;
   font-weight: 700;
 }
-nav#navigation #nav-menu > ul {
+#nav-menu > ul {
   border-right: solid 4px #FEEA3B;
   height: 100%;
-  box-shadow: 3px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 0 4px 0 rgba(0, 0, 0, 0.25);
   font-size: 1.25em;
 }
-nav#navigation ul li {
+#navigation ul li {
   margin: 0 2em;
   border-bottom: 1px solid #FEEA3B;
   padding: 0.875em 0;
 }
-nav#navigation ul li > ul { 
+#navigation ul li > ul { 
   display: none;
 }
-nav#navigation ul li:last-of-type {
+#navigation ul li:last-of-type {
   border-bottom: none;
 }
-nav#navigation a {
+#navigation a {
   text-decoration: none;
   color: inherit;
   font-weight: inherit;
 }
-div#icon {
+#icon {
   background-image: url("../images/icon-jonhagopian.jpg");
   background-size: contain;
 }
@@ -177,18 +197,19 @@ div#icon {
   position: relative;
   flex-grow: 1;
   overflow: hidden;
+  transform: perspective(1px);
 }
 #header-image img {
   display: none;
 }
-div#header-image #logo {
+#logo {
   font-size: 1em;
   line-height: 75px;
   display: inline;
   margin-left: 1em;
   color: #2274A5;
 }
-div#header-image #logo strong {
+#logo strong {
   font-weight: bold;
 }
 /* ----------- End Header ----------- */
@@ -232,72 +253,73 @@ article.full-column {
 
 /* ----------- Item Detail Page ----------- */
 .img-overlay {
-	display: none;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	z-index: 90;
-	background-color:rgba(0, 0, 0, 0.5);
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 90;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .img-overlay-box {
-	position: absolute;
-	width: 90%;
-	height: auto;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 91;
-	box-shadow: 0 0 30px 0 rgba(0,0,0,50);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin-left: 0;
+  /* top, height and margin-top rendered dynamically via imageOverlay.js */
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 91;
+  background-color: black;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 50);
 }
 .img-overlay-btns {
-	font-weight: bold;
-	position: absolute;
-	line-height: 1.5em;
-	font-size: 1.5em;
-	border-radius: 0.75em;
-	width: 1.5em;
-	text-align: center;
-	background-color: #FEEA3B;
-	color: #2274A5;
-}
-.img-overlay-left div {
-	top: calc(50% - 0.75em);
-	left: -0.75em;
-}
-.img-overlay-right div {
-	top: calc(50% - 0.75em);
-	right: -0.75em;
-}
-.img-overlay-close {
-	z-index: 94;
-	top: -0.5em;
-	right: -0.5em;
-	cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  line-height: 1.5em;
+  font-size: 1.5em;
+  border-radius: 0.75em;
+  width: 1.5em;
+  text-align: center;
+  background-color: #FEEA3B;
+  color: #2274A5;
 }
 .img-overlay-left, .img-overlay-right {
-	position: absolute;
-	z-index: 93;
-	cursor: pointer;
-	top: 0;
-	height: 100%;
-	line-height: 100%;
+  width: 2em;
+  position: absolute;
+  z-index: 93;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
 }
 .img-overlay-left {
-	width: 50%;
-	left: 0;
+  left: 0;
 }
 .img-overlay-right {
-	width: 50%;
-	right: 0;
+  right: 0;
+}
+.img-overlay-left .img-overlay-btns {
+  top: 50%;
+  left: 0.25em;
+}
+.img-overlay-right .img-overlay-btns {
+  top: 50%;
+  right: 0.25em;
+}
+.img-overlay-close {
+  z-index: 94;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
+  position: fixed;
 }
 .img-overlay img {
-	display: none;
-	width: 100%;
+  display: none;
+  width: 100%;
 }
 .overlayLink {
-	cursor: pointer;
+  cursor: pointer;
 }
 .item-description ul {
   padding-left: 1.5em;
@@ -321,7 +343,7 @@ article.full-column {
 /* ----------- End Home Page ----------- */
 
 /* ----------- Resume Page ----------- */
-#resume #resume-full {
+#resume-full {
   padding-bottom: 4em;
 }
 #resume h3, #resume h4 {
@@ -346,7 +368,7 @@ article.full-column {
 #resume article ul li {
   list-style-type: disc;
 }
-#resume #download-link {
+#download-link {
   float: right;
 }
 /* ----------- End Resume Page ----------- */
@@ -402,7 +424,7 @@ body.thankyou #contact-form {
 #contact button:hover {
   color: #165478;
 }
-#contact button.submit {
+#contact .submit {
   font-weight: 700;
 }
 #contact blockquote {
@@ -467,38 +489,38 @@ body.thankyou #contact-form {
     left: 0;
     right: 0;
   }
-  nav#navigation, div#icon {
+  #navigation, #icon {
     height: 160px;
     width: 160px;
     margin: 0 1px;
   }
-  div#header-image {
+  #header-image {
     height: 160px;
     margin: 0 1px;
   }
-  nav#navigation {
+  #navigation {
     background: #FEEA3B;
     border-top: 1px solid white;
     flex-basis: 100%;
     order: 3;
     height: auto;
   }
-  nav#navigation.close {
+  #navigation.close {
     visibility: hidden;
   }
-  nav#navigation.open #nav-menu , nav#navigation.close #nav-menu {
+  #navigation.open #nav-menu , #navigation.close #nav-menu {
     left: auto;
   }
-  nav#navigation #navigationBtn {
+  #navigationBtn {
     display: none;
   }
-  nav#navigation #nav-menu {
+  #navigation #nav-menu {
     position: static;
     top: auto;
     height: auto;
     transition-duration: 0;
   }
-  nav#navigation #nav-menu > ul {
+  #navigation #nav-menu > ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -512,15 +534,15 @@ body.thankyou #contact-form {
     font-size: 1em;
     font-weight: normal;
   }
-  nav#navigation ul > li {
+  #navigation ul > li {
     border-bottom: none;
     margin: 0;
     padding: 0;
   }
-  nav#navigation ul > li:first-of-type {
+  #navigation ul > li:first-of-type {
     padding-left: 0.875em;
   }
-  nav#navigation a {
+  #navigation a {
     display: block;
     margin: 0.50em 0;
     padding: 0 0.875em;
@@ -528,17 +550,17 @@ body.thankyou #contact-form {
     color: inherit;
     transition-duration: 400ms;
   }
-  nav#navigation #nav-menu > ul > li > a {
+  #navigation #nav-menu > ul > li > a {
     border-right: 1px solid #2274A5;
   }
-  nav#navigation #nav-menu > ul > li:last-of-type > a {
+  #navigation #nav-menu > ul > li:last-of-type > a {
     border-right: 0;
   }
-  nav#navigation a:hover {
+  #navigation a:hover {
     color: #165478;
   }
     /* ----------- Drop Down Navigation ----------- */
-  nav#navigation ul li > ul {
+  #navigation ul li > ul {
     display: none;
     position: absolute;
     flex-direction: column;
@@ -546,13 +568,13 @@ body.thankyou #contact-form {
     margin-left: -0.875em;
     font-size: 0.75em;
   }
-  nav#navigation ul li > ul li {
+  #navigation ul li > ul li {
     border-right: none;
     margin: 0;
     padding: 0 1em;
     
   }
-  nav#navigation ul li:hover > ul {
+  #navigation ul li:hover > ul {
     display: flex;
   }
     /* ----------- End Drop Down Navigation ----------- */
@@ -579,7 +601,7 @@ body.thankyou #contact-form {
     transition-duration: 4s;
     opacity: 0;
   }
-  div#header-image #logo {
+  #header-image #logo {
     display: block;
     font-size: 1.875em;
     color: white;
@@ -658,7 +680,10 @@ body.thankyou #contact-form {
 
 /* ----------- Item Detail Page ----------- */
   .img-overlay-box {
+    position: absolute;
+    left: 50%;
     width: 70%;
+    margin-left: -35%;
   }
 /* ----------- End Item Detail Page ----------- */
 
@@ -690,16 +715,11 @@ body.thankyou #contact-form {
     width: auto;
     min-width: 20em;
   }
-  #contact .left-column input#subject {
+  #contact .left-column #subject {
     width: 100%;
   }
 /* ----------- End Contact Page ----------- */
 
-/* ----------- Global Footer ----------- */
-  footer#global-footer {
-
-  }
-/* ----------- End Global Footer ----------- */
 }
 /* ----------- End iPad Standard Portrait to Large Desktop displays ----------- */
 
