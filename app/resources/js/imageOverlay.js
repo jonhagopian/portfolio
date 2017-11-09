@@ -11,11 +11,11 @@ function overlay() {
 
   function imgRotate(currImg, listenerFired) {
     currImg.style.display = "block";
-    // on click we resize iframe to same height as its content
+    // on click we resize iframe to same height as its content and width same as container
     if (currImg.nodeName === "IFRAME") {
       var content = currImg.contentDocument || currImg.contentWindow.document;
-      console.log("content: " + content.body);
       currImg.style.height = content.body.scrollHeight + "px"; // get height of iframe content
+      content.body.style.width = oBox.offsetWidth + "px";
     }
     var imgHeight = currImg.scrollHeight;
     var winHeight = window.innerHeight;

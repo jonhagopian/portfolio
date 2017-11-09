@@ -12,15 +12,24 @@
       <article id="category-results" class="full-column">
         <h1><%= pageTitle %></h1>
         <section class="item-grid img-parallax">
-            <% if (items.length > 0) { %> 
-              <% for (i = 0; i < items.length; i++) { %>
-              <a href="/projects/<%= items[i].shortname %>">
-                <figure class="img-slide">
-                    <img data-src="<%= defaultResources %>/images/portfolio/<%= items[i].images[0][0] %>_tn<%= items[i].images[0][1] %>" alt="Image <%= i %>">
+            <% if (itemsAll.length > 0) { %> 
+              <% itemsAll.forEach(function(item) { %>
+              <a href="/projects/<%= item.shortname %>">
+                <% if(item.images[0][1] === ".html" || item.images[0][1] === ".js" || item.images[0][1] === ".css") { %>
+                <figure class="img-slide iframe">
+                  <div class="aspect-ratio">
+                    <iframe width="447" height="320" class="iframeSampleCode" src="<%= item.images[0][0] %><%= item.images[0][1] %>" scrolling="no"></iframe>
+                  </div>
+                  <div class="iframe-click"><!-- invisible click object to above iFrame --></div>
                 </figure>
-                <figcaption><%= items[i].title %></figcaption>
+                <% } else { %>
+                <figure class="img-slide">
+                  <img data-src="<%= defaultResources %>/images/portfolio/<%= item.images[0][0] %>_tn<%= item.images[0][1] %>" alt="Thumbnail Image">
+                </figure>
+                <% } %>
+                <figcaption><%= item.title %></figcaption>
               </a>
-              <% } %>
+              <% }); %>
             <% } %>
         </section>
       </article>

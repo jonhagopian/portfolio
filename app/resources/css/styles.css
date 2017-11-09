@@ -270,8 +270,8 @@ article.full-column {
 }
 .img-overlay-box {
   position: absolute;
-  left: 0;
-  width: 100%;
+  left: 5%;
+  width: 90%;
   margin-left: 0;
   /* top, height and margin-top rendered dynamically via imageOverlay.js */
   overflow-y: scroll;
@@ -710,6 +710,9 @@ body.thankyou #contact-form {
   .item-grid figure {
     border: 1px solid #BCBCBC;
   }
+  .item-grid .iframe {
+    background-color: #272922;
+  }
 /* ----------- End Item Grid Body Rows ----------- * /
 
 /* ----------- Item Detail Page ----------- */
@@ -718,6 +721,12 @@ body.thankyou #contact-form {
     left: 50%;
     width: 70%;
     margin-left: -35%;
+  }
+  .img-overlay-left {
+    left: 13%;
+  }
+  .img-overlay-right {
+    right: 13%;
   }
 /* ----------- End Item Detail Page ----------- */
 

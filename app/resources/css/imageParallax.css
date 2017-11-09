@@ -27,6 +27,9 @@
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
   position: relative;
 }
+.item-grid figure {
+  position: relative;
+}
 .img-parallax .aspect-ratio {
   width: 100%;
   padding-top: 75%; /* 4:3 Aspect Ratio */
@@ -42,10 +45,10 @@
 .img-parallax .iframe {
   background-color: #272922; 
 }
-.img-parallax .iframe-click {
+.iframe-click {
   position: absolute;
-  height: inherit;
-  width: inherit;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
   top: 0;
   left: 0;

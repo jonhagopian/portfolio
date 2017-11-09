@@ -127,7 +127,10 @@ function updateIframe() {
     // Use this solution below 'forEach' since iframeArr is a 'NodeLIst' type
     Array.prototype.forEach.call(iframeArr, elem => {
       var content = elem.contentDocument || elem.contentWindow.document;
-      content.body.setAttribute("style", "color: #a6e22c; padding: 2em; cursor: pointer;");
+      content.body.style.color = "#a6e22c";
+      content.body.style.padding = "2em"; 
+      content.body.style.cursor = "pointer";
+      content.body.style.boxSizing = "border-box"
     });
   }
 }

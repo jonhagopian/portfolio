@@ -85,9 +85,7 @@
         ["adlibrary03", ".jpg"],
         ["adlibrary04", ".jpg"],
         ["adlibrary05", ".jpg"],
-        ["adlibrary06", ".jpg"],
-        ["adlibrary07", ".jpg"]
-      ]
+        ["adlibrary06", ".jpg"]      ]
     },{
       "title" : "Android Pay",
       "shortname" : "android-pay",
