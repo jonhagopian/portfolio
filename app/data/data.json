@@ -36,50 +36,81 @@
       "title" : "People Shop Ecommerce Site",
       "shortname" : "peshop",
       "clientname" : "Time Inc.",
-      "description" : "<p>Time Inc. management decided to test the People brand potential to generate revenue from an e-commerce storefront selling products relating to the people theme and trends.</p><ul><li>I was tasked with the integration of HTML, CSS and JavaScript libraries into our e-commerce platform using velocity templating language.</li><li>All requested features of the site had to work properly when served from the backend.</li><li>In order to meet our hard go live date I broke down the most basic needs of the project and tackled them accordingly. I utilized our backend team and offshore developers to complete and test various components of the storefront.</li></ul><p>People Shop hit the target go live date fully tested and full featured. Marketing was extremely happy with the project from start to finish and our performance and demonstration of progress along the way via screen share kept them informed, satisfied and minimized stress.</p><p> I utilized my logic and reason to manage time and energy, making sure that the most critical components were completed and tested ahead of schedule. Other skills demonstrated were, leadership, adaptability, self awareness. Technical skills put to use were HTML, CSS, JavaScript, Velocity, jQuery, Flexible/Mobile Design, UX/UI and Photoshop.</p>",
-      "format" : ".png",
+      "date" : "2015 &mdash; 2016",
+      "description" : "<p>Time Inc. management decided to test the People brand potential to generate revenue from an e-commerce storefront. Products that were being sold related to the people theme and current celebrity trends. These products included accessories, jewelry, housewares and beauty products.</p><p>Tasks taken to complete this project are listed below:</p><ul><li>In order to meet the hard go live date I broke down the most basic needs of the project and tackled them accordingly.</li><li>The primary task was to integrate all requested features of the site and confirm proper operation when served to all browsers.</li><li>The core of my efforts included the integration of HTML, CSS and JavaScript libraries into our e-commerce platform using the velocity templating language. A large portion of time spent was scripting functionality of the product option and quantity selectors.</li><li>Content was optimized, including images, scripts and styles. Resources were served using Amazon cloudfront CDN.</li><li>I utilized our backend team and offshore developers to complete and test various components of the storefront.</li></ul><p>My efforts concluded when People Shop hit the target go live date fully tested and full featured. Marketing was extremely happy with the project from start to finish. Our performance and demonstration of progress along the way via screen share kept them informed, satisfied and minimized stress.</p><p>I utilized my logic and reason to manage time and energy, making sure that the most critical components were completed and tested ahead of schedule. Other skills demonstrated were, leadership, adaptability, self awareness. Technical skills put to use were HTML, CSS, JavaScript, Velocity, jQuery, Flexible/Mobile Design, UX/UI and Photoshop.</p>",
       "images" : [
-          "peshop-homepage2",
-          "peshop-catResultpage",
-          "peshop-homepage",
-          "peshop-productDetailPage",
-          "peshop-viewCartPage"
-        ]
+        ["peshop-homepage2", ".png"],
+        ["peshop-catResultpage", ".png"],
+        ["peshop-homepage", ".png"],
+        ["peshop-productDetailPage", ".png"],
+        ["peshop-viewCartPage", ".png"]
+      ]
     },{
-      "title" : "Project Two",
-      "shortname" : "project_two",
-      "clientname" : "Elephants",
-      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget, molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
+      "title" : "Apple Pay",
+      "shortname" : "Apple-Pay",
+      "clientname" : "Time Inc.",
+      "date" : "2016",
+      "description" : "<p>Upper management requested our group develop a way to include the new Apple Pay for Web on our magazine subscription order forms. Using an iOS device or Safari desktop browser coupled with fingerprint verification Apple Pay seamlessly processes the financial transaction and then sends the validated order to our fulfillment system. This would enable users to subscribe to our products quickly, thus improving the conversion rate.</p><p>General action items for this project are listed below:</p><ul>I was tasked with displaying the Apple Pay button and hiding current form elements should user have Apple Pay available.</li><li>It was necessary to develop the proper JavaScript, HTML and CSS for proper UI, UX and data handling.</li><li>We also had to validate form data as per our fulfillment requirements.</li><li>This was followed by passing this proper valid data between the Apple Pay API and our servers for fulfillment.</li><li>I worked closely with our backend and fulfillment teams while researching the Apple Pay API thus enabling me to successfully integrate Apple Pay on our forms on schedule.</li><li>At completion I had to simplify this code and create reusable library.</li></ul><p>We met our target go live date and I created documentation for the rest of our team on Apple Pay usage within our order forms. I co-developed our Apple Pay library for quick drop in on new and live order forms saving development time by nearly 90%.</p><p>We successfully met our target go live date. I created documentation for the rest of our team on Apple Pay usage within our order forms. I also co-developed our Apple Pay library for quick drop in on new and live order forms saving development time by nearly 90%.</p><p>During this project I demonstrated self awareness, focus, tenacity, eagerness to learn a new technology and project management skills. My technical knowledge utilizes was the following; JavaScript, HTML/CSS, Velocity and the poorly documented at the time ApplePay API.</p>",
+      "images" : [
+        ["applePay01", ".png"],
+        ["applePay02", ".png"],
+        ["applePay03", ".png"],
+        ["applePay04", ".png"],
+        ["applePay05", ".png"],
+        ["applePay06", ".png"],
+        ["applePay07", ".png"],
+        ["/images/portfolio/code-examples/tcmApplePay", ".js"],
+        ["/images/portfolio/code-examples/tcmApplePayTemplate", ".js"]
+     ]
+    },{
+      "title" : "Image Gallery Parallax Effect",
+      "shortname" : "image-parallax",
+      "clientname" : "Self",
+      "date" : "2017",
+      "description" : "<p>My goal was to create an image gallery scroll for this portfolio with an interesting visual parallax effect on the images.</p><p>The steps I took to complete this gallery are listed below:</p><ul><li>Using paper cutouts I determined what values a script would need to calculate the image position in relation to its parent's scroll location within the gallery container. This assisted me with developing the math and determining the reference points for animation on user scroll.</li><li>After this was roughed out I created a simple and reusable CSS and HTML structure for the test page.</li><li>I then began to develop the script gathering values and calculating element positions and locations referencing my rough-out listed above.</li><li>Once a functioning prototype was complete I shifted my efforts toward consolidating the HTML, CSS and Javascript for use as a library item. This condensed the logic and code by about 50%.</li></ul><p>This resulted in a site enhancement which I developed from scratch that also serves to demonstrate skill and creativity. The feature animates quickly, works on both mobile and desktop and on either the X or Y axis.</p><p>This project utilized my knowledge of HTML, CSS, JavaScript, Photoshop and creative UI enhancement.</p>",
+      "images" : [
+        ["imgparallax01", ".jpg"],
+        ["/js/imageParallax", ".js"]
+      ]
+    },{
+      "title" : "Banner Ad JavaScript Library",
+      "shortname" : "ad-library",
+      "clientname" : "Time Inc.",
+      "date" : "2016",
+      "description" : "<p>I tasked myself with the development of a single JavaScript file that would enable developers to quickly deploy new banner AD creative to our ad serving system. This was for use on all brands across Time Inc. We had been facing major problems with display issues, inconsistent and inefficient development times, and messy duplication of code.</p><p>Below is a general outline of the tasks taken during development:</p><ul><li>To begin I combined updated original functions from current examples and developed new code that would expose touts on the parent page from within an iframe. This would also have the same results if served without use of an iFrame.</li><li>I then re-evaluated all functions and streamlined into a singe JavaScript object.</li><li>Testing on existing ads that had bug as well as on new creatives was the final step.</li></ul><p>My efforts enabled our offshore team to cut new ad script development time by 80%. The library enabled quick updates across the board and was easy for new developers to pickup and utilize successfully.</p><p>Skills employed were JavaScript, Tracking, Cross Browser testing. I also trained resources on the use of this library.</p>",
+      "images" : [
+        ["/images/portfolio/code-examples/toutLibrary", ".js"],
+        ["adlibrary01", ".jpg"],
+        ["adlibrary02", ".jpg"],
+        ["adlibrary03", ".jpg"],
+        ["adlibrary04", ".jpg"],
+        ["adlibrary05", ".jpg"],
+        ["adlibrary06", ".jpg"],
+        ["adlibrary07", ".jpg"]
+      ]
+    },{
+      "title" : "Android Pay",
+      "shortname" : "android-pay",
+      "clientname" : "Time Inc.",
+      "date" : "2016 &mdash; 2017",
+      "description" : "<p>Following the successful deployment of Apple Pay on our order forms the company shifted focus to Android. I was tasked with developing a way to utilize Android Pay on our templated and non templated subscription order forms. This would enable users to subscribe to our products using an android device and Android Pay payment method. A secondary task was to enable Google Optimize and have this technology deploy Android Pay dynamically for testing variations.</p><p>Task list:</p><ul><li>Step one, learn the Android Pay API quickly and begin to implement the elements on a test form, this gave us a visual starting point.</li><li>Next I used the Android Pay API to request user data for form field population.</li><li>I then worked with back-end team to integrate transaction connections (Chase Paymentech.)</li><li>This was followed by testing fulfillment for successfully placed valid test orders.</li><li>I then converted and streamlined all code into a reusable library for all order forms.</li></ul><p>The result was a library that was utilized to deploy Android Pay to all of our templated and non-templated order forms, as well as through Google Optimize. Marketing saw a 1-2% order increase on forms tested. The library also enabled quick development of forms requiring this feature.</p><p>Skills: HTML, CSS, JavaScript, Velocity, Android Pay API. Collaboration and project management.</p>",
       "format" : ".jpg",
-      "images" : ["image_06", "image_07", "image_08", "image_09", "image_10"]
-    },{
-      "title" : "Project Three",
-      "shortname" : "project_three",
-      "clientname" : "Martians",
-      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget, molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
-      "format" : ".jpg",
-      "images" : ["image_11", "image_12", "image_13", "image_14"]
-    },{
-      "title" : "Project Four",
-      "shortname" : "project_four",
-      "clientname" : "Monkeys",
-      "description" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget, molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
-        "format" : ".jpg",
-      "images" : ["image_15", "image_16", "image_17", "image_18", "image_19"]
-    },{
-      "title" : "Project Five",
-      "shortname" : "project_five",
-      "clientname" : "Silly Basteds",
-      "description" : "<p>Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p>Duis pharetra sed leo a malesuada. Aliquam in ultrices lacus, in tincidunt metus. Ut sit amet erat placerat, vulputate nunc eget,nsectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
-      "format" : ".jpg",
-      "images" : ["image_03", "image_08", "image_15", "image_18", "image_09"]
+      "images" : [
+        ["androidPay01", ".jpg"],
+        ["androidPay02", ".jpg"],
+        ["/images/portfolio/code-examples/tcmAndroidPay-nontemplate", ".js"],
+        ["/images/portfolio/code-examples/tcmAndroidPayTemplate", ".js"]
+      ]
     },{
       "title" : "Project Six",
       "shortname" : "project_Six",
       "clientname" : "Jerks",
+      "date" : "2015 &mdash; 2016",
       "description" : "<p>Nunc neque ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p> molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
-      "format" : ".jpg",
-      "images" : ["image_16", "image_12", "image_17", "image_15", "image_14"]
+      "images" : [
+        ["asdf333", ".jpg"],
+        ["sdfeee33", ".jpg"]
+      ]
     }
   ]
 }

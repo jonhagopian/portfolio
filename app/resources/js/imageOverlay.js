@@ -1,7 +1,7 @@
 function overlay() {
   var oBox = document.querySelector(".img-overlay-box");
   var overlay = document.querySelector(".img-overlay");
-  var allImgs = document.querySelectorAll(".img-overlay-box img");
+  var allImgs = document.querySelectorAll(".img-overlay-box img, .img-overlay-box iframe");
   var allLinks = document.querySelectorAll(".overlayLink");
   var closeBtn = document.querySelector(".img-overlay-close");
   var leftNav = document.querySelector(".img-overlay-left");
@@ -9,8 +9,14 @@ function overlay() {
   var counter = 0;
   var lastImg;
 
-  function swapimgVcenter(currImg, listenerFired) {
-    currImg.setAttribute("style", "display: block;");
+  function imgRotate(currImg, listenerFired) {
+    currImg.style.display = "block";
+    // on click we resize iframe to same height as its content
+    if (currImg.nodeName === "IFRAME") {
+      var content = currImg.contentDocument || currImg.contentWindow.document;
+      console.log("content: " + content.body);
+      currImg.style.height = content.body.scrollHeight + "px"; // get height of iframe content
+    }
     var imgHeight = currImg.scrollHeight;
     var winHeight = window.innerHeight;
     var marTop = 0;
@@ -25,13 +31,13 @@ function overlay() {
       marTop = -imgHeight/2;
       scrollHeight = imgHeight;
     }
-    oBox.setAttribute("style", "top: " + top + "; height: " + scrollHeight + "px; margin-top: " + marTop + "px;");
+    oBox.style.top = top;
+    oBox.style.height = scrollHeight + "px";
+    oBox.style.marginTop = marTop + "px";
     if(!listenerFired) {
       lastImg = currImg;
       resizeListener();
-      console.log("resized and No Listener Fired");
     }
-    console.log("resized");
   }
 
   // We need event listeners in blocks so we can use removeEventListener
@@ -39,12 +45,12 @@ function overlay() {
     var oresizeDone;
     clearTimeout(oresizeDone);
     oresizeDone = setTimeout(function() {
-      swapimgVcenter(lastImg, true);
+      imgRotate(lastImg, true);
     }, 66);
   }
 
   function _forEventListenerOchange() {
-    swapimgVcenter(lastImg, true);
+    imgRotate(lastImg, true);
   }
 
   function resizeListener() {
@@ -57,7 +63,7 @@ function overlay() {
   function closeOverlay() {
     overlay.style.display = "";
     allImgs.forEach(function(img) {
-      img.removeAttribute("style");
+      img.style.display = "none";
     });
   }
   closeBtn.addEventListener("click", closeOverlay);
@@ -66,16 +72,16 @@ function overlay() {
     event.stopPropagation();
   });
   rightNav.addEventListener("click", function(event) {
-      allImgs[counter].removeAttribute("style");
+      allImgs[counter].style.display = "none";
       counter ++;
-      swapimgVcenter(allImgs[counter]);
+      imgRotate(allImgs[counter]);
       checkBtns("right");
       event.stopPropagation();
   });
   leftNav.addEventListener("click", function(event) {
-      allImgs[counter].removeAttribute("style");
+      allImgs[counter].style.display = "none";
       counter --;
-      swapimgVcenter(allImgs[counter]);
+      imgRotate(allImgs[counter]);
       checkBtns("left");
       event.stopPropagation();
   });
@@ -96,9 +102,9 @@ function overlay() {
   allLinks.forEach(function(links, index){
     let currImg = allImgs[index];
     let loc = index; // let since we want the value of loc to stay within for as written
-    links.addEventListener("click", function() {
+    links.addEventListener("click", function(e) {
       overlay.style.display = "block";
-      swapimgVcenter(currImg);
+      imgRotate(currImg);
       counter = loc;
       if(counter === 0) {
         leftNav.style.display = "none";
@@ -115,7 +121,7 @@ function overlay() {
   checkBtns("start");
 }// EOF
 
-// Init Ovelay Images
+// Init Overlay Images
 window.addEventListener("load", function() {
   overlay();
 });

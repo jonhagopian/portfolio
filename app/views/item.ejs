@@ -11,9 +11,14 @@
     <% include includes/template/header.ejs %>
     <main>
       <% itemAll.forEach(function(item) { %>
+      <!-- item.shortname -->
       <article id="project-description" class="left-column">
-        <h1><%= item.title %></h1>
+        <h1 class="underline"><%= item.title %></h1>
         <section class="item-description">
+          <div class="item-subhead">
+            <div class="item-client">Client: <%= item.clientname %></div>
+            <div class="item-date"><%- item.date %></div>
+          </div>
           <p>
             <%- item.description %>
           </p>
@@ -22,16 +27,31 @@
       <article id="images" class="right-column">
         <div class="img-parallax">
           <% item.images.forEach(function(subitem) { %>
-          <figure class="img-slide overlayLink">
-            <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem %>_tn<%= item.format %>">
+            <% if(subitem[1] === ".html" || subitem[1] === ".js" || subitem[1] === ".css") { %>
+          <figure class="img-slide overlayLink iframe">
+            <div class="aspect-ratio">
+              <iframe width="447" height="320" class="iframeSampleCode" src="<%= subitem[0] %><%= subitem[1] %>" scrolling="no"></iframe>
+            </div>
+            <div class="iframe-click"><!-- invisible click object to above iFrame --></div>
           </figure>
+            <% } else { %>
+          <figure class="img-slide overlayLink">
+            <div class="aspect-ratio">
+            <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem[0] %>_tn<%= subitem[1] %>">
+          </div>
+          </figure>
+            <% } %>
           <% }); %>
         </div>
       </article>
       <div class="img-overlay">
         <div class="img-overlay-box">
           <% item.images.forEach(function(subitem) { %>
-          <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem %><%- item.format %>">
+            <% if(subitem[1] === ".html" || subitem[1] === ".js" || subitem[1] === ".css") { %>
+          <iframe class="iframeSampleCode" src="<%= subitem[0] %><%= subitem[1] %>" scrolling="yes"></iframe> 
+            <% } else { %>
+          <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem[0] %><%= subitem[1] %>">
+            <% } %>
           <% }); %>
           <div class="img-overlay-left">
             <div class="img-overlay-btns"><!-- left navigate -->&#10092;</div>

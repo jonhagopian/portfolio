@@ -44,7 +44,7 @@ function imageSlider(firstRun) {
     window.addEventListener("orientationchange", imageSlider);
   }
 
-  // category results page on desktop remove class img-parallax
+  // Remove class img-parallax on category page for desktop 
   var mq = window.matchMedia("(min-width: 767px)");
   var page = document.body.id;
   if (mq.matches && page === "item-grid") {
@@ -59,12 +59,12 @@ function imageSlider(firstRun) {
     });
   }
 
-  var allSliders = document.querySelectorAll(".img-parallax");
+  var allGalleries = document.querySelectorAll(".img-parallax");
   // forEach individual gallery element
-  allSliders.forEach(function(sBox) {
+  allGalleries.forEach(function(sBox) {
     let box = sBox; // let so values aren't overwritten
     let sArr = box.querySelectorAll("figure");
-    let sImgArr = box.querySelectorAll("figure img");
+    let sImgArr = box.querySelectorAll("figure img, figure iframe"); // iframe is for sample code
     // Clear out transform on resize
     sImgArr.forEach(function(sImg, index) {
       sImg.removeAttribute("style");
@@ -119,8 +119,22 @@ function imageSlider(firstRun) {
     });
   }); // End forEach
 } //EOF
+
+// Add CSS style to iframe which contains sample code file
+function updateIframe() {
+  var iframeArr = document.getElementsByClassName("iframeSampleCode");
+  if (iframeArr.length > -1) {
+    // Use this solution below 'forEach' since iframeArr is a 'NodeLIst' type
+    Array.prototype.forEach.call(iframeArr, elem => {
+      var content = elem.contentDocument || elem.contentWindow.document;
+      content.body.setAttribute("style", "color: #a6e22c; padding: 2em; cursor: pointer;");
+    });
+  }
+}
+
 window.addEventListener("load", function() {
   if(document.querySelector(".img-parallax") !== null) {
     imageSlider(true);
+    updateIframe();
   }
 });

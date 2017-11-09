@@ -2,14 +2,16 @@
 /* Image Slider Mobile */
 .img-parallax {
   width: 100%;
-  overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
   padding: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   margin-left: auto;
   margin-right: auto;
+  padding: 1em 0 1em 1em;
+  margin-bottom: 2em;
 }
 .img-parallax::-webkit-scrollbar {
   display: none;
@@ -19,21 +21,34 @@
 }
 .img-parallax figure {
   width: calc(66.6% - 1em);
-  height: auto;
   margin-right: 1em;
-  border-radius: 1em;
   overflow: hidden;
   flex: 0 0 auto;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  position: relative;
 }
-.img-parallax figure img {
-  /* negative margin matches width amount over 100% / 2 */
-  width: 128%;
-  margin-left: -14%;
+.img-parallax .aspect-ratio {
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio */
 }
-.img-parallax {
-  padding: 2em 0 2em 1em;
-  margin-bottom: 2em;
-  background-color: #F2F2F2;
+.img-parallax figure img, .img-parallax figure iframe {
+  /* negative stretch child larger then parent for parallax effect */
+  position: absolute;
+  top: -14%;
+  left: -14%;
+  bottom: -14%;
+  right: -14%;
+}
+.img-parallax .iframe {
+  background-color: #272922; 
+}
+.img-parallax .iframe-click {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  cursor: pointer;
+  top: 0;
+  left: 0;
 }
 #item-grid .img-parallax {
   background-color: unset;
@@ -57,6 +72,9 @@
   border-radius: 0;
   border: 1px solid #BCBCBC;
 }
+#category-results .img-parallax figcaption {
+  margin-bottom: 2em;
+}
 #category-results .img-parallax figure img {
   transition: all 200ms;
 }
@@ -67,11 +85,11 @@
 /* Begin Image Slider Desktop */
 @media only screen and (min-width: 767px) {
   .img-parallax {
+    overflow-x: visible;
     overflow-y: scroll;
     height: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: #f2f2f2;
     padding: 1em;
   }
   .img-parallax::-webkit-scrollbar {
@@ -83,7 +101,6 @@
     margin-right: 0;
     margin-bottom: 1em;
     flex: 0 0 auto;
-    border-radius: 1em;
   }
   .img-parallax figure img {
     /* Height calc via JS */
