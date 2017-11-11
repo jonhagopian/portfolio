@@ -9,6 +9,7 @@ app.set("port", process.env.PORT || 3000)
 app.set("appData", dataFile)
 app.set("view engine", "ejs");
 app.set("views", "app/views");
+app.set("json spaces", 2); // pretty print
 
 app.use(express.static('app/resources'));
 

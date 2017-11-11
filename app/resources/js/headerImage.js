@@ -1,9 +1,10 @@
 /*
-  Swaps banner images at timed intervals, when all loaded then choosing at random.
-  *batching reflows by browsers causes animation not to work on newly created elements, accessign offsetWidth triggers reflow and fixes this. Shuffle feature: random ordering of header images on each page visit/load.
+  Swaps banner images at timed intervals on page load.
+  ¡Batching reflows by browsers causes animation not to work on newly created elements, accessing offsetWidth triggers reflow and fixes this!
+  Shuffle feature: random ordering of header images on each page visit/load.
 */
 var imageBnrBox;
-//Fisher-Yates shuffle
+// Fisher-Yates shuffle
 function shuffle(array) {
   var i = 0, j = 0, temp = null;
   for (i = array.length - 1; i > 0; i -= 1) {
@@ -13,7 +14,7 @@ function shuffle(array) {
     array[j] = temp
   }
   return array;
-}//EOF
+} //EOF
 var shflImgArray = shuffle(hdrImgArr);
 function runHdrImg() {
   var imgElem = imageBnrBox.querySelectorAll("img");
@@ -21,7 +22,7 @@ function runHdrImg() {
       img.style.opacity = 0;
     });
     imgElem[Math.floor(Math.random() * imgElem.length)].style.opacity = 1;
-}//EOF
+} //EOF
 function loadHdrImgs() {
   var i = 0;
   function rotate() {
@@ -43,7 +44,7 @@ function loadHdrImgs() {
     timeOut = setTimeout(rotate, 20000);
   }
   rotate();
-}//EOF
+} //EOF
 window.addEventListener("load", function() {
   imageBnrBox = document.getElementById("header-image");
   loadHdrImgs();

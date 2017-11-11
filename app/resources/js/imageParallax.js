@@ -1,5 +1,7 @@
-function imageSlider(firstRun) {
+/* This gallery with parallax effect can support the following: Images and Iframes. This effect will work on both X & Y axis */
 
+function imageSlider(firstRun) {
+  // Animate a Y axis parallax effect
   function syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag) {
     if (flag === "full") {
       var scrPos = document.body.scrollTop;
@@ -19,6 +21,7 @@ function imageSlider(firstRun) {
     });
   } //EOF
 
+  // Animate an X axis parallax effect
   function sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr) {
     var scrPos = box.scrollLeft;
     // forEach individual image slide
@@ -32,7 +35,8 @@ function imageSlider(firstRun) {
     });
   } //EOF
 
-  // Begin base function
+  // Begin core script portion
+  // Only on first run is resize/orientation change listener set, if user resize gallery will adjust
   if (firstRun === true) {
     var resizeDone;
     window.addEventListener("resize", function() {
@@ -44,7 +48,7 @@ function imageSlider(firstRun) {
     window.addEventListener("orientationchange", imageSlider);
   }
 
-  // Remove class img-parallax on category page for desktop 
+  // Remove class img-parallax on category page for desktop and add if mobile
   var mq = window.matchMedia("(min-width: 767px)");
   var page = document.body.id;
   if (mq.matches && page === "item-grid") {

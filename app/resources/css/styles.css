@@ -514,7 +514,7 @@ body.thankyou #contact-form {
 
 
 
-/* ----------- iPad Standard Portrait to Large Desktop displays ----------- */
+/* ----------- iPad Portrait to Large Desktop displays ----------- */
 @media only screen and (min-width: 767px) {
 /* ----------- Header ----------- */
   header {
@@ -592,7 +592,7 @@ body.thankyou #contact-form {
   #navigation a:hover {
     color: #165478;
   }
-    /* ----------- Drop Down Navigation ----------- */
+  /* Drop Down Navigation */
   #navigation ul li > ul {
     display: none;
     position: absolute;
@@ -610,7 +610,7 @@ body.thankyou #contact-form {
   #navigation ul li:hover > ul {
     display: flex;
   }
-    /* ----------- End Drop Down Navigation ----------- */
+  /* End Drop Down Navigation */
   #header-image {
     background-color: #2274A5;
   }
@@ -645,7 +645,6 @@ body.thankyou #contact-form {
     margin-left: 0;
     z-index: 3;
   }
-
 /* ----------- End Header ----------- */
 
 /* ----------- Main Body Columns ----------- */
@@ -700,7 +699,6 @@ body.thankyou #contact-form {
   }
   .item-grid figure img {
     width: auto;
-
   }
   .item-grid figcaption {
     font-size: 0.875em;
@@ -765,20 +763,20 @@ body.thankyou #contact-form {
 /* ----------- End Contact Page ----------- */
 
 }
-/* ----------- End iPad Standard Portrait to Large Desktop displays ----------- */
+/* ----------- End iPad Portrait to Large Desktop displays ----------- */
 
 
 
 
 /* ----------- Miscellaneous Styling ----------- */
 
-/* ----------- If screen is too big for header image ----------- */
+/* ----------- If screen is too BIG for header image ----------- */
 @media only screen and (min-width: 1440px) {
   #header-image img, #header-image div.overlay {
     height: auto;
     width: 100%;
   }
 }
-/* ----------- End If screen is too big for header image ----------- */
+/* ----------- End If screen is too BIG for header image ----------- */
 
 /* ----------- End Miscellaneous Styling ----------- */

@@ -1,5 +1,5 @@
-/* ----------- Image Slider ----------- */
-/* Image Slider Mobile */
+/* ----------- Image Gallery ----------- */
+/* Mobile */
 .img-parallax {
   width: 100%;
   -webkit-overflow-scrolling: touch;
@@ -60,9 +60,7 @@
   margin: 0.25em 1em 1em 0;
   text-align: right;
 }
-
-/* Image Slider Full Height Mobile Column */
-
+/* Full Height Mobile Column */
 #category-results .img-parallax {
   height: auto;
   flex-direction: column;
@@ -81,11 +79,10 @@
 #category-results .img-parallax figure img {
   transition: all 200ms;
 }
-/* End Image Slider Full Height Mobile Column */
-
+/* End Full Height Mobile Column */
 /* End Image Slider Mobile */
 
-/* Begin Image Slider Desktop */
+/* Begin Desktop */
 @media only screen and (min-width: 767px) {
   .img-parallax {
     overflow-x: visible;
@@ -109,7 +106,5 @@
     /* Height calc via JS */
   }
 }
-/* End  Image Slider Desktop */
-
-
-/* ----------- End Image Slider ----------- */
+/* End Desktop */
+/* ----------- End Image Gallery ----------- */
