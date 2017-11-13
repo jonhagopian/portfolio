@@ -4,7 +4,6 @@
   width: 100%;
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
-  padding: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -37,10 +36,10 @@
 .img-parallax figure img, .img-parallax figure iframe {
   /* negative stretch child larger then parent for parallax effect */
   position: absolute;
-  top: -14%;
+  width: 128%;
+  height: 128%;
+  top: 0%;
   left: -14%;
-  bottom: -14%;
-  right: -14%;
 }
 .img-parallax .iframe {
   background-color: #272922; 
@@ -90,7 +89,7 @@
     height: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 1em;
+    padding: 1em 3em;
   }
   .img-parallax::-webkit-scrollbar {
     display: none;
@@ -99,7 +98,7 @@
     width: 100%;
     height: auto;
     margin-right: 0;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     flex: 0 0 auto;
   }
   .img-parallax figure img {
