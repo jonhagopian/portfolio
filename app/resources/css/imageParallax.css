@@ -1,9 +1,10 @@
-/* ----------- Image Gallery ----------- */
-/* Mobile */
+/* ------------------------------------------------------------ *\
+  Mobile
+\* ------------------------------------------------------------ */
+
 .img-parallax {
   width: 100%;
   -webkit-overflow-scrolling: touch;
-  overflow-x: scroll;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -11,6 +12,7 @@
   margin-right: auto;
   padding: 1em 0 1em 1em;
   margin-bottom: 2em;
+  overflow-x: scroll;
 }
 .img-parallax::-webkit-scrollbar {
   display: none;
@@ -59,7 +61,7 @@
   margin: 0.25em 1em 1em 0;
   text-align: right;
 }
-/* Full Height Mobile Column */
+/* ----------- End Full Height Mobile Column ----------- */
 #category-results .img-parallax {
   height: auto;
   flex-direction: column;
@@ -78,18 +80,24 @@
 #category-results .img-parallax figure img {
   transition: all 200ms;
 }
-/* End Full Height Mobile Column */
-/* End Image Slider Mobile */
+/* ----------- End End Full Height Mobile Column ----------- */
 
-/* Begin Desktop */
+/* ------------------------------------------------------------ *\
+  End Mobile
+\* ------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------ *\
+  Begin Desktop
+\* ------------------------------------------------------------ */
+
 @media only screen and (min-width: 767px) {
   .img-parallax {
+    height: 100%;
     overflow-x: visible;
     overflow-y: scroll;
-    height: 100%;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 1em 3em;
+    padding: 3em;
   }
   .img-parallax::-webkit-scrollbar {
     display: none;
@@ -105,5 +113,7 @@
     /* Height calc via JS */
   }
 }
-/* End Desktop */
-/* ----------- End Image Gallery ----------- */
+
+/* ------------------------------------------------------------ *\
+  End Begin Desktop
+\* ------------------------------------------------------------ */

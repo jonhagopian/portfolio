@@ -52,13 +52,13 @@
       "date" : "2016",
       "description" : "<p>Upper management requested our group develop a way to include the new Apple Pay for Web on our magazine subscription order forms. Using an iOS device or Safari desktop browser coupled with fingerprint verification Apple Pay seamlessly processes the financial transaction and then sends the validated order to our fulfillment system. This would enable users to subscribe to our products quickly, thus improving the conversion rate.</p><p>General action items for this project are listed below:</p><ul>I was tasked with displaying the Apple Pay button and hiding current form elements should user have Apple Pay available.</li><li>It was necessary to develop the proper JavaScript, HTML and CSS for proper UI, UX and data handling.</li><li>We also had to validate form data as per our fulfillment requirements.</li><li>This was followed by passing this proper valid data between the Apple Pay API and our servers for fulfillment.</li><li>I worked closely with our backend and fulfillment teams while researching the Apple Pay API thus enabling me to successfully integrate Apple Pay on our forms on schedule.</li><li>At completion I had to simplify this code and create reusable library.</li></ul><p>We met our target go live date and I created documentation for the rest of our team on Apple Pay usage within our order forms. I co-developed our Apple Pay library for quick drop in on new and live order forms saving development time by nearly 90%.</p><p>We successfully met our target go live date. I created documentation for the rest of our team on Apple Pay usage within our order forms. I also co-developed our Apple Pay library for quick drop in on new and live order forms saving development time by nearly 90%.</p><p>During this project I demonstrated self awareness, focus, tenacity, eagerness to learn a new technology and project management skills. My technical knowledge utilizes was the following; JavaScript, HTML/CSS, Velocity and the poorly documented at the time ApplePay API.</p>",
       "images" : [
+        ["applePay00", ".jpg"],
         ["applePay01", ".png"],
         ["applePay02", ".png"],
         ["applePay03", ".png"],
         ["applePay04", ".png"],
         ["applePay05", ".png"],
         ["applePay06", ".png"],
-        ["applePay07", ".png"],
         ["/images/portfolio/code-examples/tcmApplePay", ".js"],
         ["/images/portfolio/code-examples/tcmApplePayTemplate", ".js"]
      ]
@@ -92,7 +92,6 @@
       "clientname" : "Time Inc.",
       "date" : "2016 &mdash; 2017",
       "description" : "<p>Following the successful deployment of Apple Pay on our order forms the company shifted focus to Android. I was tasked with developing a way to utilize Android Pay on our templated and non templated subscription order forms. This would enable users to subscribe to our products using an android device and Android Pay payment method. A secondary task was to enable Google Optimize and have this technology deploy Android Pay dynamically for testing variations.</p><p>Task list:</p><ul><li>Step one, learn the Android Pay API quickly and begin to implement the elements on a test form, this gave us a visual starting point.</li><li>Next I used the Android Pay API to request user data for form field population.</li><li>I then worked with back-end team to integrate transaction connections (Chase Paymentech.)</li><li>This was followed by testing fulfillment for successfully placed valid test orders.</li><li>I then converted and streamlined all code into a reusable library for all order forms.</li></ul><p>The result was a library that was utilized to deploy Android Pay to all of our templated and non-templated order forms, as well as through Google Optimize. Marketing saw a 1-2% order increase on forms tested. The library also enabled quick development of forms requiring this feature.</p><p>Skills: HTML, CSS, JavaScript, Velocity, Android Pay API. Collaboration and project management.</p>",
-      "format" : ".jpg",
       "images" : [
         ["androidPay01", ".jpg"],
         ["androidPay02", ".jpg"],
@@ -100,14 +99,14 @@
         ["/images/portfolio/code-examples/tcmAndroidPayTemplate", ".js"]
       ]
     },{
-      "title" : "Project Six",
-      "shortname" : "project_Six",
-      "clientname" : "Jerks",
-      "date" : "2015 &mdash; 2016",
-      "description" : "<p>Nunc neque ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim libero magna, eu lacinia velit maximus non. Donec malesuada laoreet augue at malesuada. Nunc blandit ultricies libero eu malesuada. Suspendisse accumsan viverra feugiat. In hendrerit nunc ligula, ac sodales nisl aliquet a. Pellentesque sed orci venenatis, feugiat enim nec, rhoncus ligula. Vivamus congue venenatis suscipit. Donec eget efficitur ante. Vestibulum porttitor, sem quis malesuada blandit, sapien orci euismod lorem, eget efficitur dolor odio sed odio. Vivamus rutrum vestibulum iaculis. Nunc neque ipsum, ultrices a elit sed, lacinia pretium mauris. Ut posuere tortor vitae sapien accumsan gravida. Aenean id odio mauris. Nunc faucibus id odio at faucibus. Etiam consectetur rhoncus libero, et rhoncus est placerat luctus. Fusce tempus lacinia fermentum.</p>\n<p> molestie mauris. Fusce quam urna, venenatis vitae aliquet eget, bibendum nec diam. Donec lacus augue, dictum pellentesque consectetur lobortis, mollis quis felis. Ut ut massa vel nisl egestas aliquam eu ut augue. Etiam elementum, mauris congue fringilla porta, risus nisi bibendum sem, a venenatis orci ligula in ipsum.</p>",
+      "title" : "Google Maps Autofill",
+      "shortname" : "google-maps-autofill",
+      "clientname" : "Time Inc.",
+      "date" : "2016",
+      "description" : "<p>People Magazine marketing decided to test the Google Maps user address autofill on their subscription order forms. The goal was to create a less demanding user checkout and track this increase in conversions.</p><ul><li>I began by researching the Google Maps autofill API and created a simple form to test my understanding of its features and functionality.</li><li>Using JavaScript I wrote up code and created an include file.</li><li>This include file was tested on multiple order forms on various browsers and devices by our team followed by our offshore team.</li></ul><p>I finished the development on time handing over a simple and effective script. This module could be dropped into all our forms without any modifications to either script or form HTML. Using Google Optimize the marketing department was able to split test the autofill feature which I created quickly and on their own, saving time and costs.</p><p>Skills utilized: HTML, CSS, JavaScript. Project Management and training of resources.</p>",
       "images" : [
-        ["asdf333", ".jpg"],
-        ["sdfeee33", ".jpg"]
+        ["googlemaps01", ".jpg"],
+        ["/images/portfolio/code-examples/tcmGoogleAutofill", ".js"]
       ]
     }
   ]

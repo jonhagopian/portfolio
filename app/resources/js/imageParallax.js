@@ -36,13 +36,14 @@ function imageSlider(firstRun) {
   } //EOF
 
   // Begin core script portion
-  // Only on first run is resize/orientation change listener set, if user resize gallery will adjust
+  // Only first run resize/orientation listener set, if user resizes window gallery will adjust
   if (firstRun === true) {
     var resizeDone;
     window.addEventListener("resize", function() {
       clearTimeout(resizeDone);
       resizeDone = setTimeout(function() {
         imageSlider();
+        rightColHeight(); // see main.js
       }, 66);
     });
     window.addEventListener("orientationchange", imageSlider);
@@ -52,23 +53,23 @@ function imageSlider(firstRun) {
   var mq = window.matchMedia("(min-width: 767px)");
   var page = document.body.id;
   if (mq.matches && page === "item-grid") {
-    var elem = document.querySelectorAll(".img-parallax");
+    var elem = [].slice.call(document.querySelectorAll(".img-parallax"));
     elem.forEach(function(e) {
       removeClass(e,"img-parallax");
     });
   } else {
-    var elem = document.querySelectorAll(".item-grid");
+    var elem = [].slice.call(document.querySelectorAll(".item-grid"));
     elem.forEach(function(e) {
       e.className = e.className += " img-parallax";
     });
   }
 
-  var allGalleries = document.querySelectorAll(".img-parallax");
+  var allGalleries = [].slice.call(document.querySelectorAll(".img-parallax"));
   // forEach individual gallery element
   allGalleries.forEach(function(sBox) {
     let box = sBox; // let so values aren't overwritten
-    let sArr = box.querySelectorAll("figure");
-    let sImgArr = box.querySelectorAll("figure img, figure iframe"); // iframe is for sample code
+    let sArr = [].slice.call(box.querySelectorAll("figure"));
+    let sImgArr = [].slice.call(box.querySelectorAll("figure img, figure iframe")); // iframe is for sample code
     // Clear out transform on resize
     sImgArr.forEach(function(sImg, index) {
       sImg.removeAttribute("style");
@@ -129,13 +130,13 @@ function updateIframe() {
   var iframeArr = document.getElementsByClassName("iframeSampleCode");
   if (iframeArr.length > -1) {
     // Use this solution below 'forEach' since iframeArr is a 'NodeLIst' type
-    Array.prototype.forEach.call(iframeArr, elem => {
+    Array.prototype.forEach.call(iframeArr, function (elem) {
       var content = elem.contentDocument || elem.contentWindow.document;
       content.body.style.color = "#a6e22c";
-      content.body.style.padding = "2em"; 
+      content.body.style.padding = "2em";
       content.body.style.cursor = "pointer";
-      content.body.style.boxSizing = "border-box"
-    });
+      content.body.style.boxSizing = "border-box";
+});
   }
 }
 

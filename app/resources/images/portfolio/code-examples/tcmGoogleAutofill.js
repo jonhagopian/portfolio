@@ -1,0 +1,92 @@
+var placeSearch, autocomplete;
+var componentForm = {
+  locality: 'long_name',
+  street_number: 'short_name',
+  route: 'long_name',
+  administrative_area_level_1: 'short_name',
+  postal_code: 'short_name'
+};
+
+// Time Inc Added
+var componentResolver = {
+  locality: 'billingAddress.city',
+  street_number: 'billingAddress.streetNumber',
+  route: 'billingAddress.street1',
+  administrative_area_level_1: 'billingAddress.subCountry',
+  postal_code: 'billingAddress.zipPostalCode'
+}
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('billingAddress.street1')),
+      {types: ['geocode']});
+
+  /*
+    Time Inc. Set contry codes to Bias results? Which ones, US, CAN, PR, GU ....
+
+            var autocomplete = new google.maps.places.Autocomplete(input);
+
+  // Set initial restrict to the greater list of countries.
+  autocomplete.setComponentRestrictions(
+      {'country': ['us', 'pr', 'vi', 'gu', 'mp']});
+
+
+  */
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress() {
+  // Get the place details from the autocomplete object.
+  var place = autocomplete.getPlace();
+
+  for (var component in componentForm) {
+    if (component != "street_number") {
+      document.getElementById(componentResolver[component]).value = '';
+      document.getElementById(componentResolver[component]).disabled = false;
+    }
+  }
+
+  // Get each component of the address from the place details
+  // and fill the corresponding field on the form.
+  var fullStreet = "";
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0];
+    var currentElement = document.getElementById(componentResolver[addressType]);
+    if (componentForm[addressType]) {
+      var val = place.address_components[i][componentForm[addressType]];
+      // If number or street then combine
+      if(componentResolver[addressType] == "billingAddress.streetNumber") {
+        fullStreet = val;
+      } else if (componentResolver[addressType] == "billingAddress.street1") {
+        fullStreet = fullStreet + " " + val;
+        val = fullStreet;
+      }
+      if(componentResolver[addressType] != "billingAddress.streetNumber") {
+        currentElement.value = val;
+      }
+    }
+  }
+}
+
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
+}

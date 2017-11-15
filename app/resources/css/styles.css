@@ -28,10 +28,13 @@ img[data-src] {
   opacity: 0;
 }
 
-/* ----------- General Styles ----------- */
-  /* Heading should be defined only once */
+
+/* ------------------------------------------------------------ *\
+  General Styles
+\* ------------------------------------------------------------ */
+
 h1 {
-  margin: 1em 0;
+  margin: 2em 0 1em 0;
   line-height: 1.5em;
   font-family: 'Roboto Slab', serif;
   font-size: 1.2em;
@@ -97,9 +100,15 @@ button {
 .underline {
   border-bottom: 1px solid #BCBCBC;
 }
-/* ----------- End General Styles ----------- */
 
-/* ----------- Mobile First ----------- */
+/* ------------------------------------------------------------ *\
+  End General Styles
+\* ------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------ *\
+  Mobile First
+\* ------------------------------------------------------------ */
 
 /* ----------- Header ----------- */
 header {
@@ -327,8 +336,8 @@ article.full-column {
 .overlayLink {
   cursor: pointer;
 }
-#project-description {
-  margin-top: 2em;
+.item-description {
+  padding-bottom: 0;
 }
 .item-description p {
   text-indent: 0.50em;
@@ -484,7 +493,9 @@ body.thankyou #contact-form {
 }
 /* ----------- End Global Footer ----------- */
 
-/* ----------- End Mobile First ----------- */
+/* ------------------------------------------------------------ *\
+  End Mobile First
+\* ------------------------------------------------------------ */
 
 
 
@@ -495,26 +506,10 @@ body.thankyou #contact-form {
 
 
 
+/* ------------------------------------------------------------ *\
+  Tablet Portrait --> Large Desktop displays
+\* ------------------------------------------------------------ */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ----------- iPad Portrait to Large Desktop displays ----------- */
 @media only screen and (min-width: 767px) {
 /* ----------- Header ----------- */
   header {
@@ -652,18 +647,16 @@ body.thankyou #contact-form {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+    align-items: stretch;
     padding: calc(2.675em + 160px) 0 0 0;
-  }
-  article.left-colum, article.right-column {
-    height: calc(100vh - 3em - 190px);
   }
   article.left-column {
     width: 65%;
     padding: 0 4em 0 4em;
-    overflow: scroll;
   }
   article.right-column {
     width:  35%;
+    max-height: calc(100vh - 3em - 190px); /* min height see main.js */
     border: none;
     margin: 0;
     background-color: #f2f2f2;
@@ -725,6 +718,12 @@ body.thankyou #contact-form {
   .img-overlay-right {
     right: 13%;
   }
+  .item-description hr {
+  display: none;
+  }
+  .item-description {
+    padding-bottom: 4em;
+  }
 /* ----------- End Item Detail Page ----------- */
 
 /* ----------- Home Page ----------- */
@@ -762,20 +761,26 @@ body.thankyou #contact-form {
 /* ----------- End Contact Page ----------- */
 
 }
-/* ----------- End iPad Portrait to Large Desktop displays ----------- */
+
+/* ------------------------------------------------------------ *\
+  End Tablet Portrait --> Large Desktop displays
+\* ------------------------------------------------------------ */
 
 
 
+/* ------------------------------------------------------------ *\
+  Miscellaneous Styling
+\* ------------------------------------------------------------ */
 
-/* ----------- Miscellaneous Styling ----------- */
-
-/* ----------- If screen is too BIG for header image ----------- */
+/* ----------- If window too BIG for header image ----------- */
 @media only screen and (min-width: 1440px) {
   #header-image img, #header-image div.overlay {
     height: auto;
     width: 100%;
   }
 }
-/* ----------- End If screen is too BIG for header image ----------- */
+/* ----------- End If window too BIG for header image ----------- */
 
-/* ----------- End Miscellaneous Styling ----------- */
+/* ------------------------------------------------------------ *\
+  End Miscellaneous Styling
+\* ------------------------------------------------------------ */

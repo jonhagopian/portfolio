@@ -26,7 +26,19 @@ function removeClass(e, c) {
   e.className = e.className.replace(new RegExp("(?:^|\\s)" + c + "(?!\\S)") ,"");
 }
 
+function rightColHeight() {
+  var leftCol = document.querySelector(".left-column");
+  var rightCol = document.querySelector(".right-column");
+  var mq = window.matchMedia("(min-width: 767px)");
+  if (mq.matches) {
+    rightCol.style.minHeight = leftCol.scrollHeight + "px";
+  } else {
+    rightCol.style.minHeight = null;
+  }
+}
+
 window.addEventListener("load", function() {
   navSetup();
   imgSetup();
+  rightColHeight();
 });
