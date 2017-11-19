@@ -27,18 +27,36 @@ function removeClass(e, c) {
 }
 
 function rightColHeight() {
-  var leftCol = document.querySelector(".left-column");
-  var rightCol = document.querySelector(".right-column");
-  var mq = window.matchMedia("(min-width: 767px)");
-  if (mq.matches) {
-    rightCol.style.minHeight = leftCol.scrollHeight + "px";
-  } else {
-    rightCol.style.minHeight = null;
+  if (document.querySelector(".full-column") === null ) {
+    var leftCol = document.querySelector(".left-column");
+    var rightCol = document.querySelector(".right-column");
+    var mq = window.matchMedia("(min-width: 767px)");
+    if (mq.matches) {
+      rightCol.style.minHeight = leftCol.scrollHeight + "px";
+    } else {
+      rightCol.style.minHeight = null;
+    }
   }
 }
+
+function hideScrollFF() {
+  var imgBox = document.querySelector(".img-parallax");
+  var innerWidth = imgBox.clientWidth;
+  var fullWidth = imgBox.offsetWidth;
+  var sbWidth = fullWidth - innerWidth;
+  if (fullWidth > innerWidth) {
+    imgBox.style.marginRight = "-" + sbWidth + "px";
+    window.document.body.style.overflowX = "hidden";
+  }
+}
+
+var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
 window.addEventListener("load", function() {
   navSetup();
   imgSetup();
   rightColHeight();
+  if (isFirefox) {
+    hideScrollFF();
+  }
 });

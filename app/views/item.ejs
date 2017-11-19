@@ -19,29 +19,22 @@
             <div class="item-client">Client: <%= item.clientname %></div>
             <div class="item-date"><%- item.date %></div>
           </div>
-          <p>
-            <%- item.description %>
-          </p>
+          <%- item.description %>
           <hr>
         </section>
       </article>
       <article id="images" class="right-column">
         <div class="img-parallax">
           <% item.images.forEach(function(subitem) { %>
-            <% if(subitem[1] === ".html" || subitem[1] === ".js" || subitem[1] === ".css") { %>
-          <figure class="img-slide overlayLink iframe">
-            <div class="aspect-ratio">
-              <iframe width="447" height="320" class="iframeSampleCode" src="<%= subitem[0] %><%= subitem[1] %>" scrolling="no"></iframe>
-            </div>
-            <div class="iframe-click"><!-- invisible click object to above iFrame --></div>
-          </figure>
-            <% } else { %>
           <figure class="img-slide overlayLink">
             <div class="aspect-ratio">
+            <% if(subitem[1] === ".html") { %>
+            <img data-src="<%= defaultResources %>/images/portfolio/js-thumbnail.png">
+            <% } else { %>
             <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem[0] %>_tn<%= subitem[1] %>">
+            <% } %>
           </div>
           </figure>
-            <% } %>
           <% }); %>
         </div>
       </article>

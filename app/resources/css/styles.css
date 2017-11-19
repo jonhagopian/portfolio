@@ -1,11 +1,26 @@
 @charset "UTF-8";
-* {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;line-height:inherit;letter-spacing:inherit;list-style:none;text-decoration:none;}
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+/* ------------------------------------------------------------ *\
+  CSS Reset
+\* ------------------------------------------------------------ */
+
+* { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+body { line-height: 1; }
+table { border-collapse: collapse; border-spacing: 0; }
+input, select { vertical-align: middle; }
+ul { list-style: none; }
+
+/* ------------------------------------------------------------ *\
+  End CSS Reset  
+\* ------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------ *\
+  General Styles
+\* ------------------------------------------------------------ */
+
 body {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
@@ -22,28 +37,27 @@ img {
   display: block;
   opacity: 1;
   transition: opacity 0.4s;
-
 }
 img[data-src] {
   opacity: 0;
 }
-
-
-/* ------------------------------------------------------------ *\
-  General Styles
-\* ------------------------------------------------------------ */
-
+/* IE and MOZ hide scrollbars - non standard - */
+html, body {
+  -ms-overflow-style: none;
+}
 h1 {
   margin: 2em 0 1em 0;
   line-height: 1.5em;
   font-family: 'Roboto Slab', serif;
   font-size: 1.2em;
+  font-weight: 400;
 }
 h2 {
-  margin: 1em 0;
+  margin: 2em 0 1em 0;
   line-height: 1.5em;
   font-family: 'Roboto Slab', serif;
   font-size: 1.2em;
+  font-weight: 400;
 }
 h3 {
   margin: 1em 0;
@@ -251,8 +265,6 @@ article.left-column::-moz-scrollbar, article.right-column::-moz-scrollbar {
 article.left-column {
   padding: 0 1em;
 }
-article.right-column {
-}
 article.full-column {
   padding: 0 2em;
 }
@@ -339,8 +351,10 @@ article.full-column {
 .item-description {
   padding-bottom: 0;
 }
+.item-description div + p {
+  text-indent: 1em;
+}
 .item-description p {
-  text-indent: 0.50em;
   margin: 0.5em 0;
 }
 .item-description ul {
@@ -546,7 +560,7 @@ body.thankyou #contact-form {
     position: static;
     top: auto;
     height: auto;
-    transition-duration: 0;
+    /*transition-duration: 0;*/
   }
   #navigation #nav-menu > ul {
     display: flex;
@@ -581,29 +595,47 @@ body.thankyou #contact-form {
   #navigation #nav-menu > ul > li > a {
     border-right: 1px solid #2274A5;
   }
-  #navigation #nav-menu > ul > li:last-of-type > a {
+  #navigation #nav-menu > ul li:last-of-type > a {
     border-right: 0;
   }
   #navigation a:hover {
     color: #165478;
   }
   /* Drop Down Navigation */
+  #navigation .caret {
+    margin-top: -1em;
+    margin-left: 1.75em;
+    width: 0;
+    height: 0;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-bottom: 1em solid #FEEA3B;
+  }
   #navigation ul li > ul {
+    border-top: 1em solid white;
     display: none;
     position: absolute;
     flex-direction: column;
     background-color: #FEEA3B;
-    margin-left: -0.875em;
     font-size: 0.75em;
   }
   #navigation ul li > ul li {
     border-right: none;
     margin: 0;
-    padding: 0 1em;
-    
+    padding: 0.50em 1em;
   }
   #navigation ul li:hover > ul {
     display: flex;
+  }
+  #navigation ul li > ul a {
+    transition-duration: 1000ms;
+  }
+  #navigation ul li > ul li:hover {
+    background-color: #2274A5;
+  }
+  #navigation ul li > ul li:hover a {
+    color: white;
+    transition-duration: 0;
   }
   /* End Drop Down Navigation */
   #header-image {
@@ -699,9 +731,6 @@ body.thankyou #contact-form {
   }
   .item-grid figure {
     border: 1px solid #BCBCBC;
-  }
-  .item-grid .iframe {
-    background-color: #272922;
   }
 /* ----------- End Item Grid Body Rows ----------- * /
 

@@ -27,6 +27,7 @@
   flex: 0 0 auto;
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
   position: relative;
+  background-color: white;
 }
 .item-grid figure {
   position: relative;
@@ -35,12 +36,12 @@
   width: 100%;
   padding-top: 75%; /* 4:3 Aspect Ratio */
 }
-.img-parallax figure img, .img-parallax figure iframe {
+.img-parallax figure img {
   /* negative stretch child larger then parent for parallax effect */
   position: absolute;
   width: 128%;
   height: 128%;
-  top: 0%;
+  top: -14%;
   left: -14%;
 }
 .img-parallax .iframe {
@@ -61,7 +62,7 @@
   margin: 0.25em 1em 1em 0;
   text-align: right;
 }
-/* ----------- End Full Height Mobile Column ----------- */
+/* ----------- Full Height Mobile Column ----------- */
 #category-results .img-parallax {
   height: auto;
   flex-direction: column;
@@ -80,7 +81,11 @@
 #category-results .img-parallax figure img {
   transition: all 200ms;
 }
-/* ----------- End End Full Height Mobile Column ----------- */
+.img-parallax figure img {
+  /* negative stretch child larger then parent for parallax effect */
+  top: 0%;
+}
+/* ----------- End Full Height Mobile Column ----------- */
 
 /* ------------------------------------------------------------ *\
   End Mobile
@@ -109,8 +114,15 @@
     margin-bottom: 2em;
     flex: 0 0 auto;
   }
-  .img-parallax figure img {
+  .img-parallax figure {
     /* Height calc via JS */
+  }
+  .img-parallax figure img {
+    /* negative stretch child larger then parent for parallax effect */
+    width: 128%;
+    height: 128%;
+    top: 0%;
+    left: -14%;
   }
 }
 

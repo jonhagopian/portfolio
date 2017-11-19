@@ -1,0 +1,17 @@
+@charset "UTF-8";
+* {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;line-height:inherit;letter-spacing:inherit;list-style:none;text-decoration:none;}
+html {
+  box-sizing: border-box;
+}
+
+code {
+  font-family: monospace;
+  font-size: 12px;
+  width: 96%;
+  display: block;
+  margin: 0 auto;
+  color: #a6e22c;
+  cursor: pointer;
+  box-sizing: border-box;
+  white-space: pre;
+}

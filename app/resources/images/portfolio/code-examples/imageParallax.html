@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>code example</title>
+    <link href="/css/codeSample.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+<code>
+
 /* This gallery with parallax effect can support the following: Images and Iframes. This effect will work on both X & Y axis */
 
 function imageSlider(firstRun) {
@@ -5,10 +15,10 @@ function imageSlider(firstRun) {
   function syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag) {
     if (flag === "full") {
       var scrPos = document.body.scrollTop;
-      var pct = 0.15;
+      var pct = 0.10;
     } else {
       var scrPos = box.scrollTop;
-      var pct = 0.15;
+      var pct = 0.25;
     }
     // forEach individual image slide
     sOffsetArrT.forEach(function(sOffset, index) {
@@ -130,3 +140,7 @@ window.addEventListener("load", function() {
     imageSlider(true);
   }
 });
+
+</code>
+  </body>
+</html>

@@ -6,6 +6,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="/portfolio/">Portfolio</a>
           <ul>
+            <div class="caret"><!-- caret up --></div>
           <% projectsArr.forEach(function(item) { %>
             <li><a href="/projects/<%= item.shortname %>"><%= item.title %></a></li>
           <% }); %>
