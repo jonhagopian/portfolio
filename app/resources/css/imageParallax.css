@@ -67,7 +67,7 @@
   height: auto;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0;
+  padding: 0 1em;
 }
 #category-results .img-parallax figure {
   width: 100%;

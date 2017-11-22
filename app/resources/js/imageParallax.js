@@ -60,7 +60,9 @@ function imageSlider(firstRun) {
   } else {
     var elem = [].slice.call(document.querySelectorAll(".item-grid"));
     elem.forEach(function(e) {
-      e.className = e.className += " img-parallax";
+      if (!e.className.includes("img-parallax")) { 
+        e.className = e.className += " img-parallax";
+      }
     });
   }
 

@@ -1,32 +1,30 @@
-<header>
-  <nav id="navigation" role="navigation" class="open" style="display: none;">
-    <div id="navigationBtn"></div>
-    <div id="nav-menu">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/portfolio/">Portfolio</a>
-          <ul>
-            <div class="caret"><!-- caret up --></div>
-          <% projectsArr.forEach(function(item) { %>
-            <li><a href="/projects/<%= item.shortname %>"><%= item.title %></a></li>
-          <% }); %>
-          </ul>
-        </li>
-        <li><a href="/resume/">Resume</a></li>
-        <li><a href="/about-me/">About Me</a></li>
-        <li><a href="/contact/">Contact</a></li> 
-      </ul>
-    </div>
-  </nav>
-  <div id="icon">
-    <!-- photo icon -->
+<nav id="navigation" class="open" style="display: none;">
+  <div id="navigationBtn"></div>
+  <div id="nav-menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/portfolio/">Portfolio</a>
+        <ul>
+          <li class="caret"><!-- caret up --></li>
+        <% projectsArr.forEach(function(item) { %>
+          <li><a href="/projects/<%= item.shortname %>"><%= item.title %></a></li>
+        <% }); %>
+        </ul>
+      </li>
+      <li><a href="/resume/">Resume</a></li>
+      <li><a href="/about-me/">About Me</a></li>
+      <li><a href="/contact/">Contact</a></li> 
+    </ul>
   </div>
-  <div id="header-image">
-    <div id="logo">
-    	<a href="/">
-      	<strong>jonhagopian</strong>.com
-    	</a>
-    </div>
-    <div class="overlay"></div>
+</nav>
+<div id="icon">
+  <!-- photo icon -->
+</div>
+<div id="header-image">
+  <div id="logo">
+  	<a href="/">
+    	jonhagopian<span>.com</span>
+  	</a>
   </div>
-</header>
+  <div class="overlay"></div>
+</div>

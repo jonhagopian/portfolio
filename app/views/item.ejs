@@ -8,13 +8,19 @@
   </head>
 
   <body id="<%= pageID %>">
-    <% include includes/template/header.ejs %>
+
+    <header>
+      <% include includes/template/header.ejs %>
+    </header>
+
     <main>
+
       <% itemAll.forEach(function(item) { %>
-      <!-- item.shortname -->
-      <article id="project-description" class="left-column">
-        <h1 class="underline"><%= item.title %></h1>
-        <section class="item-description">
+      <article id="project-description">
+
+        <section class="item-description left-column">
+          <!-- item.shortname -->
+          <h1 class="underline"><%= item.title %></h1>
           <div class="item-subhead">
             <div class="item-client">Client: <%= item.clientname %></div>
             <div class="item-date"><%- item.date %></div>
@@ -22,22 +28,24 @@
           <%- item.description %>
           <hr>
         </section>
-      </article>
-      <article id="images" class="right-column">
-        <div class="img-parallax">
-          <% item.images.forEach(function(subitem) { %>
-          <figure class="img-slide overlayLink">
-            <div class="aspect-ratio">
-            <% if(subitem[1] === ".html") { %>
-            <img data-src="<%= defaultResources %>/images/portfolio/js-thumbnail.png">
-            <% } else { %>
-            <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem[0] %>_tn<%= subitem[1] %>">
-            <% } %>
+
+        <section id="images" class="right-column">
+          <div class="img-parallax">
+            <% item.images.forEach(function(subitem) { %>
+            <figure class="img-slide overlayLink">
+              <div class="aspect-ratio">
+              <% if(subitem[1] === ".html") { %>
+              <img data-src="<%= defaultResources %>/images/portfolio/js-thumbnail.png">
+              <% } else { %>
+              <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem[0] %>_tn<%= subitem[1] %>">
+              <% } %>
+            </div>
+            </figure>
+            <% }); %>
           </div>
-          </figure>
-          <% }); %>
-        </div>
+        </section>
       </article>
+
       <div class="img-overlay">
         <div class="img-overlay-box">
           <% item.images.forEach(function(subitem) { %>
@@ -59,7 +67,9 @@
         </div>
       </div>
       <% }); %>
+
     </main>
+
     <% include includes/template/footer.ejs %>
 
   </body>

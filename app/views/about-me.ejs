@@ -4,48 +4,55 @@
 
   <head>
     <% include includes/template/head.ejs %>
+    <script src="/js/imageOverlay.js" type="text/javascript"></script>
   </head>
 
   <body id="<%= pageID %>">
-    <% include includes/template/header.ejs %>
+
+    <header>
+      <% include includes/template/header.ejs %>
+    </header>
+
     <main>
-      <article id="about-me" class="left-column">
-        <h1 class="underline"><%= pageTitle %></h1>
-        <section id="interests">
-          <% aboutAll.forEach(function(item) { %>
+      <% aboutAll.forEach(function(item) { %>
+      <article id="about-me">
+        
+        <section id="interests" class="left-column">
+          <h1 class="underline"><%= pageTitle %></h1>
             <%- item.copy %>
-          <% }); %>
         </section>
-      </article>
-      <article id="images" class="right-column">
-        <div class="img-parallax">
-          <% aboutAll.forEach(function(item) { %>
-            <% item.images.forEach(function(item) { %>
-          <figure class="img-slide">
-            <img data-src="<%= defaultResources %>/images/about-me/<%= item %>_tn.jpg">
-          </figure>
+
+        <section id="images" class="right-column">
+          <div class="img-parallax">
+            <% item.images.forEach(function(subitem) { %>
+            <figure class="img-slide overlayLink">
+              <div class="aspect-ratio">
+              <img data-src="<%= defaultResources %>/images/about-me/<%= subitem[0] %>_tn<%= subitem[1] %>">
+            </div>
+            </figure>
             <% }); %>
-          <% }); %>
-        </div>
+          </div>
+        </section>
+
       </article>
+
       <div class="img-overlay">
         <div class="img-overlay-box">
-          <% aboutAll.forEach(function(item) { %>
-            <% item.images.forEach(function(item) { %>
-          <img data-src="<%= defaultResources %>/images/about-me/<%= item %>.jpg">
-            <% }); %>
+          <% item.images.forEach(function(subitem) { %>
+          <img data-src="<%= defaultResources %>/images/about-me/<%= subitem[0] %><%= subitem[1] %>">
           <% }); %>
-          <div class="img-overlay-left">
-            <div class="img-overlay-btns"><!-- left navigate -->&#10092;</div>
-          </div>
-          <div class="img-overlay-right">
-            <div class="img-overlay-btns"><!-- right navigate -->&#10093;</div>
-          </div>
-          <div class="img-overlay-close img-overlay-btns">
-            &#10005;
-          </div>
+        </div>
+        <div class="img-overlay-left">
+          <div class="img-overlay-btns"><!-- left navigate -->&#10092;</div>
+        </div>
+        <div class="img-overlay-right">
+          <div class="img-overlay-btns"><!-- right navigate -->&#10093;</div>
+        </div>
+        <div class="img-overlay-close img-overlay-btns">
+           &#10005;
         </div>
       </div>
+      <% }); %>
     </main>
     <% include includes/template/footer.ejs %>
 

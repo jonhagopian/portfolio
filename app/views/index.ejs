@@ -7,57 +7,62 @@
   </head>
 
   <body id="<%= pageID%>">
-    <% include includes/template/header.ejs %>
+
+    <header>
+      <% include includes/template/header.ejs %>
+    </header>
+
     <main>
-      <article id="introduction" class="left-column">
-        <section>
+      <article id="introduction">
+        <section class="left-column">
           <h1><strong>Web Developer</strong> with experience in ecommerce websites, marketing micro-sites and ads, taking creatives from clients to functional web entities. Experience includes leading large initiatives, managing offshore talent, client expectations, directing workflow and debugging. Notable skills are an eye for creative layout while coding for reusability, simplicity and speed. I enjoy solving problems in an elegant streamlined fashion while learning new technologies and techniques.</h1>
           <hr>
         </section>
-      </article>
-      <article id="images" class="right-column">
-        <div class="img-parallax ">
-          <figure class="img-slide">
-            <div class="aspect-ratio">
-              <img data-src="<%= defaultResources %>/images/gallery-test/banff1.jpg">
-            </div>
-          </figure>
-          <figure class="img-slide">
-            <div class="aspect-ratio">
-              <img data-src="<%= defaultResources %>/images/gallery-test/banff2.jpg">
-            </div>
-          </figure>
-          <figure class="img-slide">
-            <div class="aspect-ratio">
-              <img data-src="<%= defaultResources %>/images/gallery-test/banff3.jpg">
-            </div>
-          </figure>
-          <figure class="img-slide">
-            <div class="aspect-ratio">
-              <img data-src="<%= defaultResources %>/images/gallery-test/banff4.jpg">
-            </div>
-          </figure>
-          <figure class="img-slide">
-            <div class="aspect-ratio">
-              <img data-src="<%= defaultResources %>/images/gallery-test/banff5.jpg">
-            </div>
-          </figure>
-          <figure class="img-slide">
-            <div class="aspect-ratio">
-              <img data-src="<%= defaultResources %>/images/gallery-test/banff6.jpg">
-            </div>
-          </figure>
-          <figure class="img-slide">
-            <div class="aspect-ratio">
-              <img data-src="<%= defaultResources %>/images/gallery-test/banff7.jpg">
-            </div>
-          </figure>
-          <figure class="img-slide">
-            <div class="aspect-ratio">
-              <img data-src="<%= defaultResources %>/images/gallery-test/banff8.jpg">
-            </div>
-          </figure>
-        </div>
+
+        <section id="images" class="right-column">
+          <div class="img-parallax ">
+            <figure class="img-slide">
+              <div class="aspect-ratio">
+                <img data-src="<%= defaultResources %>/images/gallery-test/banff1.jpg">
+              </div>
+            </figure>
+            <figure class="img-slide">
+              <div class="aspect-ratio">
+                <img data-src="<%= defaultResources %>/images/gallery-test/banff2.jpg">
+              </div>
+            </figure>
+            <figure class="img-slide">
+              <div class="aspect-ratio">
+                <img data-src="<%= defaultResources %>/images/gallery-test/banff3.jpg">
+              </div>
+            </figure>
+            <figure class="img-slide">
+              <div class="aspect-ratio">
+                <img data-src="<%= defaultResources %>/images/gallery-test/banff4.jpg">
+              </div>
+            </figure>
+            <figure class="img-slide">
+              <div class="aspect-ratio">
+                <img data-src="<%= defaultResources %>/images/gallery-test/banff5.jpg">
+              </div>
+            </figure>
+            <figure class="img-slide">
+              <div class="aspect-ratio">
+                <img data-src="<%= defaultResources %>/images/gallery-test/banff6.jpg">
+              </div>
+            </figure>
+            <figure class="img-slide">
+              <div class="aspect-ratio">
+                <img data-src="<%= defaultResources %>/images/gallery-test/banff7.jpg">
+              </div>
+            </figure>
+            <figure class="img-slide">
+              <div class="aspect-ratio">
+                <img data-src="<%= defaultResources %>/images/gallery-test/banff8.jpg">
+              </div>
+            </figure>
+          </div>
+        </section>
       </article>
     </main>
     <% include includes/template/footer.ejs %>

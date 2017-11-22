@@ -46,11 +46,11 @@ html, body {
   -ms-overflow-style: none;
 }
 h1 {
-  margin: 2em 0 1em 0;
+  margin: 1.125em 0 1.125em 0;
   line-height: 1.5em;
   font-family: 'Roboto Slab', serif;
-  font-size: 1.2em;
-  font-weight: 400;
+  font-size: 1.125em;
+  font-weight: 700;
 }
 h2 {
   margin: 2em 0 1em 0;
@@ -73,18 +73,13 @@ h4 {
   font-size: 1em;
   font-weight: 700;
 }
-p {
-  margin: 1em 0;
-  line-height: 1.5em;
-}
-li {
-  line-height: 1.5;
-}
 figcaption {
   font-family: 'Roboto Slab', serif;
 }
-p {
-  font-size: 1em;
+p, li {
+  font-size: 1.125em;
+  margin-bottom: 1.125em;
+  line-height: 1.6em;
 }
 hr {
   border-bottom: 1px solid #BCBCBC;
@@ -145,6 +140,7 @@ header strong {
   margin: 0 1px;
 }
 #navigation {
+  font-weight: 300;
   background-color: #2274A5;
   background-position: center center;
   background-repeat: no-repeat;
@@ -187,7 +183,6 @@ header strong {
   display: block;
   background-color: #2274A5;
   color: #FEEA3B;
-  font-weight: 700;
 }
 #nav-menu > ul {
   border-right: solid 4px #FEEA3B;
@@ -209,7 +204,6 @@ header strong {
 #navigation a {
   text-decoration: none;
   color: inherit;
-  font-weight: inherit;
 }
 #icon {
   background-image: url("../images/icon-jonhagopian.jpg");
@@ -225,52 +219,68 @@ header strong {
   display: none;
 }
 #logo {
-  font-size: 1em;
+  font-size: 1.25em;
+  font-weight: 400;
   line-height: 75px;
   display: inline;
   margin-left: 1em;
   color: #2274A5;
   -webkit-font-smoothing: antialiased; /* font smoothing issue when in front of trans elem */
 }
-#logo strong {
-  font-weight: bold;
+#logo span {
+  opacity: 0.50;
+}
+
+.item-subhead {
+  display: flex;
+  flex: row flex-start;
+  margin-top: -1em;
+  margin-bottom: 2em;
+}
+.item-client {
+  width: 50%;
+}
+.item-date {
+  width: 50%;
+  margin-right: auto;
+  text-align: right;
 }
 /* ----------- End Header ----------- */
 
 /* ----------- Main Body Columns ----------- */
 main {
+  padding-top: calc(75px + 1em);
+}
+article a {
+  color: #2274A5;
+}
+article a:hover {
+  color: #165478;
+}
+article strong {
+  font-weight: 700;
+}
+article {
+  position: relative;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  padding-top: calc(75px + 1em);
 }
-main a {
-  color: #2274A5;
-}
-main a:hover {
-  color: #165478;
-}
-main strong {
-  font-weight: 700;
-}
-main article {
-  position: relative;
-}
-article.left-column::-webkit-scrollbar, article.right-column::-webkit-scrollbar {
+.left-column::-webkit-scrollbar, .right-column::-webkit-scrollbar {
   display: none;
 }
-article.left-column::-moz-scrollbar, article.right-column::-moz-scrollbar {
+.left-column::-moz-scrollbar, .right-column::-moz-scrollbar {
   display: none;
 }
-article.left-column {
-  padding: 0 1em;
-}
-article.full-column {
-  padding: 0 2em;
+section.left-column {
+  padding: 0 1.125em;
 }
 /* ----------- End Main Body Columns ----------- */
 
 /* ----------- Item Grid Body Rows ----------- */
+#item-grid h1 {
+  text-align: center;
+}
 .item-grid {
   display: flex;
   flex-direction: column;
@@ -341,7 +351,7 @@ article.full-column {
   cursor: pointer;
   position: fixed;
 }
-.img-overlay img, .img-overlay iframe {
+.img-overlay img {
   display: none;
   width: 100%;
 }
@@ -351,11 +361,8 @@ article.full-column {
 .item-description {
   padding-bottom: 0;
 }
-.item-description div + p {
+.item-description p:first-of-type, #interests p:first-of-type {
   text-indent: 1em;
-}
-.item-description p {
-  margin: 0.5em 0;
 }
 .item-description ul {
   padding-left: 1.5em;
@@ -369,20 +376,6 @@ article.full-column {
   width: 1em;
   margin-left: -1em;
 }
-.item-subhead {
-  display: flex;
-  flex: row flex-start;
-  margin-top: -1em;
-  margin-bottom: 2em;
-}
-.item-client {
-  width: 50%;
-}
-.item-date {
-  width: 50%;
-  margin-right: auto;
-  text-align: right;
-}
 /* ----------- End Item Detail Page ----------- */
 
 /* ----------- Home Page ----------- */
@@ -391,6 +384,7 @@ article.full-column {
   font-size: 1em;
   line-height: 1.75;
   text-align: center;
+  font-weight: 400;
 }
 #home .left-column {
   padding: 0 1em;
@@ -525,6 +519,22 @@ body.thankyou #contact-form {
 \* ------------------------------------------------------------ */
 
 @media only screen and (min-width: 767px) {
+/* ------------------------------------------------------------ *\
+  General Styles
+\* ------------------------------------------------------------ */
+
+h1 {
+  margin: 2.25em 0 1.125em 0;
+  line-height: 1.5em;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.125em;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------ *\
+  End General Styles
+\* ------------------------------------------------------------ */
+
 /* ----------- Header ----------- */
   header {
     flex-flow: row wrap;
@@ -574,7 +584,6 @@ body.thankyou #contact-form {
     color: #2274A5;
     box-shadow: none;
     font-size: 1em;
-    font-weight: normal;
   }
   #navigation ul > li {
     border-bottom: none;
@@ -602,24 +611,14 @@ body.thankyou #contact-form {
     color: #165478;
   }
   /* Drop Down Navigation */
-  #navigation .caret {
-    margin-top: -1em;
-    margin-left: 1.75em;
-    width: 0;
-    height: 0;
-    border-left: 1em solid transparent;
-    border-right: 1em solid transparent;
-    border-bottom: 1em solid #FEEA3B;
-  }
   #navigation ul li > ul {
-    border-top: 1em solid white;
     display: none;
     position: absolute;
     flex-direction: column;
-    background-color: #FEEA3B;
     font-size: 0.75em;
   }
   #navigation ul li > ul li {
+    background-color: #FEEA3B;
     border-right: none;
     margin: 0;
     padding: 0.50em 1em;
@@ -628,7 +627,7 @@ body.thankyou #contact-form {
     display: flex;
   }
   #navigation ul li > ul a {
-    transition-duration: 1000ms;
+    transition-duration: 500ms;
   }
   #navigation ul li > ul li:hover {
     background-color: #2274A5;
@@ -636,6 +635,16 @@ body.thankyou #contact-form {
   #navigation ul li > ul li:hover a {
     color: white;
     transition-duration: 0;
+  }
+  #navigation .caret {
+    padding: 0 !important;
+    background-color: transparent !important;
+    width: 0;
+    height: 0;
+    margin-left: 1.75em;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-bottom: 1em solid #FEEA3B;
   }
   /* End Drop Down Navigation */
   #header-image {
@@ -666,8 +675,8 @@ body.thankyou #contact-form {
     font-size: 1.875em;
     color: white;
     position: absolute;
-    bottom: 0.5em;
-    right: 0.5em;
+    bottom: 0.75em;
+    right: 0.75em;
     line-height: inherit;
     margin-left: 0;
     z-index: 3;
@@ -676,36 +685,31 @@ body.thankyou #contact-form {
 
 /* ----------- Main Body Columns ----------- */
   main {
+    padding-top: calc(2.675em + 160px);
+  }
+  article {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: stretch;
-    padding: calc(2.675em + 160px) 0 0 0;
   }
-  article.left-column {
+  .left-column {
     width: 65%;
-    padding: 0 4em 0 4em;
   }
-  article.right-column {
-    width:  35%;
+  section.left-column {
+    padding: 0 5em 5em 5em;
+  }
+  section.right-column {
+    width: 35%;
     max-height: calc(100vh - 3em - 190px); /* min height see main.js */
     border: none;
     margin: 0;
     background-color: #f2f2f2;
   }
-  article.full-column {
-    width: 100%;
-  }
-  section {
+  section.full-column {
     width: 100%;
   }
 /* ----------- End Main Body Columns ----------- */
-
-/* ----------- Home Page ----------- */
-  #home h1 {
-    text-indent: 1em;
-  }
-/* ----------- End Home Page ----------- */
 
 /* ----------- Item Grid Body Rows ----------- */
   .item-grid {
@@ -757,6 +761,7 @@ body.thankyou #contact-form {
 
 /* ----------- Home Page ----------- */
   #home h1 {
+    text-indent: 1em;
     margin: 3em 3.5em;
     line-height: 2;
     text-align: center;
