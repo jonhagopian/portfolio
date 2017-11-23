@@ -109,7 +109,12 @@ button {
 .underline {
   border-bottom: 1px solid #BCBCBC;
 }
-
+article ul li:before {
+  content: "-";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
 /* ------------------------------------------------------------ *\
   End General Styles
 \* ------------------------------------------------------------ */
@@ -370,12 +375,6 @@ section.left-column {
 .item-description ul li {
   margin: 0.5em 0;
 }
-.item-description ul li:before {
-  content: "-";
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
 /* ----------- End Item Detail Page ----------- */
 
 /* ----------- Home Page ----------- */
@@ -393,33 +392,35 @@ section.left-column {
 /* ----------- End Home Page ----------- */
 
 /* ----------- Resume Page ----------- */
-#resume-full {
-  padding-bottom: 4em;
+#resume section.full-column {
+  padding: 1.125em 1.125em 4em 1.125em;
 }
-#resume h3, #resume h4 {
+#resume section h3, #resume section h4 {
   margin-bottom: 0;
+  font-size: 1.125em;
 }
-#resume h3 {
+#resume section h3 {
   display: flex;
 }
-#resume h3 > div:last-of-type {
+#resume section h3 > div:last-of-type {
   margin-left: auto;
 }
-#resume article p, #resume article ul {
+#resume section p, #resume section ul {
+  margin-left: 1em;
+}
+#resume section p, #resume section ul li {
   text-indent: 0;
   margin: 0;
 }
-#resume article b {
+#resume section b {
   font-weight: 700;
 }
-#resume article ul {
+#resume section ul {
   padding-left: 1.3em;
-}
-#resume article ul li {
-  list-style-type: disc;
 }
 #download-link {
   float: right;
+  margin-top: -3em;
 }
 /* ----------- End Resume Page ----------- */
 
@@ -769,9 +770,8 @@ h1 {
 /* ----------- End Home Page ----------- */
 
 /* ----------- Resume Page ----------- */
-  #resume #resume-full {
-    padding-left: 2em;
-    padding-right: 2em;
+  #resume section.full-column {
+    padding: 1.125em 6em 6em 6em;
   }
 /* ----------- End Resume Page ----------- */
 
