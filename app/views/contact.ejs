@@ -7,10 +7,12 @@
   </head>
 
   <body id="<%= pageID %>" class="<%= pageVer %>">
-    <% include includes/template/header.ejs %>
+    <header>
+      <% include includes/template/header.ejs %>
+    </header>
     <main>
-      <article id="contact-input" class="left-column">
-        <section>
+      <article>
+        <section id="contact-input" class="left-column">
           <h1 class="underline"><%= pageTitle %></h1>
           <div class="tycopy">
             <p>
@@ -31,7 +33,7 @@
             </p>
             <p>
               <label for="from">Email</label>
-              <input type="email" name="from" id="from" required autocomplete="email" placeholder="you@email.com" maxlength="100" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+              <input type="email" name="from" id="from" required autocomplete="email" placeholder="Email" maxlength="100" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
             </p>
             <p>
               <label for="subject">Subject</label>
@@ -39,7 +41,7 @@
             </p>
             <p>
               <label for="message">Message</label>
-              <textarea name="message" id="message" required placeholder="Message here..." maxlength="1000"></textarea>
+              <textarea name="message" id="message" required placeholder="Message..." maxlength="1000"></textarea>
             </p>
             <p>All fields are required</p>
             <p>
@@ -48,9 +50,7 @@
             </p>
           </form>
         </section>
-      </article>
-      <article id="contact-links" class="right-column">
-        <section>
+        <section id="contact-links" class="right-column">
           <h2 class="underline">Links</h2>
           <p>
             <span>Email:</span>

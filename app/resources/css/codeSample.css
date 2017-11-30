@@ -3,6 +3,10 @@
 html {
   box-sizing: border-box;
 }
+html, body {
+  width: 100%;
+  background-color: black;
+}
 
 code {
   font-family: monospace;

@@ -22,11 +22,12 @@
                   <div class="aspect-ratio">
                     <% if(item.images[0][1] === ".html") { %>
                     <img data-src="<%= defaultResources %>/images/portfolio/js-thumbnail.png">
+                    <% } else if(item.images[0][1] === ".svg") { %>
+                    <img data-src="<%= defaultResources %>/images/portfolio/<%= item.images[0][0] %><%= item.images[0][1] %>" alt="Thumbnail Image">
                     <% } else { %>
                     <img data-src="<%= defaultResources %>/images/portfolio/<%= item.images[0][0] %>_tn<%= item.images[0][1] %>" alt="Thumbnail Image">
                     <% } %>
                   </div>
-                  <div class="iframe-click"><!-- invisible click object to above iFrame --></div>
                 </figure>
                 <figcaption><%= item.title %></figcaption>
               </a>

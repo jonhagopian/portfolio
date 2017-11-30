@@ -47,19 +47,11 @@
 .img-parallax .iframe {
   background-color: #272922; 
 }
-.iframe-click {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-}
 #item-grid .img-parallax {
   background-color: unset;
 }
 #item-grid .img-parallax figcaption {
-  margin: 0.25em 1em 1em 0;
+  margin: 0.5em 1em 1em 0;
   text-align: right;
 }
 /* ----------- Full Height Mobile Column ----------- */
@@ -76,7 +68,7 @@
   border: 1px solid #BCBCBC;
 }
 #category-results .img-parallax figcaption {
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 #category-results .img-parallax figure img {
   transition: all 200ms;

@@ -36,6 +36,8 @@
               <div class="aspect-ratio">
               <% if(subitem[1] === ".html") { %>
               <img data-src="<%= defaultResources %>/images/portfolio/js-thumbnail.png">
+              <% } else if(subitem[1] === ".svg") { %>
+              <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem[0] %><%= subitem[1] %>">
               <% } else { %>
               <img data-src="<%= defaultResources %>/images/portfolio/<%= subitem[0] %>_tn<%= subitem[1] %>">
               <% } %>
