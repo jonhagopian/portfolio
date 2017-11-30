@@ -361,6 +361,9 @@ section.left-column {
   display: none;
   width: 100%;
 }
+.img-overlay iframe {
+  display: none;
+}
 .overlayLink {
   cursor: pointer;
 }
@@ -607,6 +610,7 @@ h1 {
     position: static;
     top: auto;
     height: auto;
+    width: 100%;
     /*transition-duration: 0;*/
   }
   #navigation #nav-menu > ul {
