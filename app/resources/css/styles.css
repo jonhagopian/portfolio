@@ -254,6 +254,7 @@ header strong {
 
 /* ----------- Main Body Columns ----------- */
 main {
+  display: block;
   padding-top: calc(75px + 1em);
 }
 article a {
