@@ -2,7 +2,6 @@ function overlay() {
   var oBox = document.querySelector(".img-overlay-box");
   var overlay = document.querySelector(".img-overlay");
   var allImgs = [].slice.call(document.querySelectorAll(".img-overlay-box img, .img-overlay-box iframe"));
-  console.log(allImgs);
   var allLinks = [].slice.call(document.querySelectorAll(".overlayLink"));
   var closeBtn = document.querySelector(".img-overlay-close");
   var leftNav = document.querySelector(".img-overlay-left");

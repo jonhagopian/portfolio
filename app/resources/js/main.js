@@ -1,6 +1,6 @@
 function detectIE() {
   if (navigator.userAgent.indexOf("MSIE") >= 0) {
-    window.location = "/badbrowser.html"
+    window.location = "/static/badbrowser.html"
   }
   return false;
 }
