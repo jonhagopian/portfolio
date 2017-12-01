@@ -50,6 +50,12 @@ function hideScrollFF() {
   }
 }
 
+function detectIE() {
+  if (navigator.userAgent.indexOf("MSIE") >= 0) {
+    document.write("You are using an unsupported version of Internet Explorer. Please upgrade to Internet Explorer 11 or use a different web browser.");
+  }
+}
+
 var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
 window.addEventListener("load", function() {
