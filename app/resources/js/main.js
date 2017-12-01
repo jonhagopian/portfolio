@@ -1,3 +1,11 @@
+function detectIE() {
+  if (navigator.userAgent.indexOf("MSIE") >= 0) {
+    document.write("You are using an unsupported version of Internet Explorer. Please upgrade to Internet Explorer 11 or use a different web browser.");
+  }
+  return false;
+}
+detectIE();
+
 function navSetup() {
   var headerNav = document.getElementById("navigation");
   var headerNavBtn = document.getElementById("navigationBtn");
@@ -47,12 +55,6 @@ function hideScrollFF() {
   if (fullWidth > innerWidth) {
     imgBox.style.marginRight = "-" + sbWidth + "px";
     window.document.body.style.overflowX = "hidden";
-  }
-}
-
-function detectIE() {
-  if (navigator.userAgent.indexOf("MSIE") >= 0) {
-    document.write("You are using an unsupported version of Internet Explorer. Please upgrade to Internet Explorer 11 or use a different web browser.");
   }
 }
 
