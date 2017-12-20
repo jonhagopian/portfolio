@@ -45,31 +45,30 @@ img[data-src] {
 html, body {
   -ms-overflow-style: none;
 }
+h1, h2, h3, h4 {
+  font-family: 'Roboto Slab', serif;
+}
 h1 {
   margin: 1.125em 0 1.125em 0;
   line-height: 1.5em;
-  font-family: 'Roboto Slab', serif;
   font-size: 1.125em;
   font-weight: 700;
 }
 h2 {
   margin: 2em 0 1em 0;
   line-height: 1.5em;
-  font-family: 'Roboto Slab', serif;
   font-size: 1.2em;
   font-weight: 400;
 }
 h3 {
   margin: 1em 0;
   line-height: 1.5em;
-  font-family: 'Roboto Slab', serif;
   font-size: 1em;
   font-weight: 700;
 }
 h4 {
   margin: 1em 0;
   line-height: 1.5em;
-  font-family: 'Roboto Slab', serif;
   font-size: 1em;
   font-weight: 700;
 }
@@ -235,7 +234,6 @@ header strong {
 #logo span {
   opacity: 0.50;
 }
-
 .item-subhead {
   display: flex;
   flex: row flex-start;
@@ -566,7 +564,6 @@ body.thankyou #contact-form {
 h1 {
   margin: 2.25em 0 1.125em 0;
   line-height: 1.5em;
-  font-family: 'Roboto Slab', serif;
   font-size: 1.125em;
   font-weight: 700;
 }
