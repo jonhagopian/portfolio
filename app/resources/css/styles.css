@@ -22,7 +22,6 @@ ul { list-style: none; }
 \* ------------------------------------------------------------ */
 
 body {
-  font-size: 16px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: #212121;
@@ -253,7 +252,7 @@ header strong {
 /* ----------- Main Body Columns ----------- */
 main {
   display: block;
-  padding-top: calc(75px + 1em);
+  padding-top: 75px;
 }
 article a {
   color: #2274A5;
@@ -282,8 +281,9 @@ section.left-column {
 /* ----------- End Main Body Columns ----------- */
 
 /* ----------- Item Grid Body Rows ----------- */
-#item-grid h1 {
-  text-align: center;
+#items-list h1 {
+  font-size: 2em;
+  margin: 0.750rem 1rem 0 1rem;
 }
 .item-grid {
   display: flex;
@@ -723,7 +723,7 @@ h1 {
 
 /* ----------- Main Body Columns ----------- */
   main {
-    padding-top: calc(2.675em + 160px);
+    padding-top: calc(2.675em + 166px);
   }
   article {
     display: flex;
@@ -750,6 +750,10 @@ h1 {
 /* ----------- End Main Body Columns ----------- */
 
 /* ----------- Item Grid Body Rows ----------- */
+  #items-list h1 {
+    text-align: center;
+    margin: 1em 0;
+  }
   .item-grid {
     display: flex;
     flex-direction: row;

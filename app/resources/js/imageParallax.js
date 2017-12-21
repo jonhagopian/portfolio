@@ -52,7 +52,7 @@ function imageSlider(firstRun) {
   // Remove class img-parallax on category page for desktop and add if mobile
   var mq = window.matchMedia("(min-width: 767px)");
   var page = document.body.id;
-  if (mq.matches && page === "item-grid") {
+  if (mq.matches && page === "items-list") {
     var elem = [].slice.call(document.querySelectorAll(".img-parallax"));
     elem.forEach(function(e) {
       removeClass(e,"img-parallax");
@@ -93,7 +93,7 @@ function imageSlider(firstRun) {
       sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr);
     } else if (flexDir === "column") {
       box.scrollTop = 0;
-      if (page === "item-grid") {
+      if (page === "items-list") {
         var boxH = window.innerHeight;
         var flag = "full";
       } else {
@@ -114,7 +114,7 @@ function imageSlider(firstRun) {
       syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag);
     } // End if else row/column
     // switch box to doc if vertical scroll is full page
-    if (page === "item-grid") {
+    if (page === "items-list") {
       box = document;
     }
     box.addEventListener("scroll", _forEventListener);

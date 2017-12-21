@@ -69,7 +69,7 @@ app.use(require("./routes/route-resume"));
 app.use(require("./routes/route-contact"));
 app.use(require("./routes/route-aboutme"));
 app.use(require("./routes/route-aboutsite"));
-app.use(require("./routes/route-item-grid"));
+app.use(require("./routes/route-items-list"));
 app.use(require("./routes/route-item"));
 
 var server = app.listen(app.get('port'), function() {

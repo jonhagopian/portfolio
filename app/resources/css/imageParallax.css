@@ -22,10 +22,10 @@
 }
 .img-parallax figure {
   width: calc(66.6% - 1em);
-  margin-right: 1em;
   overflow: hidden;
   flex: 0 0 auto;
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+  margin: 15px 1.875rem 15px 0; /* match shadow prevent cutoff */
   position: relative;
   background-color: white;
 }
@@ -47,10 +47,10 @@
 .img-parallax .iframe {
   background-color: #272922; 
 }
-#item-grid .img-parallax {
+#items-list .img-parallax {
   background-color: unset;
 }
-#item-grid .img-parallax figcaption {
+#items-list .img-parallax figcaption {
   margin: 0.5em 1em 1em 0;
   text-align: right;
 }
@@ -63,7 +63,6 @@
 }
 #category-results .img-parallax figure {
   width: 100%;
-  margin-right: 0;
   border-radius: 0;
   border: 1px solid #BCBCBC;
 }
