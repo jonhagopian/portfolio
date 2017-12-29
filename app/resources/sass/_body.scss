@@ -1,0 +1,68 @@
+/* --------------------------------------------------------------
+    Main Body Columns
+--------------------------------------------------------------- */
+// Mobile First
+main {
+  display: block;
+  padding-top: 75px;
+}
+article {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  a {
+    color: $color-blue;
+    &:hover {
+      color: $color-text-link-hover;
+    }
+  }
+  strong {
+    font-weight: $font-weight-bold;
+  }
+}
+section {
+  &.left-column {
+    padding: 0 1.125em;
+  }
+}
+.left-column::-webkit-scrollbar, .right-column::-webkit-scrollbar {
+  display: none;
+}
+.left-column::-moz-scrollbar, .right-column::-moz-scrollbar {
+  display: none;
+}
+// End Mobile
+//
+// Begin Desktop
+@media only screen and (min-width: 767px) {
+  main {
+    padding-top: calc(2.675em + 166px);
+  }
+  article {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+  section {
+    &.left-column {
+      width: 65%;
+      padding: 0 5em 5em 5em;
+    }
+    &.right-column {
+      width: 35%;
+      max-height: calc(100vh - 3em - 190px); /* min height see main.js */
+      border: none;
+      margin: 0;
+      background-color: $color-gray;
+    }
+    &.full-column {
+      width: 100%;
+    }
+  }
+}
+// End Desktop
+/* --------------------------------------------------------------
+    End Main Body Columns
+--------------------------------------------------------------- */

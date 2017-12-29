@@ -21,5 +21,10 @@
     "express": "^4.16.1",
     "nodemailer": "^4.3.1",
     "reload": "^2.2.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0"
   }
 }

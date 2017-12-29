@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "reset";
+@import "base";
+@import "header";
+@import "body";
+@import "item-grid";
+@import "item-detail";
+@import "footer";
+
+@import "page-home";
+@import "page-resume";
+@import "page-contact";
+
+/* --------------------------------------------------------------
+    Miscellaneous CSS
+--------------------------------------------------------------- */
+/* ----------- If window is too BIG for header image ----------- */
+@media only screen and (min-width: 1440px) {
+  #header-image img, #header-image div.overlay {
+    height: auto;
+    width: 100%;
+  }
+}
+/* ----------- End If window is too BIG for header image ----------- */
+/* --------------------------------------------------------------
+    End Miscellaneous CSS
+--------------------------------------------------------------- */

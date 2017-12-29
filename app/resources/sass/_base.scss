@@ -1,0 +1,111 @@
+/* --------------------------------------------------------------
+    Base Styles
+--------------------------------------------------------------- */
+body {
+  font-family: $font-body;
+  font-weight: $font-weight-normal;
+  color: $color-text-body;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+html, body {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+// img and data-src along with JS create image fade in on load
+img {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.4s;
+  &[data-src] {
+    opacity: 0;
+  }
+}
+// IE and MOZ hide scrollbars - non standard - 
+html, body {
+  -ms-overflow-style: none;
+}
+h1, h2, h3, h4 {
+  font-family: 'Roboto Slab', serif;
+}
+h1 {
+  margin: 1.125em 0 1.125em 0;
+  line-height: 1.5em;
+  font-size: 1.125em;
+  font-weight: $font-weight-bold;
+}
+h2 {
+  margin: 2em 0 1em 0;
+  line-height: 1.5em;
+  font-size: 1.2em;
+  font-weight: $font-weight-normal;
+}
+h3 {
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: $font-weight-bold;
+}
+h4 {
+  margin: 1em 0;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: $font-weight-bold;
+}
+p, li {
+  font-size: 1.125em;
+  margin-bottom: 1.125em;
+  line-height: 1.6em;
+}
+hr {
+  border-bottom: 1px solid $color-border;
+  width: 80%;
+  margin: 2em auto;
+}
+blockquote {
+  margin: 0 2em;
+  font-size: 0.875em;
+  font-style: italic;
+  color: $color-border;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+label, input, textarea {
+  display: block;
+}
+input, textarea {
+  border: 1px solid $color-border;
+  padding: 0.25em 1em;
+}
+button {
+  cursor: pointer;
+}
+.underline {
+  border-bottom: 1px solid $color-border;
+}
+article ul li:before {
+  content: "-";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+section ul {
+  padding-left: 1.5em;
+}
+// End Mobile
+//
+// Begin Desktop
+h1 {
+  margin: 2.25em 0 1.125em 0;
+  line-height: 1.5em;
+  font-size: 1.125em;
+  font-weight: $font-weight-bold;
+}
+hr:last-of-type {
+  display: none;
+}
+// End Desktop
+/* --------------------------------------------------------------
+    End Base Styles
+--------------------------------------------------------------- */

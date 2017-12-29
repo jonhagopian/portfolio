@@ -1,0 +1,54 @@
+/* --------------------------------------------------------------
+    Item Grid Body Rows
+--------------------------------------------------------------- */
+// Mobile First
+#items-list h1 {
+  font-size: 2em;
+  margin: 0.750rem 1rem 0 1rem;
+}
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+// End Mobile
+//
+// Begin Desktop
+@media only screen and (min-width: 767px) {
+  #items-list h1 {
+    text-align: center;
+    margin: 1em 0;
+  }
+  .item-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .item-grid figure {
+    width: 250px;
+    height: 179px;
+    margin: 0 2em 0.50em 2em;
+    overflow: hidden;
+    border-radius: 0;
+  }
+  .item-grid figure img {
+    width: auto;
+  }
+  .item-grid figcaption {
+    font-size: 0.875em;
+    margin: 0 2em 3em 2em;
+    text-align: center;
+  }
+  .item-grid figure {
+    border: 1px solid $color-border;
+  }
+  .item-grid figure img {
+    width: 100%;
+    height: auto;
+  }
+}
+// End Desktop
+/* --------------------------------------------------------------
+    End Item Grid Body Rows
+--------------------------------------------------------------- */

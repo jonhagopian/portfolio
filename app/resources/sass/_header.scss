@@ -1,0 +1,285 @@
+/* --------------------------------------------------------------
+    Header
+--------------------------------------------------------------- */
+// Mobile First
+header {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1px 0;
+  font-family: 'Roboto Slab', serif;
+  font-weight: $font-weight-normal;
+  position: fixed;
+  background-color: white;
+  z-index: 10;
+  strong {
+    font-weight: $font-weight-bold;
+  }
+}
+#navigation, #icon, #header-image {
+  height: 75px;
+  width: 75px;
+  margin: 0 1px;
+}
+#navigation {
+  font-weight: $font-weight-light;
+  background-color: $color-blue;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 40% 40%;
+  color: $color-blue;
+  cursor: pointer;
+  &.open {
+    background-image: url("../images/menu-icon-open.svg");
+  }
+  &.close {
+    background-image: url("../images/menu-icon-close.svg");
+  }
+}
+#navigationBtn {
+  position: absolute;
+  z-index: 8;
+  width: inherit;
+  height: inherit;
+  cursor: pointer;
+}
+.close #navigationBtn {
+  width: 100vw;
+  height: 100vh;
+}
+#nav-menu {
+  position: absolute;
+  transition: 400ms ease-in-out;
+  height: calc(100vh - 75px);
+  z-index: 9;
+  top: 100%;
+  width: 70%;
+  > ul {
+    display: block;
+    background-color: $color-blue;
+    color: $color-yellow;
+    border-right: solid 0.875rem $color-yellow;
+    height: 100%;
+    box-shadow: 3px 0 4px 0 rgba(0, 0, 0, 0.25);
+    font-size: 1.25rem;
+    > li {
+      margin: 0 0.875rem;
+      border-bottom: 1px solid $color-yellow;
+      &:last-of-type {
+        border-bottom: none;
+      }
+      > a {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        color: inherit;
+        padding: 0.875rem 0;
+      }
+      > ul { 
+        display: none;
+      }
+    }
+  }
+}
+.open #nav-menu {
+  left: -100%;
+}
+.close #nav-menu {
+  left: 0;
+}
+#icon {
+  background-image: url("../images/icon-jonhagopian.jpg");
+  background-size: contain;
+}
+#header-image {
+  background-color: $color-yellow;
+  position: relative;
+  flex-grow: 1;
+  overflow: hidden;
+  img {
+    display: none;
+  }
+}
+#logo {
+  font-size: 1.25em;
+  font-weight: $font-weight-normal;
+  line-height: 75px;
+  display: inline;
+  margin-left: 1em;
+  color: $color-blue;
+  // font smoothing issue when in front of trans elem
+  -webkit-font-smoothing: antialiased;
+  span {
+    opacity: 0.50;
+  }
+}
+.item-subhead {
+  display: flex;
+  flex: row flex-start;
+  margin-top: -1em;
+  margin-bottom: 2em;
+}
+.item-client {
+  width: 50%;
+}
+.item-date {
+  width: 50%;
+  margin-right: auto;
+  text-align: right;
+}
+// End Mobile
+//
+// Begin Desktop
+@media only screen and (min-width: 767px) {
+  header {
+    flex-flow: row wrap;
+    left: 0;
+    right: 0;
+  }
+  #navigation, #icon {
+    height: 160px;
+    width: 160px;
+    margin: 0 1px;
+  }
+  #header-image {
+    height: 160px;
+    margin: 0 1px;
+  }
+  #navigation {
+    background: $color-yellow;
+    border-top: 1px solid white;
+    flex-basis: 100%;
+    order: 3;
+    height: auto;
+    &.close {
+      visibility: hidden;
+    }
+    &.open #nav-menu, &.close #nav-menu {
+      left: auto;
+    }
+    #nav-menu {
+      position: static;
+      top: auto;
+      height: auto;
+      width: 100%;
+      > ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        border-right: none;
+        background: none;
+        color: $color-blue;
+        box-shadow: none;
+        font-size: 1rem;
+        > li {
+          border-bottom: none;
+          margin: 0;
+          padding: 0;
+          &:hover {
+            > ul {
+              display: flex;
+            }
+          }
+          &:first-of-type {
+            padding-left: 0.875rem;
+          }
+          &:last-of-type > a {
+            border-right: 0;
+          }
+          > a {
+            display: block;
+            margin: 0.50rem 0;
+            padding: 0 0.875rem;
+            text-decoration: none;
+            color: inherit;
+            transition-duration: 400ms;
+            border-right: 1px solid $color-blue;
+            &:hover {
+              color: $color-text-link-hover;
+            }
+          }
+          > ul { // Begin Drop Down Navigation
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            font-size: 0.75rem;
+            > li {
+              background-color: $color-yellow;
+              border-right: none;
+              margin: 0;
+              padding: 0.50rem 0;
+              > a {
+                transition-duration: 500ms;
+                padding: 0.50rem 1rem;
+              }
+              &:hover {
+                background-color: $color-blue;
+                > a {
+                  color: white;
+                  transition-duration: 0;
+                }
+              }
+              &:last-of-type > a {
+                border-right: 0;
+              }
+              &.caret {
+                padding: 0 !important;
+                background-color: transparent !important;
+                width: 0;
+                height: 0;
+                margin-left: 1.75em;
+                border-left: 1rem solid transparent;
+                border-right: 1rem solid transparent;
+                border-bottom: 1rem solid $color-yellow;
+              }
+            }
+          } // End Drop Down Navigation
+        }
+      }
+    }
+  }
+  #navigationBtn {
+    display: none;
+  }
+  #header-image {
+    background-color: $color-blue;
+    div.overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0.4) 100%); // modern browser compatible
+    }
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transition-duration: 4s;
+      opacity: 0;
+    }
+    #logo {
+      display: block;
+      font-size: 1.875em;
+      color: white;
+      position: absolute;
+      bottom: 0.75em;
+      right: 0.75em;
+      line-height: inherit;
+      margin-left: 0;
+      z-index: 3;
+    }
+  }
+}
+// End Desktop
+/* --------------------------------------------------------------
+    End Header
+--------------------------------------------------------------- */

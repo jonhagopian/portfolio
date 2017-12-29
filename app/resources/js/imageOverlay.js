@@ -1,6 +1,7 @@
 function overlay() {
   var oBox = document.querySelector(".img-overlay-box");
   var overlay = document.querySelector(".img-overlay");
+  var oBoxClose = document.querySelector(".img-overlay-close");
   var allImgs = [].slice.call(document.querySelectorAll(".img-overlay-box img, .img-overlay-box iframe"));
   var allLinks = [].slice.call(document.querySelectorAll(".overlayLink"));
   var closeBtn = document.querySelector(".img-overlay-close");
@@ -33,6 +34,8 @@ function overlay() {
     oBox.style.top = top;
     oBox.style.height = scrollHeight + "px";
     oBox.style.marginTop = marTop + "px";
+    oBoxClose.style.marginTop = oBox.getBoundingClientRect().top + "px";
+    oBoxClose.style.marginRight = oBox.getBoundingClientRect().left + "px";
     if(!listenerFired) {
       lastImg = currImg;
       resizeListener();
