@@ -1,4 +1,8 @@
 /* --------------------------------------------------------------
+    Styles for jonhagopian.com 2017, compiled with Sass.
+    See styles.scss
+--------------------------------------------------------------- */
+/* --------------------------------------------------------------
     CSS Reset
 --------------------------------------------------------------- */
 * {
@@ -384,7 +388,7 @@ header strong {
     padding: 0 0.875rem;
     text-decoration: none;
     color: inherit;
-    transition-duration: 400ms;
+    transition-duration: 200ms;
     border-right: 1px solid #2274A5;
   }
   #navigation #nav-menu > ul > li > a:hover {
@@ -403,7 +407,7 @@ header strong {
     padding: 0.50rem 0;
   }
   #navigation #nav-menu > ul > li > ul > li > a {
-    transition-duration: 500ms;
+    transition-duration: 200ms;
     padding: 0.50rem 1rem;
   }
   #navigation #nav-menu > ul > li > ul > li:hover {
@@ -509,7 +513,7 @@ section.left-column {
 
 @media only screen and (min-width: 767px) {
   main {
-    padding-top: calc(2.675em + 166px);
+    padding-top: calc(2.675em + 164px);
   }
   article {
     display: flex;
@@ -527,7 +531,7 @@ section.left-column {
     /* min height see main.js */
     border: none;
     margin: 0;
-    background-color: #f2f2f2;
+    background-color: #fafafa;
   }
   section.full-column {
     width: 100%;
@@ -568,21 +572,16 @@ section.left-column {
     margin: 0 2em 0.50em 2em;
     overflow: hidden;
     border-radius: 0;
-  }
-  .item-grid figure img {
-    width: auto;
-  }
-  .item-grid figcaption {
-    font-size: 0.875em;
-    margin: 0 2em 3em 2em;
-    text-align: center;
-  }
-  .item-grid figure {
     border: 1px solid #BCBCBC;
   }
   .item-grid figure img {
     width: 100%;
     height: auto;
+  }
+  .item-grid figcaption {
+    font-size: 0.875em;
+    margin: 0 2em 3em 2em;
+    text-align: center;
   }
 }
 
@@ -701,11 +700,11 @@ section.left-column {
   .img-overlay-right {
     right: 13%;
   }
-  .item-description hr {
-    display: none;
-  }
   .item-description {
     padding-bottom: 4rem;
+  }
+  .item-description hr {
+    display: none;
   }
 }
 
@@ -741,7 +740,6 @@ section.left-column {
     Home Page
 --------------------------------------------------------------- */
 #home h1 {
-  font-family: 'Roboto', sans-serif;
   font-size: 1em;
   line-height: 1.75;
   font-weight: 400;
@@ -901,7 +899,6 @@ body.thankyou #contact-form {
 
 #contact .right-column p > span {
   display: block;
-  font-weight: 700;
   width: 100%;
 }
 

@@ -24,28 +24,23 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  .item-grid figure {
-    width: 250px;
-    height: 179px;
-    margin: 0 2em 0.50em 2em;
-    overflow: hidden;
-    border-radius: 0;
-  }
-  .item-grid figure img {
-    width: auto;
-  }
-  .item-grid figcaption {
-    font-size: 0.875em;
-    margin: 0 2em 3em 2em;
-    text-align: center;
-  }
-  .item-grid figure {
-    border: 1px solid $color-border;
-  }
-  .item-grid figure img {
-    width: 100%;
-    height: auto;
+    figure {
+      width: 250px;
+      height: 179px;
+      margin: 0 2em 0.50em 2em;
+      overflow: hidden;
+      border-radius: 0;
+      border: 1px solid $color-border;
+    }
+    figure img {
+      width: 100%;
+      height: auto;
+    }
+    figcaption {
+      font-size: 0.875em;
+      margin: 0 2em 3em 2em;
+      text-align: center;
+    }
   }
 }
 // End Desktop

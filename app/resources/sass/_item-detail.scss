@@ -64,21 +64,23 @@
   cursor: pointer;
   position: absolute;
 }
-.img-overlay img {
-  display: none;
-  width: 100%;
-}
-.img-overlay iframe {
-  display: none;
+.img-overlay {
+  img {
+    display: none;
+    width: 100%;
+  }
+  iframe {
+    display: none;
+  }
 }
 .overlayLink {
   cursor: pointer;
 }
 .item-description {
   padding-bottom: 0;
-}
-.item-description ul li {
-  margin: 0.5em 0;
+  ul li {
+    margin: 0.5em 0;
+  }
 }
 .iframeSampleCode {
   width: 100%;
@@ -99,11 +101,11 @@
   .img-overlay-right {
     right: 13%;
   }
-  .item-description hr {
-  display: none;
-  }
   .item-description {
     padding-bottom: 4rem;
+    hr {
+      display: none;
+    }
   }
 }
 // End Desktop

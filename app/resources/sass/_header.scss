@@ -195,7 +195,7 @@ header {
             padding: 0 0.875rem;
             text-decoration: none;
             color: inherit;
-            transition-duration: 400ms;
+            transition-duration: 200ms;
             border-right: 1px solid $color-blue;
             &:hover {
               color: $color-text-link-hover;
@@ -212,7 +212,7 @@ header {
               margin: 0;
               padding: 0.50rem 0;
               > a {
-                transition-duration: 500ms;
+                transition-duration: 200ms;
                 padding: 0.50rem 1rem;
               }
               &:hover {

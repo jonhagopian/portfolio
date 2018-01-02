@@ -1,3 +1,9 @@
+/* --------------------------------------------------------------
+    Styles for jonhagopian.com 2017, compiled with Sass.
+    See imageParallax.scss
+--------------------------------------------------------------- */
+@import "mixins";
+@import "variables";
 // Begin Mobile
 .img-parallax {
   width: 100%;
@@ -10,46 +16,46 @@
   padding: 1em 0 1em 1em;
   margin-bottom: 2em;
   overflow-x: scroll;
-}
-.img-parallax::-webkit-scrollbar {
-  display: none;
-}
-.img-parallax.justified {
-  justify-content: center;
-}
-.img-parallax figure {
-  width: calc(66.6% - 1em);
-  overflow: hidden;
-  flex: 0 0 auto;
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
-  margin: 15px 1.875rem 15px 0; // match shadow prevent cutoff
-  position: relative;
-  background-color: white;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &.justified {
+    justify-content: center;
+  }
+  figure {
+    width: calc(66.6% - 1em);
+    overflow: hidden;
+    flex: 0 0 auto;
+    margin: 15px 1.875rem 15px 0; // match shadow prevent cutoff
+    position: relative;
+    background-color: white;
+    @include shadow-outset();
+  }
+  .aspect-ratio {
+    width: 100%;
+    padding-top: 75%; // 4:3 Aspect Ratio
+  }
+  figure img {
+    // negative stretch child larger then parent for parallax effect
+    position: absolute;
+    width: 128%;
+    height: 128%;
+    top: -14%;
+    left: -14%;
+  }
+  .iframe {
+    background-color: #272922; 
+  }
 }
 .item-grid figure {
   position: relative;
 }
-.img-parallax .aspect-ratio {
-  width: 100%;
-  padding-top: 75%; /* 4:3 Aspect Ratio */
-}
-.img-parallax figure img {
-  // negative stretch child larger then parent for parallax effect
-  position: absolute;
-  width: 128%;
-  height: 128%;
-  top: -14%;
-  left: -14%;
-}
-.img-parallax .iframe {
-  background-color: #272922; 
-}
 #items-list .img-parallax {
   background-color: unset;
-}
-#items-list .img-parallax figcaption {
-  margin: 0.5em 1em 1em 0;
-  text-align: right;
+  figcaption {
+    margin: 0.5em 1em 1em 0;
+    text-align: right;
+  }
 }
 // Full Height Mobile Column
 #category-results .img-parallax {
@@ -57,21 +63,19 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 0 1em;
-}
-#category-results .img-parallax figure {
-  width: 100%;
-  border-radius: 0;
-  border: 1px solid #BCBCBC;
-}
-#category-results .img-parallax figcaption {
-  margin-bottom: 4em;
-}
-#category-results .img-parallax figure img {
-  transition: all 200ms;
-}
-.img-parallax figure img {
-  // negative stretch child larger then parent for parallax effect
-  top: 0%;
+  figure {
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #BCBCBC;
+  }
+  figcaption {
+    margin-bottom: 4em;
+  }
+  figure img {
+    transition: all 200ms;
+    // negative stretch child larger then parent for parallax effect
+    top: 0%;
+  }
 }
 // End Full Height Mobile Column
 //
@@ -85,26 +89,23 @@
     overflow-y: scroll;
     flex-direction: column;
     padding: 3em;
-  }
-  .img-parallax::-webkit-scrollbar {
-    display: none;
-  }
-  .img-parallax figure {
-    width: 100%;
-    height: auto;
-    margin-right: 0;
-    margin-bottom: 2em;
-    flex: 0 0 auto;
-  }
-  .img-parallax figure {
-    /* Height calc via JS */
-  }
-  .img-parallax figure img {
-    // negative stretch child larger then parent for parallax effect
-    width: 128%;
-    height: 128%;
-    top: 0%;
-    left: -14%;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    figure {
+      width: 100%;
+      height: auto; // Height calc via JS
+      margin-right: 0;
+      margin-bottom: 2em;
+      flex: 0 0 auto;
+    }
+    figure img {
+      // negative stretch child larger then parent for parallax effect
+      width: 128%;
+      height: 128%;
+      top: 0%;
+      left: -14%;
+    }
   }
 }
 // End Desktop
