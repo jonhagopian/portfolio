@@ -2,9 +2,6 @@
     Resume Page
 --------------------------------------------------------------- */
 // Mobile First
-#resume section.full-column {
-  padding: 1.125em 1.125em 4em 1.125em;
-}
 #resume section h3, #resume section h4 {
   margin-bottom: 0;
   font-size: 1.125em;
@@ -35,11 +32,7 @@
 // End Mobile
 //
 // Begin Desktop
-@media only screen and (min-width: 767px) {
-  #resume section.full-column {
-    padding: 1.125em 6em 6em 6em;
-  }
-}
+// No styles here
 // End Desktop
 /* --------------------------------------------------------------
     End Resume Page

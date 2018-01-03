@@ -96,14 +96,16 @@ section ul {
 // End Mobile
 //
 // Begin Desktop
-h1 {
-  margin: 2.25em 0 1.125em 0;
-  line-height: 1.5em;
-  font-size: 1.125em;
-  font-weight: $font-weight-bold;
-}
-hr:last-of-type {
-  display: none;
+@media only screen and (min-width: 767px) {
+  h1 {
+    margin: 2.25em 0 1.125em 0;
+    line-height: 1.5em;
+    font-size: 1.125em;
+    font-weight: $font-weight-bold;
+  }
+  hr:last-of-type {
+    display: none;
+  }
 }
 // End Desktop
 /* --------------------------------------------------------------

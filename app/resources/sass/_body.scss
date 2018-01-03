@@ -25,6 +25,9 @@ section {
   &.left-column {
     padding: 0 1.125em;
   }
+  &.full-column {
+    padding: 0 1.125em 4em 1.125em;
+  }
 }
 .left-column::-webkit-scrollbar, .right-column::-webkit-scrollbar {
   display: none;
@@ -59,6 +62,7 @@ section {
     }
     &.full-column {
       width: 100%;
+      padding: 0 5em 5em 5em;
     }
   }
 }

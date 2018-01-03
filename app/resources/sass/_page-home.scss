@@ -7,9 +7,7 @@
     font-size: 1em;
     line-height: 1.75;
     font-weight: $font-weight-normal;
-  }
-  .left-column {
-    padding: 0 1em;
+    margin: 2em 0;
   }
 }
 .sec-figure {
@@ -55,13 +53,14 @@
 //
 // Begin Desktop
 @media only screen and (min-width: 767px) {
-  #home h1 {
-    margin: 3em 3.5em;
-    line-height: 2;
-    font-size: 1.125em;
+  #home {
+    h1 {
+      line-height: 2;
+      font-size: 1.125em;
+      margin: 3em 0;
+    }
   }
   .sec-figure {
-    margin: 3em 3.5em;
     img {
       width: 160px;
       height: 160px;

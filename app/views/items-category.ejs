@@ -12,9 +12,10 @@
     </header>
     
     <main>
-      <h1><%= pageTitle %></h1>
-      <article id="category-results" class="full-column">
-        <section class="item-grid img-parallax">
+      <article id="category-results">
+        <section class="full-column">
+          <h1 class="underline"><%= pageTitle %></h1>
+          <div class="item-grid img-parallax">
             <% if (itemsAll.length > 0) { %> 
               <% itemsAll.forEach(function(item) { %>
               <a href="/projects/<%= item.shortname %>">
@@ -33,6 +34,7 @@
               </a>
               <% }); %>
             <% } %>
+          </div>
         </section>
       </article>
     </main>
