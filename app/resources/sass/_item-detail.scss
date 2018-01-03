@@ -27,16 +27,16 @@
 .img-overlay-btns {
   font-weight: $font-weight-bold;
   position: absolute;
-  line-height: 2.5rem;
-  font-size: 2rem;
-  border-radius: 1.25rem;
-  width: 2.5rem;
+  line-height: 2.5em;
+  font-size: 2em;
+  border-radius: 1.25em;
+  width: 2.5em;
   text-align: center;
   background-color: $color-yellow;
   color: $color-blue;
 }
 .img-overlay-left, .img-overlay-right {
-  width: 2rem;
+  width: 2em;
   position: absolute;
   z-index: 93;
   cursor: pointer;
@@ -51,16 +51,16 @@
 }
 .img-overlay-left .img-overlay-btns {
   top: 50%;
-  left: 0.25rem;
+  left: 0.25em;
 }
 .img-overlay-right .img-overlay-btns {
   top: 50%;
-  right: 0.25rem;
+  right: 0.25em;
 }
 .img-overlay-close {
   z-index: 94;
-  top: -1.25rem;
-  right: -1.25rem;
+  top: -1.25em;
+  right: -1.25em;
   cursor: pointer;
   position: absolute;
 }
@@ -102,7 +102,7 @@
     right: 13%;
   }
   .item-description {
-    padding-bottom: 4rem;
+    padding-bottom: 4em;
     hr {
       display: none;
     }

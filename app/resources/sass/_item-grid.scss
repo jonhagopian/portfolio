@@ -2,7 +2,6 @@
     Item Grid Body Rows
 --------------------------------------------------------------- */
 // Mobile First
-
 .item-grid {
   display: flex;
   flex-direction: column;
@@ -12,12 +11,12 @@
 //
 // Begin Desktop
 @media only screen and (min-width: 767px) {
-
   .item-grid {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 4em;
     figure {
       width: 250px;
       height: 179px;
