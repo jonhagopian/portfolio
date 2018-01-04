@@ -6,6 +6,31 @@ function detectIE() {
 }
 detectIE();
 
+function browserSupportsAllFeatures() {
+  return window.Promise && window.fetch && window.Symbol;
+}
+
+if (browserSupportsAllFeatures()) {
+  // Browsers that support all features run `main()` immediately.
+  main();
+} else {
+  // All other browsers loads polyfills and then run `main()`.
+  loadScript('/js/es6-shim.js', main);
+}
+
+
+function loadScript(src, done) {
+  var js = document.createElement('script');
+  js.src = src;
+  js.onload = function() {
+    done();
+  };
+  js.onerror = function() {
+    done(new Error('Failed to load script ' + src));
+  };
+  document.head.appendChild(js);
+}
+
 function navSetup() {
   var headerNav = document.getElementById("navigation");
   var headerNavBtn = document.getElementById("navigationBtn");
@@ -60,11 +85,13 @@ function hideScrollFF() {
 
 var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
-window.addEventListener("load", function() {
-  navSetup();
-  imgSetup();
-  rightColHeight();
-  if (isFirefox) {
-    hideScrollFF();
-  }
-});
+function main() {
+  window.addEventListener("load", function() {
+    navSetup();
+    imgSetup();
+    rightColHeight();
+    if (isFirefox) {
+      hideScrollFF();
+    }
+  });
+}

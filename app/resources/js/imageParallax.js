@@ -1,12 +1,8 @@
 /* This gallery with parallax effect can support the following: Images and Iframes. This effect will work on both X & Y axis */
-var imgParallax = {
 
-  mq : window.matchMedia("(min-width: 767px)"),
-  page : document.body.id,
-  allGalleries : [].slice.call(document.querySelectorAll(".img-parallax")),
-  forEventListener : function() {},
-
-  syAnimate : function(box, boxH, sH, sOffsetArrT, sImgArr, flag) {
+function imageSlider(firstRun) {
+  // Animate a Y axis parallax effect
+  function syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag) {
     if (flag === "full") {
       var scrPos = document.body.scrollTop;
       var pct = 0.15;
@@ -23,9 +19,10 @@ var imgParallax = {
       sPosPct = (sPosPct * pct).toFixed(2); // change image movement lag by reducing the %
       sImgArr[index].style.transform = "translateY(" + sPosPct + "%)";
     });
-  },
+  } //EOF
 
-  sxAnimate : function(box, boxW, sW, sOffsetArrL, sImgArr) {
+  // Animate an X axis parallax effect
+  function sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr) {
     var scrPos = box.scrollLeft;
     // forEach individual image slide
     sOffsetArrL.forEach(function(sOffset, index) {
@@ -36,105 +33,102 @@ var imgParallax = {
       sPosPct = (sPosPct * 0.20).toFixed(2); // change image movement lag by reducing the %
       sImgArr[index].style.transform = "translateX(" + sPosPct + "%)";
     });
-  },
+  } //EOF
 
-  setupTwo : function() { // forEach gallery element
-    if (this.mq.matches && this.page === "items-list") {
-      var elem = [].slice.call(document.querySelectorAll(".img-parallax"));
-      elem.forEach(function(e) {
-        removeClass(e,"img-parallax");
-        var figures = [].slice.call(e.querySelectorAll(".img-slide"));
-        figures.forEach(function(figure) {
-          figure.removeAttribute("style");
-          var img = figure.getElementsByTagName("img")[0];
-          img.removeAttribute("style");
-        });
-      });
-      return;
-    } else {
-      var elem = [].slice.call(document.querySelectorAll(".item-grid"));
-      elem.forEach(function(e) {
-        if (e.className.indexOf("img-parallax") === -1) { 
-          e.className = e.className += " img-parallax";
-        }
-      });
-    }
-    this.allGalleries.forEach(sBox => {
-      let box = sBox;
-      let sArr = [].slice.call(box.querySelectorAll("figure"));
-      let sImgArr = [].slice.call(box.querySelectorAll("figure img, figure iframe")); // iframe is for sample code
-      // Clear out transform on resize
-      sImgArr.forEach((sImg, index) => {
-        sImg.removeAttribute("style");
-        sArr[index].removeAttribute("style");
-      });
-      // if horizontal/vertical scroll switch
-      var flexDir = window.getComputedStyle(box).flexDirection;
-      if (flexDir === "row") {
-        box.scrollLeft = 0; // reset scroll to beginning
-        var boxW = box.offsetWidth;
-        var sW = box.querySelector("figure").offsetWidth;
-        var sOffsetArrL = [];
-        sArr.forEach((sOffset, index) => {
-          sOffsetArrL.push(sOffset.offsetLeft);
-        });
-        this.forEventListener = () => {
-          this.sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr);
-        }
-        this.sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr);
-      } else if (flexDir === "column") {
-        box.scrollTop = 0;
-        if (this.page === "items-list") {
-          var boxH = window.innerHeight;
-          var flag = "full";
-        } else {
-          var boxH = box.offsetHeight;
-          var flag = "fixed";
-        }
-        var sH = box.querySelector("figure").offsetHeight;
-        var sOffsetArrT = [];
-        sArr.forEach((sOffset, index) => {
-          sOffsetArrT.push(sOffset.offsetTop);
-          var newHeight = parseInt(getComputedStyle(sOffset).width) * 0.66; // Aspect ratio adjust
-          newHeight = Math.round(newHeight);
-          sOffset.setAttribute("style", "height: " + newHeight + "px;");
-        });
-        this.forEventListener = () => {
-          this.syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag);
-        }
-        this.syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag);
-      } // End if else row/column
-      // switch box to doc if vertical scroll is full this.page
-      if (this.page === "items-list") {
-        box = document;
-      }
-      box.addEventListener("scroll", this.forEventListener);
-      window.addEventListener("resize", function() {
-        box.removeEventListener("scroll", this.forEventListener)
-      });
-      window.addEventListener("orientationchange", function() {
-        box.removeEventListener("scroll", this.forEventListener)
-      });
-    }); // End forEach
-  },
-
-  setupOne : function() { // first run and initial css setup
+  // Begin core script portion
+  // Only first run resize/orientation listener set, if user resizes window gallery will adjust
+  if (firstRun === true) {
     var resizeDone;
     window.addEventListener("resize", function() {
       clearTimeout(resizeDone);
-      resizeDone = setTimeout(() => {
+      resizeDone = setTimeout(function() {
+        imageSlider();
         rightColHeight(); // see main.js
-        imgParallax.setupTwo(); // scope is window
       }, 66);
     });
-    window.addEventListener("orientationchange", this.setupTwo);
-    this.setupTwo();
+    window.addEventListener("orientationchange", imageSlider);
   }
 
-} // End imgParallax
+  // Remove class img-parallax on category page for desktop and add if mobile
+  var mq = window.matchMedia("(min-width: 767px)");
+  var page = document.body.id;
+  if (mq.matches && page === "items-list") {
+    var elem = [].slice.call(document.querySelectorAll(".img-parallax"));
+    elem.forEach(function(e) {
+      removeClass(e,"img-parallax");
+    });
+  } else {
+    var elem = [].slice.call(document.querySelectorAll(".item-grid"));
+    elem.forEach(function(e) {
+      if (e.className.indexOf("img-parallax") === -1) { 
+        e.className = e.className += " img-parallax";
+      }
+    });
+  }
+
+  var allGalleries = [].slice.call(document.querySelectorAll(".img-parallax"));
+  // forEach individual gallery element
+  allGalleries.forEach(function(sBox) {
+    let box = sBox; // let so values aren't overwritten
+    let sArr = [].slice.call(box.querySelectorAll("figure"));
+    let sImgArr = [].slice.call(box.querySelectorAll("figure img, figure iframe")); // iframe is for sample code
+    // Clear out transform on resize
+    sImgArr.forEach(function(sImg, index) {
+      sImg.removeAttribute("style");
+      sArr[index].removeAttribute("style");
+    });
+    // if horizontal/vertical scroll switch
+    var flexDir = window.getComputedStyle(box).flexDirection;
+    if (flexDir === "row") {
+      box.scrollLeft = 0; // reset scroll to beginning
+      var boxW = box.offsetWidth;
+      var sW = box.querySelector("figure").offsetWidth;
+      var sOffsetArrL = [];
+      sArr.forEach(function(sOffset, index) {
+        sOffsetArrL.push(sOffset.offsetLeft);
+      });
+      var _forEventListener = function() {
+        sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr);
+      }
+      sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr);
+    } else if (flexDir === "column") {
+      box.scrollTop = 0;
+      if (page === "items-list") {
+        var boxH = window.innerHeight;
+        var flag = "full";
+      } else {
+        var boxH = box.offsetHeight;
+        var flag = "fixed";
+      }
+      var sH = box.querySelector("figure").offsetHeight;
+      var sOffsetArrT = [];
+      sArr.forEach(function(sOffset, index) {
+        sOffsetArrT.push(sOffset.offsetTop);
+        var newHeight = parseInt(getComputedStyle(sOffset).width) * 0.66; // Aspect ratio adjust
+        newHeight = Math.round(newHeight);
+        sOffset.setAttribute("style", "height: " + newHeight + "px;");
+      });
+      var _forEventListener = function() {
+        syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag);
+      }
+      syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag);
+    } // End if else row/column
+    // switch box to doc if vertical scroll is full page
+    if (page === "items-list") {
+      box = document;
+    }
+    box.addEventListener("scroll", _forEventListener);
+    window.addEventListener("resize", function() {
+      box.removeEventListener("scroll", _forEventListener)
+    });
+    window.addEventListener("orientationchange", function() {
+      box.removeEventListener("scroll", _forEventListener)
+    });
+  }); // End forEach
+} //EOF
 
 window.addEventListener("load", function() {
   if(document.querySelector(".img-parallax") !== null) {
-    imgParallax.setupOne();
+    imageSlider(true);
   }
 });
