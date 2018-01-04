@@ -1,3 +1,4 @@
+// Site redirect for less than IE11
 function detectIE() {
   if (navigator.userAgent.indexOf("MSIE") >= 0) {
     window.location = "/static/badbrowser.html"
@@ -6,6 +7,8 @@ function detectIE() {
 }
 detectIE();
 
+// ES6 shim, if ES6 features aren't supported load shim
+// Credit to: https://philipwalton.com/articles/loading-polyfills-only-when-needed/
 function browserSupportsAllFeatures() {
   return window.Promise && window.fetch && window.Symbol;
 }
@@ -18,7 +21,6 @@ if (browserSupportsAllFeatures()) {
   loadScript('/js/es6-shim.js', main);
 }
 
-
 function loadScript(src, done) {
   var js = document.createElement('script');
   js.src = src;
@@ -30,6 +32,7 @@ function loadScript(src, done) {
   };
   document.head.appendChild(js);
 }
+// End ES6 shim
 
 function navSetup() {
   var headerNav = document.getElementById("navigation");
