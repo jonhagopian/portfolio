@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Jon Hagopian's online portfolio",
   "main": "app/app.js",
-  "scripts": {
-    "build": "babel app/resources/js -d app/resources/js/babel"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jonhagopian/portfolio.git"
@@ -26,7 +23,9 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
+    "babel-watch": "^2.0.7",
     "grunt": "^1.0.1",
+    "grunt-babel": "^7.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^2.0.0"
   }

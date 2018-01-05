@@ -16,14 +16,44 @@ module.exports = function(grunt) {
         }]
       }
     },
+    babel: {
+      options: {
+        sourceMap: false,
+        presets: [{"env": {
+            "targets": {
+              "Explorer": "11"
+            }
+          }
+        }]
+      },
+      dist: {
+        files: [{
+          "expand": true,
+          "cwd": "app/resources/js/",
+          "src": ["**/*.js"],
+          "dest": "app/resources/js-babel/",
+          "ext": "-babel.js"
+        }]
+      }
+    },
     watch: {
-      files: "app/resources/sass/**/*.scss",
-      tasks: "sass"
+      css: {
+        files: "app/resources/sass/**/*.scss",
+        tasks: "sass"
+      },
+      js: {
+        files: "app/resources/js/*.js",
+        tasks: "babel"
+      }
     }
   });
 
-  grunt.loadNpmTasks("grunt-sass")
+  grunt.loadNpmTasks("grunt-sass");
+  grunt.loadNpmTasks("grunt-babel");
   grunt.loadNpmTasks("grunt-contrib-watch");
 
-  grunt.registerTask("default", ["sass", "watch"]); //runs sass task first then watch by default, simply type 'grunt' at the command line.
+  grunt.registerTask("default", ["sass", "babel", "watch"]);
+  //runs sass task first then watch by default,
+  //babel
+  //type 'grunt' at the command line.
 };

@@ -96,6 +96,6 @@ if (browserSupportsAllFeatures()) {
   loadScript("/js/imageParallax.js", main);
 } else {
   // All other browsers then run `main()`.
-  loadScript("/js/babel/imageParallax.js", main);
+  loadScript("/js-babel/imageParallax-babel.js", main);
 }
 // End ES6 shim and others

@@ -97,8 +97,7 @@ if (browserSupportsAllFeatures()) {
   // Browsers that support all features.
   loadScript("/js/imageParallax.js", main);
 } else {
-  // All other browsers load polyfills and then run `main()`.
-  loadScript("https://cdn.polyfill.io/v2/polyfill.min.js", main);
-  loadScript("/js/imageParallax_es5.js", main);
+  // All other browsers then run `main()`.
+  loadScript("/js-babel/imageParallax-babel.js", main);
 }
 // End ES6 shim and others
