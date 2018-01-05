@@ -59,7 +59,7 @@ var imgParallax = {
         }
       });
     }
-    this.allGalleries.forEach(sBox => {
+    this.allGalleries.forEach((sBox) => {
       let box = sBox;
       let sArr = [].slice.call(box.querySelectorAll("figure"));
       let sImgArr = [].slice.call(box.querySelectorAll("figure img, figure iframe")); // iframe is for sample code
