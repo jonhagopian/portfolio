@@ -4,7 +4,7 @@
   "description": "Jon Hagopian's online portfolio",
   "main": "app/app.js",
   "scripts": {
-    "start": "NODE_ENV=testing nodemon -e css,ejs,js,json --watch app"
+    "build": "babel app/resources/js -d app/resources/js/babel"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,9 @@
     "reload": "^2.2.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
     "grunt": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^2.0.0"

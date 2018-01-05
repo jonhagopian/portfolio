@@ -1,7 +1,9 @@
+"use strict";
+
 // Site redirect for less than IE11
 function detectIE() {
   if (navigator.userAgent.indexOf("MSIE") >= 0) {
-    window.location = "/static/badbrowser.html"
+    window.location = "/static/badbrowser.html";
   }
   return false;
 }
@@ -28,18 +30,18 @@ function imgSetup() {
   var allImg = document.querySelectorAll("img[data-src]");
   for (var i = 0; i < allImg.length; i++) {
     allImg[i].setAttribute("src", allImg[i].getAttribute("data-src"));
-    allImg[i].onload = function() {
+    allImg[i].onload = function () {
       this.removeAttribute("data-src");
     };
   }
 }
 
 function removeClass(e, c) {
-  e.className = e.className.replace(new RegExp("(?:^|\\s)" + c + "(?!\\S)") ,"");
+  e.className = e.className.replace(new RegExp("(?:^|\\s)" + c + "(?!\\S)"), "");
 }
 
 function rightColHeight() {
-  if (document.querySelector(".full-column") === null ) {
+  if (document.querySelector(".full-column") === null) {
     var leftCol = document.querySelector(".left-column");
     var rightCol = document.querySelector(".right-column");
     var mq = window.matchMedia("(min-width: 767px)");
@@ -63,7 +65,7 @@ function hideScrollFF() {
 }
 
 function main() {
-  window.addEventListener("load", function() {
+  window.addEventListener("load", function () {
     navSetup();
     imgSetup();
     rightColHeight();
@@ -82,10 +84,10 @@ function browserSupportsAllFeatures() {
 function loadScript(src, done) {
   var js = document.createElement("script");
   js.src = src;
-  js.onload = function() {
+  js.onload = function () {
     done();
   };
-  js.onerror = function() {
+  js.onerror = function () {
     done(new Error("Failed to load script " + src));
   };
   document.head.appendChild(js);
@@ -95,7 +97,8 @@ if (browserSupportsAllFeatures()) {
   // Browsers that support all features.
   loadScript("/js/imageParallax.js", main);
 } else {
-  // All other browsers then run `main()`.
-  loadScript("/js/babel/imageParallax.js", main);
+  // All other browsers load polyfills and then run `main()`.
+  loadScript("https://cdn.polyfill.io/v2/polyfill.min.js", main);
+  loadScript("/js/imageParallax_es5.js", main);
 }
 // End ES6 shim and others
