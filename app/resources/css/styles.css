@@ -614,12 +614,12 @@ section.full-column {
 }
 
 .img-overlay-btns {
+  line-height: 30px;
+  font-size: 22px;
+  border-radius: 15px;
+  width: 30px;
   font-weight: 700;
   position: absolute;
-  line-height: 2.5em;
-  font-size: 2em;
-  border-radius: 1.25em;
-  width: 2.5em;
   text-align: center;
   background-color: #FEEA3B;
   color: #2274A5;
@@ -654,8 +654,8 @@ section.full-column {
 
 .img-overlay-close {
   z-index: 94;
-  top: -1.25em;
-  right: -1.25em;
+  top: -15px;
+  right: -15px;
   cursor: pointer;
   position: absolute;
 }
@@ -703,6 +703,16 @@ section.full-column {
   }
   .item-description hr {
     display: none;
+  }
+  .img-overlay-btns {
+    line-height: 40px;
+    font-size: 30px;
+    border-radius: 20px;
+    width: 40px;
+  }
+  .img-overlay-close {
+    top: -20px;
+    right: -20px;
   }
 }
 
