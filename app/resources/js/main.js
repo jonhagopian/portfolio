@@ -78,14 +78,6 @@ function browserSupportsAllFeatures() {
   return window.Promise && window.fetch && window.Symbol;
 }
 
-if (browserSupportsAllFeatures()) {
-  // Browsers that support all features run `main()` immediately.
-  main();
-} else {
-  // All other browsers loads polyfills and then run `main()`.
-  loadScript('/js/es6-shim.js', main);
-}
-
 function loadScript(src, done) {
   var js = document.createElement('script');
   js.src = src;
@@ -96,5 +88,13 @@ function loadScript(src, done) {
     done(new Error('Failed to load script ' + src));
   };
   document.head.appendChild(js);
+}
+
+if (browserSupportsAllFeatures()) {
+  // Browsers that support all features run `main()` immediately.
+  main();
+} else {
+  // All other browsers loads polyfills and then run `main()`.
+  loadScript('/js/es6-shim.js', main);
 }
 // End ES6 shim
