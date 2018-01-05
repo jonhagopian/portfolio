@@ -95,6 +95,9 @@
     width: 70%;
     margin-left: -35%;
   }
+  .img-overlay-box::-webkit-scrollbar {
+    display: none;
+  }
   .img-overlay-left {
     left: 13%;
   }

@@ -11,9 +11,6 @@
 /* This gallery with parallax effect can support the following: Images and Iframes. This effect will work on both X & Y axis */
 var imgParallax = {
 
-  mq : window.matchMedia("(min-width: 767px)"),
-  page : document.body.id,
-  allGalleries : [].slice.call(document.querySelectorAll(".img-parallax")),
   forEventListener : function() {},
 
   syAnimate : function(box, boxH, sH, sOffsetArrT, sImgArr, flag) {
@@ -49,7 +46,10 @@ var imgParallax = {
   },
 
   setupTwo : function() { // forEach gallery element
-    if (this.mq.matches && this.page === "items-list") {
+    var mq = window.matchMedia("(min-width: 767px)");
+    var page = document.body.id;
+    var allGalleries = [].slice.call(document.querySelectorAll(".img-parallax"));
+    if (mq.matches && page === "items-list") {
       var elem = [].slice.call(document.querySelectorAll(".img-parallax"));
       elem.forEach(function(e) {
         removeClass(e,"img-parallax");
@@ -69,7 +69,7 @@ var imgParallax = {
         }
       });
     }
-    this.allGalleries.forEach(sBox => {
+    allGalleries.forEach((sBox) => {
       let box = sBox;
       let sArr = [].slice.call(box.querySelectorAll("figure"));
       let sImgArr = [].slice.call(box.querySelectorAll("figure img, figure iframe")); // iframe is for sample code
