@@ -7,33 +7,6 @@ function detectIE() {
 }
 detectIE();
 
-// ES6 shim, if ES6 features aren't supported load shim
-// Credit to: https://philipwalton.com/articles/loading-polyfills-only-when-needed/
-function browserSupportsAllFeatures() {
-  return window.Promise && window.fetch && window.Symbol;
-}
-
-if (browserSupportsAllFeatures()) {
-  // Browsers that support all features run `main()` immediately.
-  main();
-} else {
-  // All other browsers loads polyfills and then run `main()`.
-  loadScript('/js/es6-shim.js', main);
-}
-
-function loadScript(src, done) {
-  var js = document.createElement('script');
-  js.src = src;
-  js.onload = function() {
-    done();
-  };
-  js.onerror = function() {
-    done(new Error('Failed to load script ' + src));
-  };
-  document.head.appendChild(js);
-}
-// End ES6 shim
-
 function navSetup() {
   var headerNav = document.getElementById("navigation");
   var headerNavBtn = document.getElementById("navigationBtn");
@@ -98,3 +71,30 @@ function main() {
     }
   });
 }
+
+// ES6 shim, if ES6 features aren't supported load shim
+// Credit: https://philipwalton.com/articles/loading-polyfills-only-when-needed/
+function browserSupportsAllFeatures() {
+  return window.Promise && window.fetch && window.Symbol;
+}
+
+if (browserSupportsAllFeatures()) {
+  // Browsers that support all features run `main()` immediately.
+  main();
+} else {
+  // All other browsers loads polyfills and then run `main()`.
+  loadScript('/js/es6-shim.js', main);
+}
+
+function loadScript(src, done) {
+  var js = document.createElement('script');
+  js.src = src;
+  js.onload = function() {
+    done();
+  };
+  js.onerror = function() {
+    done(new Error('Failed to load script ' + src));
+  };
+  document.head.appendChild(js);
+}
+// End ES6 shim
