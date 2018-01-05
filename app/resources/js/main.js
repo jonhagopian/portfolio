@@ -6,6 +6,9 @@ function detectIE() {
   return false;
 }
 detectIE();
+// End Site redirect for less than IE11
+
+var isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
 
 function navSetup() {
   var headerNav = document.getElementById("navigation");
@@ -59,8 +62,6 @@ function hideScrollFF() {
   }
 }
 
-var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-
 function main() {
   window.addEventListener("load", function() {
     navSetup();
@@ -72,29 +73,30 @@ function main() {
   });
 }
 
-// ES6 shim, if ES6 features aren't supported load shim
+// ES6 shim, if ES6 features aren't supported load shim and others
 // Credit: https://philipwalton.com/articles/loading-polyfills-only-when-needed/
 function browserSupportsAllFeatures() {
   return window.Promise && window.fetch && window.Symbol;
 }
 
 function loadScript(src, done) {
-  var js = document.createElement('script');
+  var js = document.createElement("script");
   js.src = src;
   js.onload = function() {
     done();
   };
   js.onerror = function() {
-    done(new Error('Failed to load script ' + src));
+    done(new Error("Failed to load script " + src));
   };
   document.head.appendChild(js);
 }
 
 if (browserSupportsAllFeatures()) {
-  // Browsers that support all features run `main()` immediately.
-  main();
+  // Browsers that support all features.
+  loadScript("/js/imageParallax.js", main);
 } else {
-  // All other browsers loads polyfills and then run `main()`.
-  loadScript('https://cdn.polyfill.io/v2/polyfill.min.js', main);
+  // All other browsers load polyfills and then run `main()`.
+  loadScript("https://cdn.polyfill.io/v2/polyfill.min.js", main);
+  loadScript("/js/imageParallax_es5.js", main);
 }
-// End ES6 shim
+// End ES6 shim and others
