@@ -95,6 +95,6 @@ if (browserSupportsAllFeatures()) {
   main();
 } else {
   // All other browsers loads polyfills and then run `main()`.
-  loadScript('/js/es6-shim.js', main);
+  loadScript('https://cdn.polyfill.io/v2/polyfill.min.js', main);
 }
 // End ES6 shim
