@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Jon Hagopian's online portfolio",
   "main": "app/app.js",
+  "scripts": {
+    "start": "NODE_ENV=testing nodemon -e css,ejs,js,json --watch app & grunt"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jonhagopian/portfolio.git"
@@ -17,6 +20,7 @@
     "ejs": "^2.5.7",
     "express": "^4.16.1",
     "nodemailer": "^4.3.1",
+    "nodemon": "^1.14.8",
     "reload": "^2.2.2"
   },
   "devDependencies": {
