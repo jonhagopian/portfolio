@@ -86,6 +86,19 @@
         ["applePay05", ".png"],
         ["applePay06", ".png"]     ]
     },{
+      "title" : "Time Shop",
+      "shortname" : "Time-Shop",
+      "clientname" : "Time Inc.",
+      "date" : "2016",
+      "description" : "<p>Similar to our other online store fronts we developed the Time Shop as a way to leverage the brand identity to sell products previously for sale on various disjointed platforms. This would also give them an avenue of marketing to sell other items marketing was testing for potential value. We’d feature items that were new ideas and add items that were topical in nature for sales and promotions. It also allowed these physical products to be easily linked to from other promotional elements.</p><p>Our in house design group completed the layout and consulted with me as far as user interaction and viability according to our current backend technology. I built out the site using HTML, CSS and JavaScript along with Apache Velocity for the templating. I finished it up by testing cross browser and cross mobile device. This was then QA’d and debugged from feedback received from our offshore QA team as well as our e-commerce fulfillment department.</p>",
+      "images" : [
+        ["tdShop1", ".jpg"],
+        ["tdShop2", ".jpg"],
+        ["tdShop3", ".jpg"],
+        ["tdShop4", ".jpg"],
+        ["tdShop5", ".jpg"],
+        ["tdShop6", ".jpg"]     ]
+    },{
       "title" : "Image Gallery Parallax Effect",
       "shortname" : "image-parallax",
       "clientname" : "Self",
