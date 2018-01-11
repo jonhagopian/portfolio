@@ -5,9 +5,11 @@ $font-weight-normal: 400;
 $font-weight-bold: 700;
 $font-weight-light: 300;
 // Colors
+$color-white: white;
 $color-blue: #2274A5;
 $color-border: #BCBCBC;
 $color-text-body: #212121;
 $color-text-link-hover: darken($color-blue, 20);
 $color-yellow: #FEEA3B;
-$color-gray: lighten(black, 98);
+$color-gray: lighten(black, 66);
+$color-light-gray: lighten(black, 33);

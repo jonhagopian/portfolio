@@ -38,24 +38,18 @@ body.thankyou #contact-form {
   width: 100%;
   height: 14em;
 }
-#contact button {
-  line-height: 3em; 
-  padding: 0 2em;
-  border: 1px solid $color-border;
-  border-radius: 0.50em;
-  margin-right: 1em;
-  background-color: white;
-  transition: 400ms ease-in-out;
-  color: $color-blue;
-  &:hover {
-    color: $color-text-link-hover;
-  }
-}
 #contact .submit {
   font-weight: $font-weight-bold;
 }
 #contact blockquote {
   margin-bottom: 2em;
+}
+#contact button {
+  border: 1px solid $color-border;
+  color: $color-blue;
+  &:hover {
+    color: $color-text-link-hover;
+  }
 }
 // End Mobile
 //

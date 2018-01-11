@@ -80,6 +80,12 @@ input, textarea {
 }
 button {
   cursor: pointer;
+  line-height: 3em; 
+  padding: 0 2em;
+  border-radius: 0.50em;
+  margin-right: 1em;
+  background-color: white;
+  transition: 400ms ease-in-out;
 }
 .underline {
   border-bottom: 1px solid $color-border;
@@ -102,9 +108,6 @@ section ul {
     line-height: 1.5em;
     font-size: 1.125em;
     font-weight: $font-weight-bold;
-  }
-  hr:last-of-type {
-    display: none;
   }
 }
 // End Desktop

@@ -27,9 +27,14 @@
           </div>
           <%- item.description %>
           <hr>
+          <div class="nav-post-description">
+            <a href="/portfolio/" class="btn-txt">
+              Return to Portfolio
+            </a>
+          </div>
         </section>
 
-        <section id="images" class="right-column">
+        <section class="right-column">
           <div class="img-parallax">
             <% item.images.forEach(function(subitem) { %>
             <figure class="img-slide overlayLink">
@@ -45,7 +50,15 @@
             </figure>
             <% }); %>
           </div>
+          <div class="nav-post-gallery">
+            <a href="/portfolio/">
+              <button type="button" class="btn-std">
+                Return to Portfolio
+              </button>
+            </a>
+          </div>        
         </section>
+
       </article>
 
       <div class="img-overlay">

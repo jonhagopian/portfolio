@@ -85,6 +85,19 @@
 .iframeSampleCode {
   width: 100%;
 }
+.nav-post-description {
+  display: none;
+}
+.nav-post-gallery {
+  display: block;
+  margin-bottom: 4em;
+  .btn-std {
+    display: block;
+    margin: 0 auto;
+    background-color: $color-blue;
+    color: $color-yellow;
+  }
+}
 // End Mobile
 //
 // Begin Desktop
@@ -106,9 +119,6 @@
   }
   .item-description {
     padding-bottom: 4em;
-    hr {
-      display: none;
-    }
   }
   .img-overlay-btns {
     line-height: 40px;
@@ -119,6 +129,26 @@
   .img-overlay-close {
     top: -20px;
     right: -20px;  }
+  .nav-post-description {
+    display: block;
+    margin: 2em 0;
+    text-align: center;
+  }
+  .nav-post-description {
+    .btn-txt {
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+      cursor: pointer;
+      color: $color-gray;
+      transition-duration: 200ms;
+      &:hover {
+        color: $color-light-gray;
+      }
+    }
+  }
+  .nav-post-gallery {
+    display: none;
+  }
 }
 // End Desktop
 /* --------------------------------------------------------------
