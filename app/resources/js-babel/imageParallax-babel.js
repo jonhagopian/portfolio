@@ -1,10 +1,10 @@
 "use strict";
 
-/* This gallery with parallax effect can support the following: Images and Iframes. This effect will work on both X & Y axis */
+/* This gallery with parallax effect can support the following: Images and Iframes. This effect will work on both X & Y axis. Syntax to modularize and contain scope within imgParallax object */
 var imgParallax = {
 
   forEventListener: function forEventListener() {},
-
+  // shorter syntax available - syAnimate(params) {}
   syAnimate: function syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag) {
     if (flag === "full") {
       var scrPos = document.body.scrollTop;
@@ -89,9 +89,10 @@ var imgParallax = {
         _this.sxAnimate(box, boxW, sW, sOffsetArrL, sImgArr);
       } else if (flexDir === "column") {
         box.scrollTop = 0;
-        if (_this.page === "items-list") {
+        if (page === "items-list") {
           var boxH = window.innerHeight;
           var flag = "full";
+          box = document;
         } else {
           var boxH = box.offsetHeight;
           var flag = "fixed";
@@ -110,9 +111,6 @@ var imgParallax = {
         _this.syAnimate(box, boxH, sH, sOffsetArrT, sImgArr, flag);
       } // End if else row/column
       // switch box to doc if vertical scroll is full this.page
-      if (_this.page === "items-list") {
-        box = document;
-      }
       box.addEventListener("scroll", _this.forEventListener);
       window.addEventListener("resize", function () {
         box.removeEventListener("scroll", this.forEventListener);
