@@ -539,7 +539,7 @@ section.full-column {
     /* min height see main.js */
     border: none;
     margin: 0;
-    background-color: #a8a8a8;
+    background-color: whitesmoke;
   }
   section.full-column {
     width: 100%;
